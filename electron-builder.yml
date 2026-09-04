@@ -14,8 +14,10 @@ extraResources:
   - 'libraries'
 
 # Windows Configuration
-win: 
+win:
   icon: 'build/icon.png'
+  # Keep the icon embedded in the installed executable for Explorer, shortcuts, and the taskbar.
+  signAndEditExecutable: true
   target: 
     - target: 'nsis'
       arch: 'x64'
