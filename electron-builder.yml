@@ -45,10 +45,11 @@ linux:
   description: 'Official Relax Zone launcher for installing, updating, and launching the Minecraft client.'
   category: 'Game'
 
-# Update metadata and artifacts are served from the Relax Zone website.
+# Public launcher releases and update metadata are hosted on GitHub Releases.
 publish:
-  provider: 'generic'
-  url: 'https://relaxzone.org/downloads/'
+  provider: 'github'
+  owner: 'Yu817'
+  repo: 'relaxzone-launch-releases'
 
 directories:
   buildResources: 'build'

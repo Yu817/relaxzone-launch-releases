@@ -17,7 +17,7 @@
 
 ## 下載
 
-請從 [Relax Zone 官方下載頁](https://relaxzone.org/downloads/) 下載對應系統的安裝檔。
+請從 [Relax Zone 官方下載頁](https://github.com/Yu817/relaxzone-launch-releases/releases/latest) 下載對應系統的安裝檔。
 
 | 平台 | 安裝檔名 |
 | --- | --- |

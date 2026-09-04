@@ -12,8 +12,8 @@ const isDev                          = require('./assets/js/isdev')
 const { LoggerUtil }                 = require('helios-core')
 const Lang                           = require('./assets/js/langloader')
 
-// Keep this in sync with the publish URL in electron-builder.yml.
-const UPDATE_DOWNLOAD_BASE_URL = 'https://relaxzone.org/downloads'
+// Keep this in sync with the GitHub publish target in electron-builder.yml.
+const UPDATE_RELEASE_BASE_URL = 'https://github.com/Yu817/relaxzone-launch-releases/releases/download'
 
 const loggerUICore             = LoggerUtil.getLogger('UICore')
 const loggerAutoUpdater        = LoggerUtil.getLogger('AutoUpdater')
@@ -51,7 +51,7 @@ if(!isDev){
                 loggerAutoUpdater.info('New update available', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `${UPDATE_DOWNLOAD_BASE_URL}/RelaxZone-Launcher-Setup-${info.version}-${process.arch === 'arm64' ? 'arm64' : 'x64'}.dmg`
+                    info.darwindownload = `${UPDATE_RELEASE_BASE_URL}/v${info.version}/RelaxZone-Launcher-Setup-${info.version}-${process.arch === 'arm64' ? 'arm64' : 'x64'}.dmg`
                     showUpdateUI(info)
                 }
                 

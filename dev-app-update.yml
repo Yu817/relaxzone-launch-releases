@@ -1,2 +1,3 @@
-provider: generic
-url: https://relaxzone.org/downloads/
+provider: github
+owner: Yu817
+repo: relaxzone-launch-releases
