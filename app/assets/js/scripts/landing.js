@@ -46,7 +46,7 @@ const loggerLanding = LoggerUtil.getLogger('Landing')
 
 /**
  * Show/hide the loading area.
- * 
+ *
  * @param {boolean} loading True if the loading area should be shown, otherwise false.
  */
 function toggleLaunchArea(loading){
@@ -61,7 +61,7 @@ function toggleLaunchArea(loading){
 
 /**
  * Set the details text of the loading area.
- * 
+ *
  * @param {string} details The new text for the loading details.
  */
 function setLaunchDetails(details){
@@ -70,7 +70,7 @@ function setLaunchDetails(details){
 
 /**
  * Set the value of the loading progress bar and display that value.
- * 
+ *
  * @param {number} percent Percentage (0-100)
  */
 function setLaunchPercentage(percent){
@@ -81,7 +81,7 @@ function setLaunchPercentage(percent){
 
 /**
  * Set the value of the OS progress bar and display that on the UI.
- * 
+ *
  * @param {number} percent Percentage (0-100)
  */
 function setDownloadPercentage(percent){
@@ -91,7 +91,7 @@ function setDownloadPercentage(percent){
 
 /**
  * Enable or disable the launch button.
- * 
+ *
  * @param {boolean} val True to enable, false to disable.
  */
 function setLaunchEnabled(val){
@@ -224,7 +224,7 @@ const refreshMojangStatuses = async function(){
         loggerLanding.warn('Unable to refresh Mojang service status.')
         statuses = MojangRestAPI.getDefaultStatuses()
     }
-    
+
     greenCount = 0
     greyCount = 0
 
@@ -261,7 +261,7 @@ const refreshMojangStatuses = async function(){
             status = 'green'
         }
     }
-    
+
     document.getElementById('mojangStatusEssentialContainer').innerHTML = tooltipEssentialHTML
     document.getElementById('mojangStatusNonEssentialContainer').innerHTML = tooltipNonEssentialHTML
     document.getElementById('mojang_status_icon').style.color = MojangRestAPI.statusToHex(status)
@@ -326,7 +326,7 @@ let serverStatusListener = setInterval(() => refreshServerStatus(true), 300000)
 
 /**
  * Shows an error overlay, toggles off the launch area.
- * 
+ *
  * @param {string} title The overlay title.
  * @param {string} desc The overlay description.
  */
@@ -345,8 +345,8 @@ function showLaunchFailure(title, desc){
 
 /**
  * Asynchronously scan the system for valid Java installations.
- * 
- * @param {boolean} launchAfter Whether we should begin to launch after scanning. 
+ *
+ * @param {boolean} launchAfter Whether we should begin to launch after scanning.
  */
 async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
 
@@ -371,7 +371,7 @@ async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
         setOverlayHandler(() => {
             setLaunchDetails(Lang.queryJS('landing.systemScan.javaDownloadPrepare'))
             toggleOverlay(false)
-            
+
             try {
                 downloadJava(effectiveJavaOptions, launchAfter)
             } catch(err) {
@@ -562,7 +562,7 @@ async function dlAsync(login = true) {
         showLaunchFailure(Lang.queryJS('landing.dlAsync.errorDuringFileVerificationTitle'), err.displayable || Lang.queryJS('landing.dlAsync.seeConsoleForDetails'))
         return
     }
-    
+
 
     if(invalidFileCount > 0) {
         loggerLaunchSuite.info('Downloading files.')
@@ -719,8 +719,8 @@ let newsGlideCount = 0
 
 /**
  * Show the news UI via a slide animation.
- * 
- * @param {boolean} up True to slide up, otherwise false. 
+ *
+ * @param {boolean} up True to slide up, otherwise false.
  */
 function slide_(up){
     const lCUpper = document.querySelector('#landingContainer > #upper')
@@ -794,7 +794,7 @@ let newsLoadingListener = null
 
 /**
  * Set the news loading animation.
- * 
+ *
  * @param {boolean} val True to set loading animation, otherwise false.
  */
 function setNewsLoading(val){
@@ -836,7 +836,7 @@ newsArticleContentScrollable.onscroll = (e) => {
 
 /**
  * Reload the news without restarting.
- * 
+ *
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
@@ -874,7 +874,7 @@ async function digestMessage(str) {
 /**
  * Initialize News UI. This will load the news and prepare
  * the UI accordingly.
- * 
+ *
  * @returns {Promise.<void>} A promise which resolves when the news
  * content has finished loading and transitioning.
  */
@@ -953,7 +953,7 @@ async function initNews(){
         const switchHandler = (forward) => {
             let cArt = parseInt(newsContent.getAttribute('article'))
             let nxtArt = forward ? (cArt >= newsArr.length-1 ? 0 : cArt + 1) : (cArt <= 0 ? newsArr.length-1 : cArt - 1)
-    
+
             displayArticle(newsArr[nxtArt], nxtArt+1)
         }
 
@@ -993,7 +993,7 @@ document.addEventListener('keydown', (e) => {
 
 /**
  * Display a news article on the UI.
- * 
+ *
  * @param {Object} articleObject The article meta object.
  * @param {number} index The article index.
  */
@@ -1015,75 +1015,321 @@ function displayArticle(articleObject, index){
     newsContent.setAttribute('article', index-1)
 }
 
+// Google Spreadsheet Announcement Configuration
+const GOOGLE_SHEET_NEWS_ID = '1eKRBorkgPCo0dJqm2RjfXNMxdXACTMloNeQNV2Wy0Ms'
+const GOOGLE_SHEET_NEWS_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_NEWS_ID}/export?format=csv`
+
+/**
+ * Robust CSV parser for Google Sheets export format.
+ *
+ * @param {string} text The raw CSV text.
+ * @returns {Array<Array<string>>} Parsed rows.
+ */
+function parseCSV(text){
+    const rows = []
+    let currentRow = []
+    let currentField = ''
+    let inQuotes = false
+
+    for(let i = 0; i < text.length; i++){
+        const char = text[i]
+        const nextChar = text[i + 1]
+        if(char === '"'){
+            if(inQuotes && nextChar === '"'){
+                currentField += '"'
+                i++
+            } else {
+                inQuotes = !inQuotes
+            }
+        } else if(char === ',' && !inQuotes){
+            currentRow.push(currentField.trim())
+            currentField = ''
+        } else if((char === '\r' || char === '\n') && !inQuotes){
+            if(char === '\r' && nextChar === '\n'){
+                i++
+            }
+            currentRow.push(currentField.trim())
+            if(currentRow.some(field => field.length > 0)){
+                rows.push(currentRow)
+            }
+            currentRow = []
+            currentField = ''
+        } else {
+            currentField += char
+        }
+    }
+
+    if(currentField.length > 0 || currentRow.length > 0){
+        currentRow.push(currentField.trim())
+        if(currentRow.some(field => field.length > 0)){
+            rows.push(currentRow)
+        }
+    }
+
+    return rows
+}
+
+/**
+ * Determine the CSS class for a tag based on user type or tag text.
+ *
+ * @param {string} tagText Tag label.
+ * @param {string} tagType Optional type identifier.
+ * @returns {string} CSS class name.
+ */
+function resolveTagClass(tagText, tagType){
+    const type = (tagType || '').toLowerCase().trim()
+    const validTypes = ['dungeon', 'event', 'notice', 'update', 'system', 'danger', 'alert', 'success', 'info']
+    if(validTypes.includes(type)){
+        return `tag_${type}`
+    }
+
+    const t = (tagText || '').toLowerCase()
+    if(t.includes('副本') || t.includes('王') || t.includes('boss')){
+        return 'tag_dungeon'
+    }
+    if(t.includes('活動') || t.includes('玩法') || t.includes('節日')){
+        return 'tag_event'
+    }
+    if(t.includes('維護') || t.includes('緊急') || t.includes('注意') || t.includes('修復')){
+        return 'tag_notice'
+    }
+    if(t.includes('更新') || t.includes('版本') || t.includes('改版') || t.includes('新增')){
+        return 'tag_update'
+    }
+    if(t.includes('系統') || t.includes('通知') || t.includes('規則')){
+        return 'tag_system'
+    }
+    return 'tag_default'
+}
+
+/**
+ * Escape HTML special characters to prevent injection.
+ *
+ * @param {string} str Raw string.
+ * @returns {string} Escaped string.
+ */
+function escapeHtml(str){
+    if(!str) return ''
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;')
+}
+
+/**
+ * Render parsed announcements onto the homepage news strip.
+ *
+ * @param {Array<Object>} newsItems The list of announcement objects.
+ */
+function renderHomepageNewsStrip(newsItems){
+    const container = document.getElementById('rz_news_items')
+    if(!container || !newsItems || newsItems.length === 0){
+        return
+    }
+
+    container.innerHTML = ''
+    const displayCount = Math.min(newsItems.length, 3)
+
+    for(let i = 0; i < displayCount; i++){
+        const item = newsItems[i]
+        const itemEl = document.createElement('div')
+        itemEl.className = 'rz_news_item'
+
+        const tagClass = resolveTagClass(item.tag, item.type)
+        itemEl.innerHTML = `
+            <span class="rz_news_tag ${tagClass}">${escapeHtml(item.tag)}</span>
+            <span class="rz_news_text">${escapeHtml(item.text)}</span>
+            <span class="rz_news_date">${escapeHtml(item.date)}</span>
+        `
+
+        if(item.link && (item.link.startsWith('http://') || item.link.startsWith('https://'))){
+            itemEl.title = `點擊開啟連結: ${item.link}`
+            itemEl.onclick = (e) => {
+                e.stopPropagation()
+                shell.openExternal(item.link)
+            }
+        } else {
+            itemEl.onclick = () => {
+                document.getElementById('newsButton').click()
+            }
+        }
+
+        container.appendChild(itemEl)
+    }
+}
+
+/**
+ * Fetch announcement data from Google Sheets CSV endpoint.
+ *
+ * @returns {Promise<Array<Object>|null>} List of announcements or null if failed.
+ */
+async function fetchSpreadsheetNews(){
+    try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 4500)
+
+        const response = await fetch(GOOGLE_SHEET_NEWS_URL, {
+            signal: controller.signal,
+            cache: 'no-store'
+        })
+        clearTimeout(timeoutId)
+
+        if(!response.ok){
+            loggerLanding.warn(`Google Sheet fetch returned HTTP status ${response.status}`)
+            return null
+        }
+
+        const text = await response.text()
+        if(!text || text.trim().length === 0){
+            loggerLanding.debug('Google Sheet returned empty content.')
+            return null
+        }
+
+        const rawRows = parseCSV(text)
+        if(!rawRows || rawRows.length === 0){
+            return null
+        }
+
+        let rows = rawRows
+        // Skip header row if present
+        if(rows[0] && rows[0][0]){
+            const headerStr = rows[0].join(' ').toLowerCase()
+            if(headerStr.includes('標籤') || headerStr.includes('tag') || headerStr.includes('類型') || headerStr.includes('內容') || headerStr.includes('title')){
+                rows = rows.slice(1)
+            }
+        }
+
+        const newsItems = []
+        for(const row of rows){
+            if(!row || row.length === 0){
+                continue
+            }
+            let tag = ''
+            let type = ''
+            let contentText = ''
+            let date = ''
+            let link = ''
+
+            if(row.length >= 5){
+                tag = row[0]
+                type = row[1]
+                contentText = row[2]
+                date = row[3]
+                link = row[4]
+            } else if(row.length === 4){
+                tag = row[0]
+                type = row[1]
+                contentText = row[2]
+                date = row[3]
+            } else if(row.length === 3){
+                tag = row[0]
+                contentText = row[1]
+                date = row[2]
+            } else if(row.length === 2){
+                tag = row[0]
+                contentText = row[1]
+            } else if(row.length === 1){
+                tag = '公告'
+                contentText = row[0]
+            }
+
+            if(!contentText && !tag){
+                continue
+            }
+
+            newsItems.push({
+                tag: tag || '公告',
+                type: type || '',
+                text: contentText || tag,
+                date: date || '',
+                link: link || ''
+            })
+        }
+
+        return newsItems
+    } catch(err){
+        loggerLanding.warn('Failed to fetch news from Google Sheet:', err.message)
+        return null
+    }
+}
+
 /**
  * Load news information from the RSS feed specified in the
- * distribution index.
+ * distribution index, or fall back to Google Sheets news.
  */
 async function loadNews(){
 
-    const distroData = await DistroAPI.getDistribution()
-    if(!distroData.rawDistribution.rss) {
-        loggerLanding.debug('No RSS feed provided.')
-        return null
+    // First attempt to fetch Google Sheet news and update the homepage strip
+    const sheetNews = await fetchSpreadsheetNews()
+    if(sheetNews && sheetNews.length > 0){
+        renderHomepageNewsStrip(sheetNews)
     }
 
-    const promise = new Promise((resolve, reject) => {
-        
-        const newsFeed = distroData.rawDistribution.rss
-        const newsHost = new URL(newsFeed).origin + '/'
-        $.ajax({
-            url: newsFeed,
-            success: (data) => {
-                const items = $(data).find('item')
-                const articles = []
+    const distroData = await DistroAPI.getDistribution()
+    if(distroData.rawDistribution && distroData.rawDistribution.rss) {
+        try {
+            const newsFeed = distroData.rawDistribution.rss
+            const newsHost = new URL(newsFeed).origin + '/'
+            const data = await $.ajax({ url: newsFeed, timeout: 2500 })
+            const items = $(data).find('item')
+            const articles = []
 
-                for(let i=0; i<items.length; i++){
-                // JQuery Element
-                    const el = $(items[i])
+            for(let i=0; i<items.length; i++){
+                const el = $(items[i])
+                const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
+                let comments = el.find('slash\\:comments').text() || '0'
+                comments = comments + ' Comment' + (comments === '1' ? '' : 's')
 
-                    // Resolve date.
-                    const date = new Date(el.find('pubDate').text()).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
-
-                    // Resolve comments.
-                    let comments = el.find('slash\\:comments').text() || '0'
-                    comments = comments + ' Comment' + (comments === '1' ? '' : 's')
-
-                    // Fix relative links in content.
-                    let content = el.find('content\\:encoded').text()
-                    let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
-                    let matches
-                    while((matches = regex.exec(content))){
-                        content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
-                    }
-
-                    let link   = el.find('link').text()
-                    let title  = el.find('title').text()
-                    let author = el.find('dc\\:creator').text()
-
-                    // Generate article.
-                    articles.push(
-                        {
-                            link,
-                            title,
-                            date,
-                            author,
-                            content,
-                            comments,
-                            commentsLink: link + '#comments'
-                        }
-                    )
+                let content = el.find('content\\:encoded').text()
+                let regex = /src="(?!http:\/\/|https:\/\/)(.+?)"/g
+                let matches
+                while((matches = regex.exec(content))){
+                    content = content.replace(`"${matches[1]}"`, `"${newsHost + matches[1]}"`)
                 }
-                resolve({
-                    articles
-                })
-            },
-            timeout: 2500
-        }).catch(err => {
-            resolve({
-                articles: null
-            })
-        })
-    })
 
-    return await promise
+                let link   = el.find('link').text()
+                let title  = el.find('title').text()
+                let author = el.find('dc\\:creator').text()
+
+                articles.push({
+                    link,
+                    title,
+                    date,
+                    author,
+                    content,
+                    comments,
+                    commentsLink: link + '#comments'
+                })
+            }
+            return { articles }
+        } catch(err){
+            loggerLanding.warn('RSS load failed, falling back to Google Sheet articles.')
+        }
+    }
+
+    // If no RSS or RSS failed, use Google Sheet articles if available
+    if(sheetNews && sheetNews.length > 0){
+        const articles = sheetNews.map(item => {
+            const hasLink = item.link && (item.link.startsWith('http://') || item.link.startsWith('https://'))
+            let contentHtml = `<div style="font-size: 15px; line-height: 1.8; color: #e2e8f0; white-space: pre-wrap;">${escapeHtml(item.text)}</div>`
+            if(hasLink){
+                contentHtml += `<div style="margin-top: 20px;"><a href="${escapeHtml(item.link)}" onclick="shell.openExternal('${escapeHtml(item.link)}'); return false;" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.4); color: #38bdf8; border-radius: 8px; text-decoration: none; font-weight: 600; cursor: pointer;"><span>🔗 前往相關網址</span></a></div>`
+            }
+            return {
+                link: item.link || '#',
+                title: `【${item.tag}】 ${item.text.length > 30 ? item.text.substring(0, 30) + '...' : item.text}`,
+                date: item.date || '最新公告',
+                author: 'Relax Zone 悠然之境',
+                content: contentHtml,
+                comments: '0 Comments',
+                commentsLink: '#'
+            }
+        })
+        return { articles }
+    }
+
+    loggerLanding.debug('No RSS feed and no Google Sheet articles available.')
+    return null
 }

@@ -18,9 +18,9 @@
 
 ## 目前專案狀態
 
-- 啟動器版本：1.0.7
+- 啟動器版本：1.0.8
 - Git 分支：main
-- 最新 tag：v1.0.7
+- 最新 tag：v1.0.8
 - Discord 邀請連結：https://discord.gg/m2Ern4DKCZ
 - Windows 圖示來源：app/assets/images/SealCircle.png
 

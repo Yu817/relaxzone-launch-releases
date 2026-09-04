@@ -1467,15 +1467,14 @@ function populateAboutVersionInformation(){
  * of the current version. This value is displayed on the UI.
  */
 function populateReleaseNotes(){
-    settingsAboutChangelogTitle.innerHTML = 'Relax Zone Launcher v1.0.7 更新'
+    settingsAboutChangelogTitle.innerHTML = 'Relax Zone Launcher v1.0.8 更新'
     settingsAboutChangelogText.innerHTML = `
         <div style="line-height: 1.8; color: #cbd5e1; font-size: 13px;">
-            ✦ <b>核心版本</b>：完美支援 Minecraft 1.21.11 Fabric 核心<br>
-            ✦ <b>預設模組</b>：新增 Xaero's Minimap 小地圖與 Inventory Sorting 背包整理<br>
-            ✦ <b>渲染引擎</b>：內建 PackForge 材質載入優化、Iris + Sodium 光影支援<br>
-            ✦ <b>空間語音</b>：整合 Simple Voice Chat 遊戲內 3D 距離語音模組<br>
-            ✦ <b>伺服器直連</b>：mc.relaxzone.org 專屬直連與多人伺服器列表自動預載<br>
-            ✦ <b>極致效能</b>：整合 Java 21 與專屬記憶體分配最佳化
+            ✦ <b>即時動態公告</b>：主畫面公告全面整合雲端即時同步，伺服器消息與活動通知零時差掌握<br>
+            ✦ <b>智慧分類色彩</b>：新增副本、活動、維護、更新等多彩專屬標籤，並支援點擊一鍵開啟外部連結<br>
+            ✦ <b>斷網平滑防護</b>：新增離線降級保護機制，任何網路環境下皆維持穩定視覺體驗<br>
+            ✦ <b>核心版本</b>：完美支援 Minecraft 1.21.11 Fabric 核心與 Java 21<br>
+            ✦ <b>模組整合</b>：內建小地圖、背包整理、Iris + Sodium 光影及 Simple Voice Chat 語音
         </div>
     `
     settingsAboutChangelogButton.href = Lang.queryEJS('settings.supportLink')
