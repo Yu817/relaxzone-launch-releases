@@ -722,47 +722,64 @@ let newsGlideCount = 0
  *
  * @param {boolean} up True to slide up, otherwise false.
  */
+/**
+ * Show the news UI via a slide animation.
+ *
+ * @param {boolean} up True to slide up, otherwise false.
+ */
 function slide_(up){
-    const lCUpper = document.querySelector('#landingContainer > #upper')
-    const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
-    const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
-    const lCLRight = document.querySelector('#landingContainer > #lower > #right')
-    const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
     const landingContainer = document.getElementById('landingContainer')
-    const newsContainer = document.querySelector('#landingContainer > #newsContainer')
+    const newsContainer = document.getElementById('newsContainer')
+    const hero = document.querySelector('.rz_hero_center')
+    const deck = document.querySelector('.rz_bottom_deck')
+
+    if(!newsContainer){
+        return
+    }
 
     newsGlideCount++
 
     if(up){
-        lCUpper.style.top = '-200vh'
-        lCLLeft.style.top = '-200vh'
-        lCLCenter.style.top = '-200vh'
-        lCLRight.style.top = '-200vh'
-        newsBtn.style.top = '130vh'
+        newsContainer.style.display = 'flex'
+        void newsContainer.offsetHeight
         newsContainer.style.top = '0px'
-        //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
-        //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
-        landingContainer.style.background = 'rgba(0, 0, 0, 0.50)'
-        setTimeout(() => {
-            if(newsGlideCount === 1){
-                lCLCenter.style.transition = 'none'
-                newsBtn.style.transition = 'none'
-            }
-            newsGlideCount--
-        }, 2000)
+
+        if(hero){
+            hero.style.transition = 'opacity 0.35s ease, transform 0.35s ease'
+            hero.style.opacity = '0'
+            hero.style.transform = 'translateY(-20px)'
+            hero.style.pointerEvents = 'none'
+        }
+        if(deck){
+            deck.style.transition = 'opacity 0.35s ease, transform 0.35s ease'
+            deck.style.opacity = '0'
+            deck.style.transform = 'translateY(20px)'
+            deck.style.pointerEvents = 'none'
+        }
+        if(landingContainer){
+            landingContainer.style.background = 'rgba(0, 0, 0, 0.65)'
+        }
     } else {
-        setTimeout(() => {
-            newsGlideCount--
-        }, 2000)
-        landingContainer.style.background = null
-        lCLCenter.style.transition = null
-        newsBtn.style.transition = null
         newsContainer.style.top = '100%'
-        lCUpper.style.top = '0px'
-        lCLLeft.style.top = '0px'
-        lCLCenter.style.top = '0px'
-        lCLRight.style.top = '0px'
-        newsBtn.style.top = '10px'
+
+        if(hero){
+            hero.style.opacity = '1'
+            hero.style.transform = 'none'
+            hero.style.pointerEvents = 'all'
+        }
+        if(deck){
+            deck.style.opacity = '1'
+            deck.style.transform = 'none'
+            deck.style.pointerEvents = 'all'
+        }
+        if(landingContainer){
+            landingContainer.style.background = null
+        }
+        setTimeout(() => {
+            if(!newsActive){
+                newsContainer.style.display = 'none'
+            }
+        }, 400)
     }
 }
 
@@ -784,6 +801,14 @@ document.getElementById('newsButton').onclick = () => {
     }
     slide_(!newsActive)
     newsActive = !newsActive
+}
+
+// Bind news close button.
+const newsCloseBtnEl = document.getElementById('newsCloseButton')
+if(newsCloseBtnEl){
+    newsCloseBtnEl.onclick = () => {
+        document.getElementById('newsButton').click()
+    }
 }
 
 // Array to store article meta.
@@ -976,6 +1001,9 @@ document.addEventListener('keydown', (e) => {
     if(newsActive){
         if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
             document.getElementById(e.key === 'ArrowRight' ? 'newsNavigateRight' : 'newsNavigateLeft').click()
+        }
+        if(e.key === 'Escape'){
+            document.getElementById('newsButton').click()
         }
         // Interferes with scrolling an article using the down arrow.
         // Not sure of a straight forward solution at this point.

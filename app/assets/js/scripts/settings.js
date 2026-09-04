@@ -1467,10 +1467,10 @@ function populateAboutVersionInformation(){
  * of the current version. This value is displayed on the UI.
  */
 function populateReleaseNotes(){
-    settingsAboutChangelogTitle.innerHTML = 'Relax Zone Launcher v1.0.8 更新'
+    settingsAboutChangelogTitle.innerHTML = 'Relax Zone Launcher v1.0.9 更新'
     settingsAboutChangelogText.innerHTML = `
         <div style="line-height: 1.8; color: #cbd5e1; font-size: 13px;">
-            ✦ <b>即時動態公告</b>：主畫面公告全面整合雲端即時同步，伺服器消息與活動通知零時差掌握<br>
+            ✦ <b>即時動態公告</b>：全面整合雲端即時同步，並修復「伺服器公告」全螢幕抽屜滑動展開與 ESC 關閉功能<br>
             ✦ <b>智慧分類色彩</b>：新增副本、活動、維護、更新等多彩專屬標籤，並支援點擊一鍵開啟外部連結<br>
             ✦ <b>斷網平滑防護</b>：新增離線降級保護機制，任何網路環境下皆維持穩定視覺體驗<br>
             ✦ <b>核心版本</b>：完美支援 Minecraft 1.21.11 Fabric 核心與 Java 21<br>

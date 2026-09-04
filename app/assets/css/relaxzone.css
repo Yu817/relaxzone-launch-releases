@@ -4132,3 +4132,80 @@ body {
     color: #ffffff;
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
 }
+
+/* ===================================================
+   Relax Zone 專屬全螢幕公告抽屜樣式
+   =================================================== */
+#newsContainer {
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    height: 100% !important;
+    width: 100% !important;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: none;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: rgba(11, 15, 25, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    z-index: 100 !important;
+    padding-top: 48px !important;
+    box-sizing: border-box !important;
+}
+
+.rz_news_drawer_bar {
+    width: 90% !important;
+    max-width: 1100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 20px !important;
+    margin-bottom: 16px !important;
+    background: rgba(30, 41, 59, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+}
+
+.rz_news_drawer_title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.rz_news_close_btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.rz_news_close_btn:hover {
+    background: rgba(239, 68, 68, 0.25) !important;
+    border-color: rgba(239, 68, 68, 0.5) !important;
+    color: #fca5a5 !important;
+    transform: scale(1.02) !important;
+}
+
+#newsContent {
+    height: 75vh !important;
+    width: 90% !important;
+    max-width: 1100px !important;
+    border-radius: 16px !important;
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+    overflow: hidden !important;
+    display: flex !important;
+}
