@@ -38,6 +38,18 @@
         <%- include('modmarket') %>
     </div>
     <%- include('overlay') %>
+    <div id="launcherUpdateOverlay" role="dialog" aria-modal="true" aria-live="polite" aria-hidden="true" style="display: none;">
+        <div id="launcherUpdateModal" class="rz_update_modal" data-state="checking">
+            <div id="launcherUpdateModalIcon" class="rz_update_modal_icon">↻</div>
+            <div id="launcherUpdateModalTitle" class="rz_update_modal_title">正在檢查啟動器更新...</div>
+            <div id="launcherUpdateModalDescription" class="rz_update_modal_description">請稍候，正在確認是否有可用的新版本。</div>
+            <div id="launcherUpdateProgress" class="rz_update_progress" aria-hidden="true">
+                <div id="launcherUpdateProgressBar" class="rz_update_progress_bar"></div>
+            </div>
+            <div id="launcherUpdateProgressText" class="rz_update_progress_text"></div>
+            <button id="launcherUpdateAcknowledge" class="rz_update_acknowledge" type="button" style="display: none;">我知道了</button>
+        </div>
+    </div>
     <div id="loadingContainer">
         <div id="loadingContent">
             <div id="loadSpinnerContainer">

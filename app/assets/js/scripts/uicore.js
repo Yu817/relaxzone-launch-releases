@@ -18,6 +18,104 @@ const UPDATE_RELEASE_BASE_URL = 'https://github.com/Yu817/relaxzone-launch-relea
 const loggerUICore             = LoggerUtil.getLogger('UICore')
 const loggerAutoUpdater        = LoggerUtil.getLogger('AutoUpdater')
 
+let updateStatusHideTimer
+let activeUpdateVersion = null
+
+function updateText(key, placeholders = null){
+    return Lang.queryJS(`uicore.autoUpdate.${key}`, placeholders)
+}
+
+function showLauncherUpdateStatus(state, info = null){
+    const overlay = document.getElementById('launcherUpdateOverlay')
+    const modal = document.getElementById('launcherUpdateModal')
+    const icon = document.getElementById('launcherUpdateModalIcon')
+    const title = document.getElementById('launcherUpdateModalTitle')
+    const description = document.getElementById('launcherUpdateModalDescription')
+    const progress = document.getElementById('launcherUpdateProgress')
+    const progressBar = document.getElementById('launcherUpdateProgressBar')
+    const progressText = document.getElementById('launcherUpdateProgressText')
+    const acknowledge = document.getElementById('launcherUpdateAcknowledge')
+
+    if(!overlay || !modal || !icon || !title || !description || !progress || !progressBar || !progressText || !acknowledge){
+        return
+    }
+
+    if(updateStatusHideTimer){
+        clearTimeout(updateStatusHideTimer)
+        updateStatusHideTimer = null
+    }
+
+    const version = info && info.version ? info.version : activeUpdateVersion
+    const percent = info && Number.isFinite(Number(info.percent)) ? Math.max(0, Math.min(100, Number(info.percent))) : 0
+
+    modal.dataset.state = state
+    acknowledge.style.display = state === 'error' ? 'inline-flex' : 'none'
+    acknowledge.innerText = updateText('acknowledgeButton')
+    acknowledge.onclick = () => hideLauncherUpdateStatus()
+    progress.style.display = state === 'downloading' || state === 'installing' ? 'block' : 'none'
+    progressText.style.display = state === 'downloading' ? 'block' : 'none'
+    progressBar.style.width = `${state === 'installing' ? 100 : percent}%`
+
+    switch(state){
+        case 'available':
+            icon.innerText = '↓'
+            title.innerText = version
+                ? updateText('availableModalTitle', { version })
+                : updateText('availableModalTitleFallback')
+            description.innerText = updateText('availableModalDescription')
+            break
+        case 'downloading':
+            icon.innerText = '↓'
+            title.innerText = updateText('downloadingModalTitle')
+            description.innerText = version
+                ? updateText('downloadingModalDescription', { version })
+                : updateText('downloadingModalDescriptionFallback')
+            progressText.innerText = `${percent.toFixed(0)}%`
+            break
+        case 'installing':
+            icon.innerText = '↻'
+            title.innerText = updateText('installingModalTitle')
+            description.innerText = updateText('installingModalDescription')
+            break
+        case 'latest':
+            icon.innerText = '✓'
+            title.innerText = updateText('latestModalTitle')
+            description.innerText = updateText('latestModalDescription')
+            break
+        case 'error':
+            icon.innerText = '!'
+            title.innerText = updateText('errorModalTitle')
+            description.innerText = updateText('errorModalDescription')
+            break
+        case 'checking':
+        default:
+            icon.innerText = '↻'
+            title.innerText = updateText('checkingModalTitle')
+            description.innerText = updateText('checkingModalDescription')
+            break
+    }
+
+    overlay.style.display = 'flex'
+    overlay.setAttribute('aria-hidden', 'false')
+}
+
+function hideLauncherUpdateStatus(delay = 0){
+    const overlay = document.getElementById('launcherUpdateOverlay')
+    if(!overlay){
+        return
+    }
+    if(updateStatusHideTimer){
+        clearTimeout(updateStatusHideTimer)
+        updateStatusHideTimer = null
+    }
+    if(delay > 0){
+        updateStatusHideTimer = setTimeout(() => hideLauncherUpdateStatus(), delay)
+        return
+    }
+    overlay.style.display = 'none'
+    overlay.setAttribute('aria-hidden', 'true')
+}
+
 // Log deprecation and process warnings.
 process.traceProcessWarnings = true
 process.traceDeprecation = true
@@ -45,10 +143,13 @@ if(!isDev){
         switch(arg){
             case 'checking-for-update':
                 loggerAutoUpdater.info('Checking for update..')
+                showLauncherUpdateStatus('checking')
                 settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.checkingForUpdateButton'), true)
                 break
             case 'update-available':
                 loggerAutoUpdater.info('New update available', info.version)
+                activeUpdateVersion = info.version
+                showLauncherUpdateStatus('available', info)
                 
                 if(process.platform === 'darwin'){
                     info.darwindownload = `${UPDATE_RELEASE_BASE_URL}/v${info.version}/RelaxZone-Launcher-Setup-${info.version}-${process.arch === 'arm64' ? 'arm64' : 'x64'}.dmg`
@@ -57,13 +158,24 @@ if(!isDev){
                 
                 populateSettingsUpdateInformation(info)
                 break
+            case 'download-progress':
+                showLauncherUpdateStatus('downloading', {
+                    percent: info.percent,
+                    version: activeUpdateVersion
+                })
+                break
             case 'update-downloaded':
                 loggerAutoUpdater.info('Update ' + info.version + ' ready to be installed.')
+                activeUpdateVersion = info.version
+                showLauncherUpdateStatus('installing', info)
                 settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.installingButton'), true)
                 showUpdateUI(info)
                 break
             case 'update-not-available':
                 loggerAutoUpdater.info('No new update found.')
+                showLauncherUpdateStatus('latest')
+                hideLauncherUpdateStatus(900)
+                activeUpdateVersion = null
                 populateSettingsUpdateInformation(null)
                 break
             case 'ready':
@@ -85,6 +197,7 @@ if(!isDev){
                         loggerAutoUpdater.debug('Error Code:', info.code)
                     }
                 }
+                showLauncherUpdateStatus('error', info)
                 showSettingsUpdateCheckError()
                 break
             default:

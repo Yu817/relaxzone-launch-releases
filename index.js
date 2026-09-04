@@ -70,6 +70,9 @@ function initAutoUpdater(event, data) {
             }, 500)
         }
     })
+    autoUpdater.on('download-progress', (progress) => {
+        sendAutoUpdateNotification('download-progress', progress)
+    })
     autoUpdater.on('update-not-available', (info) => {
         sendAutoUpdateNotification('update-not-available', info)
     })
