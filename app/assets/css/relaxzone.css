@@ -399,10 +399,10 @@ body {
 /* 左側：伺服器狀態與最新公告卡片 */
 .rz_deck_left {
     flex: 1;
-    max-width: 580px;
+    max-width: 680px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .rz_status_bar {
@@ -566,7 +566,10 @@ body {
     background: rgba(13, 18, 30, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
-    padding: 8px 14px;
+    width: 100%;
+    min-height: 118px;
+    box-sizing: border-box;
+    padding: 14px 18px 16px;
     backdrop-filter: blur(16px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
@@ -575,18 +578,18 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .rz_news_strip_title {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     color: #94a3b8;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -633,15 +636,15 @@ body {
 .rz_news_items {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 7px;
 }
 
 .rz_news_item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 3px 6px;
-    border-radius: 6px;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -652,10 +655,10 @@ body {
 }
 
 .rz_news_tag {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 4px;
+    padding: 3px 8px;
+    border-radius: 5px;
     flex-shrink: 0;
 }
 
@@ -672,7 +675,7 @@ body {
 }
 
 .rz_news_text {
-    font-size: 12px;
+    font-size: 13px;
     color: #cbd5e1;
     white-space: nowrap;
     overflow: hidden;
@@ -681,7 +684,7 @@ body {
 }
 
 .rz_news_date {
-    font-size: 10px;
+    font-size: 11px;
     color: #64748b;
     font-weight: 600;
     flex-shrink: 0;
@@ -3972,4 +3975,3 @@ body {
     color: #ffffff;
     box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
 }
-
