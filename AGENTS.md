@@ -224,17 +224,19 @@ git push origin vX.Y.Z
 - Node.js 使用 22。
 - 透過 RELAXZONE_RELEASE_TOKEN secret 與 GH_TOKEN 發布到 relaxzone-launch-releases。
 
-推 tag 後要到 GitHub Actions 與 relaxzone-launch-releases 檢查 workflow 是否成功，不要只看到 git push 成功就認定玩家已經拿得到更新。若 workflow 沒有發布 asset，手動建立同名 tag 的 GitHub Release，並上傳以下三個檔案：
+### 自動發布到 relaxzone-launch-releases 規範
 
-~~~text
-dist/RelaxZone-Launcher-Setup-X.Y.Z.exe
-dist/latest.yml
-dist/RelaxZone-Launcher-Setup-X.Y.Z.exe.blockmap
-~~~
+**重要規則**：每次版本更新後，最新打包的發布檔（Windows 安裝檔、latest.yml、blockmap）**必須自動推送到公開下載庫 `https://github.com/Yu817/relaxzone-launch-releases.git` 的 GitHub Releases**，確保玩家端能立即收到最新版本：
 
-手動上傳時使用 GitHub credential helper 或安全的環境變數取得 token；不要把 token 寫入 AGENTS.md、source code、PowerShell 檔案或 command output。Release 必須是非 draft、非 prerelease，tag 必須和 vX.Y.Z 完全一致。
+1. **雲端自動發布**：若 GitHub Actions 配置了 `RELAXZONE_RELEASE_TOKEN`，推 tag 後會由 workflow 自動完成多平台建置並上傳 release。
+2. **本機自動發布 Fallback**：若 GitHub Actions 因缺少 Token 或錯誤未完成發布，AI 或開發者應在本地完成打包後，**直接透過本機的 Git Credential Helper 取得授權 Token，以腳本或 API 自動將發布檔案建立 Release 並推送到 `https://github.com/Yu817/relaxzone-launch-releases.git`**，不要要求使用者手動拖曳上傳。
+3. 發布時必須包含以下三個檔案：
+   - `dist/RelaxZone-Launcher-Setup-X.Y.Z.exe`
+   - `dist/latest.yml`
+   - `dist/RelaxZone-Launcher-Setup-X.Y.Z.exe.blockmap`
+4. Release 必須是非 draft、非 prerelease，tag 必須和 vX.Y.Z 完全一致。且嚴禁將 token 寫入 code、docs 或 command output。
 
-發布完成後，用玩家實際可存取的網址驗證更新 feed：
+發布完成後，必須用玩家實際可存取的網址驗證更新 feed：
 
 ~~~powershell
 $feed = Invoke-WebRequest -Uri 'https://github.com/Yu817/relaxzone-launch-releases/releases/latest/download/latest.yml' -UseBasicParsing
