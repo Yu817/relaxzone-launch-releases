@@ -1,0 +1,3895 @@
+/* ===================================================
+   Relax Zone 悠然之境 - 專屬客製化樣式表
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+:root {
+    --rz-primary: #f59e0b;
+    --rz-primary-glow: rgba(245, 158, 11, 0.4);
+    --rz-primary-hover: #fbbf24;
+    --rz-accent: #38bdf8;
+    --rz-success: #10b981;
+    --rz-success-glow: rgba(16, 185, 129, 0.5);
+    --rz-bg-card: rgba(15, 20, 30, 0.78);
+    --rz-bg-card-border: rgba(255, 255, 255, 0.12);
+    --rz-text-bright: #ffffff;
+    --rz-text-sub: #cbd5e1;
+    --rz-text-muted: #94a3b8;
+}
+
+body {
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', -apple-system, sans-serif !important;
+    background-color: #0b0f19 !important;
+    overflow: hidden;
+}
+
+/* 標題列客製化 */
+#frameBar {
+    background: rgba(10, 14, 23, 0.85) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#frameTitleText {
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    color: #f1f5f9 !important;
+    font-size: 12px;
+}
+
+#frameButtonDockWin .frameButton {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#frameButton_settings:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ===================================================
+   主遊戲面板 (Landing Screen) 史詩頂級電競 UI
+   =================================================== */
+
+/* 主面板容器 (尺寸精確適配 980x530，零縱向滾動) */
+#landingContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 28px 18px 28px;
+    background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.4) 0%, rgba(8, 12, 22, 0.8) 60%, rgba(3, 5, 10, 0.94) 100%);
+    overflow: hidden !important;
+    z-index: 10;
+}
+
+#landingContainer:not([style*="display: none"]):not([style*="display:none"]) {
+    display: flex !important;
+}
+
+/* ---------------------------------------------------
+   1. 頂部輕量化毛玻璃功能列 (.rz_top_bar)
+   --------------------------------------------------- */
+.rz_top_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    margin-bottom: 4px;
+    z-index: 20;
+}
+
+/* 伺服器微型品牌標章 */
+.rz_brand_chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 4px 14px 4px 6px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rz_brand_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+    object-fit: contain;
+}
+
+.rz_brand_meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.rz_brand_title {
+    font-family: 'Cinzel', 'Noto Sans TC', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+}
+
+.rz_brand_tag {
+    font-size: 10px;
+    color: #fbbf24;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* 玩家狀態膠囊與設定按鈕 */
+.rz_user_panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#landingContainer #user_content,
+.rz_user_capsule {
+    display: inline-flex !important;
+    align-items: center !important;
+    position: static !important;
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 24px !important;
+    padding: 4px 10px 4px 5px !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
+    transition: all 0.25s ease !important;
+}
+
+#landingContainer #user_content:hover,
+.rz_user_capsule:hover {
+    border-color: rgba(245, 158, 11, 0.6) !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25) !important;
+}
+
+#landingContainer #avatarContainer,
+.rz_avatar_frame {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #f59e0b !important;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.45) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0f172a !important;
+    position: relative !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+#rz_avatar_head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    display: block;
+}
+
+.rz_user_info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 0 8px;
+    justify-content: center;
+}
+
+#landingContainer #user_text,
+.rz_user_name {
+    position: static !important;
+    right: auto !important;
+    text-align: left !important;
+    min-width: unset !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.rz_user_status {
+    font-size: 10px;
+    color: #34d399;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.rz_status_dot_online {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #10b981;
+    display: inline-block;
+}
+
+#landingContainer #avatarOverlay,
+.rz_account_switch_btn {
+    opacity: 1 !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    color: #cbd5e1 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 3px 9px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+#landingContainer #avatarOverlay:hover,
+.rz_account_switch_btn:hover {
+    background: rgba(245, 158, 11, 0.25) !important;
+    border-color: #f59e0b !important;
+    color: #fef08a !important;
+    transform: translateY(-1px) !important;
+}
+
+.rz_settings_btn,
+#settingsMediaButton {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 20px !important;
+    background: rgba(15, 23, 42, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #cbd5e1 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    backdrop-filter: blur(14px) !important;
+    transition: all 0.25s ease !important;
+}
+
+.rz_settings_btn:hover,
+#settingsMediaButton:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-1px) !important;
+}
+
+.rz_gear_icon {
+    font-size: 14px;
+    transition: transform 0.4s ease;
+}
+
+.rz_settings_btn:hover .rz_gear_icon {
+    transform: rotate(90deg);
+}
+
+/* ---------------------------------------------------
+   2. 中央宏偉世界主視覺區 (.rz_hero_center)
+   --------------------------------------------------- */
+.rz_hero_center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto 0;
+    padding: 6px 0;
+    z-index: 5;
+}
+
+.rz_hero_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    border-radius: 20px;
+    padding: 3px 14px;
+    color: #fde68a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+    margin-bottom: 8px;
+    animation: rz_badge_glow 3s infinite alternate;
+}
+
+.rz_sparkle {
+    color: #fbbf24;
+    font-size: 10px;
+}
+
+.rz_hero_main_title {
+    font-family: 'Cinzel', 'Noto Sans TC', serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(245, 158, 11, 0.35);
+}
+
+.rz_title_glow {
+    background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.7));
+    font-weight: 900;
+}
+
+.rz_hero_tagline {
+    font-size: 13px;
+    font-weight: 500;
+    color: #cbd5e1;
+    letter-spacing: 0.8px;
+    margin: 0 0 12px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.rz_mod_pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rz_mod_pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #e2e8f0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease;
+}
+
+.rz_mod_pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(245, 158, 11, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.rz_pill_icon {
+    font-size: 12px;
+}
+
+/* ---------------------------------------------------
+   3. 底部一體化操作控制台 (.rz_bottom_deck)
+   --------------------------------------------------- */
+.rz_bottom_deck {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: auto;
+    z-index: 20;
+}
+
+/* 左側：伺服器狀態與最新公告卡片 */
+.rz_deck_left {
+    flex: 1;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rz_status_bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+/* 伺服器選擇 / 分流切換按鈕 */
+#landingContainer #server_selection_button,
+.rz_server_select_btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 38px !important;
+    padding: 0 16px !important;
+    border-radius: 12px !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+    cursor: pointer !important;
+    width: auto !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    text-shadow: none !important;
+    outline: none !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#landingContainer #server_selection_button:hover,
+.rz_server_select_btn:hover {
+    background: rgba(30, 41, 59, 0.95) !important;
+    border-color: rgba(56, 189, 248, 0.5) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 16px rgba(56, 189, 248, 0.25) !important;
+    transform: translateY(-1px) !important;
+}
+
+#landingContainer #server_selection_button:active,
+.rz_server_select_btn:active {
+    transform: translateY(0px) scale(0.98) !important;
+}
+
+.rz_server_btn_icon {
+    font-size: 14px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.45));
+}
+
+.rz_server_btn_name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+    line-height: 1;
+}
+
+.rz_server_btn_arrow {
+    display: inline-flex;
+    align-items: center;
+    color: #94a3b8;
+    margin-left: 2px;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#landingContainer #server_selection_button:hover .rz_server_btn_arrow,
+.rz_server_select_btn:hover .rz_server_btn_arrow {
+    color: #38bdf8;
+    transform: translateY(1px);
+}
+
+/* 伺服器狀態與在線人數卡片 */
+#landingContainer #server_status_wrapper,
+.rz_server_status_card {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 38px !important;
+    padding: 0 14px !important;
+    border-radius: 12px !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35) !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+}
+
+#landingContainer #server_status_wrapper:hover,
+.rz_server_status_card:hover {
+    background: rgba(24, 34, 53, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(-1px);
+}
+
+.rz_status_dot_indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rz_status_dot_indicator.online {
+    background-color: #10b981;
+    box-shadow: 0 0 10px #10b981;
+    animation: rz_pulse 2s infinite;
+}
+
+.rz_status_dot_indicator.offline {
+    background-color: #ef4444;
+    box-shadow: 0 0 10px #ef4444;
+    animation: none;
+}
+
+#landingContainer #landingPlayerLabel,
+.rz_status_text_label {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: #cbd5e1 !important;
+    text-shadow: none !important;
+    margin: 0 !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1 !important;
+    user-select: none !important;
+}
+
+.rz_status_sep {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0 1px;
+    line-height: 1;
+    user-select: none;
+}
+
+#landingContainer #player_count,
+.rz_status_text_val {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #38bdf8 !important;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.35) !important;
+    margin-left: 0 !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1 !important;
+}
+
+/* 精緻毛玻璃動態公告列 */
+.rz_news_strip {
+    background: rgba(13, 18, 30, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 8px 14px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.rz_news_strip_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 4px;
+}
+
+.rz_news_strip_title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#landingContainer #newsButton,
+.rz_news_more_btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--rz-primary) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: all 0.2s ease !important;
+    outline: none !important;
+}
+
+#landingContainer #newsButton:hover,
+.rz_news_more_btn:hover {
+    color: #fbbf24 !important;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5) !important;
+}
+
+#landingContainer #newsButtonText {
+    color: inherit !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: normal !important;
+    text-shadow: none !important;
+}
+
+.rz_arrow_more {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.rz_news_more_btn:hover .rz_arrow_more {
+    transform: translateX(3px);
+}
+
+.rz_news_items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rz_news_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_news_item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(3px);
+}
+
+.rz_news_tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.tag_dungeon {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.tag_event {
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+.rz_news_text {
+    font-size: 12px;
+    color: #cbd5e1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.rz_news_date {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* 右側：開始遊戲核心行動區 */
+.rz_deck_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.rz_launch_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#landingContainer #launch_content {
+    display: inline-flex !important;
+    position: static !important;
+    top: auto !important;
+}
+
+/* 史詩傳奇開始遊戲按鈕 */
+#landingContainer #launch_button,
+.rz_epic_play_btn {
+    position: relative !important;
+    width: 250px !important;
+    height: 60px !important;
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #c2410c 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 28px rgba(234, 88, 12, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.6) !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    outline: none !important;
+    padding: 0 !important;
+    text-shadow: none !important;
+}
+
+#landingContainer #launch_button:hover,
+.rz_epic_play_btn:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 12px 38px rgba(245, 158, 11, 0.75), inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+    background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ea580c 100%) !important;
+}
+
+#landingContainer #launch_button:active,
+.rz_epic_play_btn:active {
+    transform: translateY(1px) scale(0.99) !important;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.4) !important;
+}
+
+#landingContainer #launch_button:disabled,
+.rz_epic_play_btn:disabled {
+    opacity: 0.6 !important;
+    filter: grayscale(0.8) !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+.rz_btn_shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-25deg);
+    animation: rz_shimmer_sweep 3.5s infinite;
+    pointer-events: none;
+}
+
+.rz_btn_inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.rz_play_icon_box {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease;
+}
+
+.rz_play_arrow {
+    font-size: 15px;
+    color: #ffffff;
+    margin-left: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.rz_epic_play_btn:hover .rz_play_icon_box {
+    transform: scale(1.12);
+    background: rgba(255, 255, 255, 0.32);
+}
+
+.rz_btn_labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.rz_label_primary {
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    line-height: 1.1;
+}
+
+.rz_label_secondary {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+/* 啟動下載進度卡片 */
+#landingContainer #launch_details,
+.rz_progress_deck {
+    position: static !important;
+    top: auto !important;
+    width: 250px !important;
+    background: rgba(13, 18, 30, 0.92) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 14px !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+    flex-direction: column !important;
+}
+
+.rz_progress_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+#landingContainer #launch_details_text,
+.rz_prog_label {
+    font-size: 11px !important;
+    color: #e2e8f0 !important;
+    font-weight: 600 !important;
+    line-height: normal !important;
+    text-shadow: none !important;
+}
+
+#landingContainer #launch_progress_label,
+.rz_prog_val {
+    font-size: 13px !important;
+    color: #fbbf24 !important;
+    font-weight: 900 !important;
+    min-width: unset !important;
+    text-align: right !important;
+    text-shadow: none !important;
+    line-height: normal !important;
+}
+
+.rz_prog_track {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+#landingContainer #launch_progress[value],
+.rz_epic_progress[value] {
+    width: 100% !important;
+    height: 6px !important;
+    -webkit-appearance: none !important;
+    border-radius: 3px !important;
+    overflow: hidden !important;
+    display: block !important;
+}
+
+#landingContainer #launch_progress[value]::-webkit-progress-bar {
+    background-color: transparent !important;
+}
+
+#landingContainer #launch_progress[value]::-webkit-progress-value {
+    background: linear-gradient(90deg, #f59e0b, #38bdf8) !important;
+    border-radius: 3px !important;
+    transition: width 0.2s ease !important;
+}
+
+@keyframes rz_shimmer_sweep {
+    0% { left: -100%; }
+    25% { left: 200%; }
+    100% { left: 200%; }
+}
+
+@keyframes rz_badge_glow {
+    0% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.1); }
+    100% { box-shadow: 0 0 22px rgba(245, 158, 11, 0.4); }
+}
+
+/* ===================================================
+   登入方式 (Login Options) & 登入表單 (Login) 精美卡片
+   =================================================== */
+
+#loginOptionsContainer,
+#loginContainer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.4) 0%, rgba(10, 14, 23, 0.85) 100%);
+}
+
+#loginOptionsContainer:not([style*="display: none"]):not([style*="display:none"]),
+#loginContainer:not([style*="display: none"]):not([style*="display:none"]) {
+    display: flex !important;
+}
+
+#loginOptionsContent,
+#loginContent {
+    top: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rz_login_card {
+    width: 440px !important;
+    background: rgba(13, 18, 30, 0.88) !important;
+    backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 158, 11, 0.15) !important;
+    padding: 32px 36px !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: rz_card_fade_in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes rz_card_fade_in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.rz_login_header {
+    text-align: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.rz_login_badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #fbbf24;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.rz_login_brand_title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.rz_login_brand_subtitle {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.rz_login_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.rz_login_actions .loginOptionButtonContainer {
+    width: 100% !important;
+}
+
+.rz_login_btn {
+    width: 100% !important;
+    height: 62px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    text-align: left;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.rz_btn_msft {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)) !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.rz_btn_msft:hover,
+.rz_btn_msft:focus {
+    border-color: #38bdf8 !important;
+    background: linear-gradient(135deg, rgba(38, 55, 80, 0.95), rgba(18, 30, 52, 0.95)) !important;
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35) !important;
+    transform: translateY(-2px);
+    text-shadow: none !important;
+}
+
+.rz_btn_msft_primary {
+    height: 72px !important;
+    background: linear-gradient(135deg, rgba(14, 116, 144, 0.85) 0%, rgba(3, 105, 161, 0.85) 100%) !important;
+    border: 1.5px solid #38bdf8 !important;
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+.rz_btn_msft_primary:hover {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.95) 0%, rgba(3, 105, 161, 0.95) 100%) !important;
+    box-shadow: 0 12px 32px rgba(56, 189, 248, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.rz_btn_mojang {
+    background: rgba(30, 41, 59, 0.55) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.rz_btn_mojang:hover,
+.rz_btn_mojang:focus {
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    background: rgba(51, 65, 85, 0.6) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-2px);
+    text-shadow: none !important;
+}
+
+.rz_btn_icon_box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 14px;
+}
+
+.rz_btn_text_group {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rz_btn_main_text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.rz_recommend_tag {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.rz_btn_sub_text {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.rz_btn_arrow {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 8px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.rz_login_btn:hover .rz_btn_arrow {
+    transform: translateX(3px);
+    color: #ffffff;
+}
+
+.rz_login_footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
+    width: 100%;
+    justify-content: center;
+}
+
+.rz_security_icon {
+    font-size: 12px;
+}
+
+.rz_login_cancel_btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_login_cancel_btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* 登入表單輸入框樣式 (Mojang) 徹底覆寫舊樣式 */
+#loginForm {
+    width: 440px !important;
+    max-width: 90vw !important;
+    background: rgba(13, 18, 30, 0.92) !important;
+    backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 158, 11, 0.15) !important;
+    padding: 28px 32px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+#loginForm .loginFieldContainer {
+    width: 100% !important;
+    position: relative !important;
+    margin-bottom: 14px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+#loginForm .rz_input_icon {
+    position: absolute !important;
+    left: 14px !important;
+    font-size: 15px !important;
+    color: #94a3b8 !important;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#loginForm .loginField {
+    width: 100% !important;
+    height: 46px !important;
+    background: rgba(20, 28, 48, 0.75) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 12px !important;
+    padding: 0 16px 0 42px !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-family: inherit !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+    outline: none !important;
+    margin-bottom: 0 !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#loginForm .loginField:focus {
+    border-color: var(--rz-primary) !important;
+    box-shadow: 0 0 14px var(--rz-primary-glow) !important;
+    background: rgba(25, 36, 62, 0.9) !important;
+}
+
+#loginForm .loginErrorSpan {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 11px !important;
+    color: #f87171 !important;
+    background: rgba(239, 68, 68, 0.2) !important;
+    border: 1px solid rgba(239, 68, 68, 0.4) !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+    width: auto !important;
+    text-align: right !important;
+    font-family: inherit !important;
+    font-weight: 600 !important;
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.rz_login_warning_box {
+    width: 100%;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #fde68a;
+    line-height: 1.45;
+    text-align: left;
+}
+
+.rz_login_sub_options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 18px;
+    font-size: 12px;
+}
+
+.rz_checkbox_label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #cbd5e1;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.rz_forgot_link,
+.rz_register_link {
+    color: var(--rz-primary);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s ease;
+}
+
+.rz_forgot_link:hover,
+.rz_register_link:hover {
+    color: var(--rz-primary-hover);
+    text-decoration: underline;
+}
+
+.rz_submit_btn {
+    width: 100%;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+}
+
+.rz_submit_btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.6);
+}
+
+.rz_submit_btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.rz_login_disclaimer {
+    text-align: center;
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* ===================================================
+   Relax Zone 專屬圓形伺服器 Logo 載入動畫
+   =================================================== */
+
+#loadSpinnerContainer {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 290px !important;
+    height: 290px !important;
+}
+
+#loadCenterImage {
+    position: absolute !important;
+    width: 204px !important;
+    height: 204px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    box-shadow: 0 0 35px rgba(245, 158, 11, 0.55), inset 0 0 15px rgba(0, 0, 0, 0.6) !important;
+    border: 3px solid #f59e0b !important;
+    z-index: 390 !important;
+    animation: rz_logo_breathe 2.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes rz_logo_breathe {
+    0% {
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.45);
+        transform: scale(0.99);
+    }
+    100% {
+        box-shadow: 0 0 45px rgba(245, 158, 11, 0.8), 0 0 60px rgba(56, 189, 248, 0.4);
+        transform: scale(1.02);
+    }
+}
+
+#loadSpinnerImage {
+    position: absolute !important;
+    width: 290px !important;
+    height: 290px !important;
+    z-index: 400 !important;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.65)) !important;
+}
+
+/* ===================================================
+   Relax Zone 專屬全新客製化設定介面 (Settings UI Overhaul - 高效能版)
+   =================================================== */
+
+/* 設定介面容器：允許正常顯示與隱藏，支援平滑切換 */
+#settingsContainer {
+    position: relative !important;
+    height: 100% !important;
+    background: radial-gradient(circle at 80% 20%, rgba(18, 28, 48, 0.97) 0%, rgba(8, 12, 22, 0.98) 100%) !important;
+    overflow: hidden !important;
+    z-index: 50 !important;
+}
+
+/* 強制遵守 inline style 的 display: none，確保點擊完成或啟動時能正常隱藏 */
+#settingsContainer[style*="display: none"] {
+    display: none !important;
+}
+
+#settingsContainer:not([style*="display: none"]) {
+    display: flex;
+}
+
+#settingsContainer:before {
+    display: none !important;
+}
+
+/* 左側導航面板 */
+#settingsContainerLeft {
+    width: 240px !important;
+    min-width: 240px !important;
+    height: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background: rgba(10, 15, 26, 0.98) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#settingsNavContainer {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 24px 16px !important;
+    box-sizing: border-box !important;
+}
+
+/* 導航頂部 Logo 與標題 */
+#settingsNavHeader {
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 6px 10px 20px 10px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+    margin-bottom: 16px !important;
+    justify-content: flex-start !important;
+}
+
+.rz_settings_nav_logo_wrap {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(56, 189, 248, 0.2));
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+    flex-shrink: 0;
+}
+
+.rz_settings_nav_logo {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+}
+
+.rz_settings_nav_titles {
+    display: flex;
+    flex-direction: column;
+}
+
+#settingsNavHeaderText {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    background: linear-gradient(135deg, #f59e0b, #38bdf8) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.rz_settings_nav_sub {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* 導航項目列表 */
+#settingsNavItemsContainer {
+    height: auto !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#settingsNavItemsContent {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: static !important;
+    gap: 4px !important;
+}
+
+.settingsNavItem {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    margin: 2px 0 !important;
+    padding: 10px 14px !important;
+    color: #94a3b8 !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-shadow: none !important;
+}
+
+.settingsNavItem .rz_nav_icon {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.settingsNavItem .rz_nav_label {
+    flex: 1;
+}
+
+.settingsNavItem:hover {
+    color: #f1f5f9 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    transform: translateX(3px) !important;
+    text-shadow: none !important;
+}
+
+.settingsNavItem:hover .rz_nav_icon {
+    transform: scale(1.15);
+}
+
+.settingsNavItem[selected] {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(56, 189, 248, 0.12)) !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.2), inset 0 0 12px rgba(245, 158, 11, 0.1) !important;
+    font-weight: 700 !important;
+    cursor: default !important;
+    transform: none !important;
+    text-shadow: none !important;
+}
+
+.settingsNavItem[selected] .rz_nav_icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+}
+
+.settingsNavSpacer {
+    height: 12px !important;
+}
+
+/* 底部完成按鈕區塊 */
+#settingsNavContentBottom {
+    position: static !important;
+    margin-top: auto !important;
+    width: 100% !important;
+    padding-top: 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.settingsNavDivider {
+    width: 100% !important;
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    margin: 0 0 14px 0 !important;
+}
+
+#settingsNavDone {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 18px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #0b0f19 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-shadow: none !important;
+}
+
+#settingsNavDone .rz_done_icon {
+    font-size: 14px;
+}
+
+#settingsNavDone:hover {
+    transform: translateY(-2px) !important;
+    filter: brightness(1.12) !important;
+    box-shadow: 0 6px 26px rgba(245, 158, 11, 0.6) !important;
+    text-shadow: none !important;
+    color: #0b0f19 !important;
+}
+
+#settingsNavDone:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ===================================================
+   右側內容設定頁面 (Right Content Tabs)
+   =================================================== */
+
+#settingsContainerRight {
+    flex: 1 !important;
+    width: auto !important;
+    height: 100% !important;
+    padding: 32px 48px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* 確保外層不產生預設滾動條 */
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.settingsTab {
+    height: 100% !important;
+    overflow-y: auto !important;
+    padding-right: 12px !important;
+    padding-bottom: 40px !important;
+    box-sizing: border-box !important;
+}
+
+/* 標頭樣式 */
+.settingsTabHeader {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 24px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-bottom: 16px !important;
+}
+
+.settingsTabHeaderText {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 6px !important;
+}
+
+.settingsTabHeaderDesc {
+    font-size: 13px !important;
+    color: #94a3b8 !important;
+    font-weight: 500 !important;
+}
+
+/* 卡片容器設計：移除 backdrop-filter 保持 60+ FPS 極速渲染 */
+.settingsAuthAccountTypeContainer,
+.settingsFieldContainer,
+#settingsGameResolutionContainer,
+#settingsMemoryContainer,
+.settingsFileSelContainer,
+#settingsJVMOptsContainer,
+.rz_about_card,
+.rz_changelog_card,
+#settingsUpdateStatusContainer,
+.settingsChangelogContainer {
+    background: rgba(18, 25, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px 24px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.settingsAuthAccountTypeContainer:hover,
+.settingsFieldContainer:hover,
+#settingsGameResolutionContainer:hover,
+#settingsMemoryContainer:hover,
+.settingsFileSelContainer:hover,
+#settingsJVMOptsContainer:hover,
+.rz_about_card:hover,
+#settingsUpdateStatusContainer:hover {
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* 標題與說明文字 */
+.settingsFieldTitle,
+#settingsMemoryTitle,
+.settingsFileSelTitle,
+#settingsJVMOptsTitle,
+.settingsModsHeader {
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    letter-spacing: 0.2px !important;
+}
+
+.settingsFieldDesc,
+.settingsFileSelDesc,
+#settingsJVMOptsDesc,
+#settingsShaderpackDesc {
+    font-size: 12.5px !important;
+    color: #94a3b8 !important;
+    line-height: 1.5 !important;
+    margin-top: 4px !important;
+}
+
+/* 輸入框設計 */
+#settingsContainer input[type=number],
+#settingsContainer input[type=text] {
+    background: rgba(10, 15, 28, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: #f8fafc !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    padding: 8px 14px !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+}
+
+#settingsContainer input[type=number]:focus,
+#settingsContainer input[type=text]:focus {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.35) !important;
+    background: rgba(12, 18, 34, 0.98) !important;
+}
+
+#settingsGameResolutionContent {
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 10px !important;
+}
+
+#settingsGameResolutionCross {
+    color: #64748b !important;
+    margin: 0 12px !important;
+    font-weight: 800 !important;
+}
+
+/* 現代 iOS/Fluent 風格開關按鈕 (Toggle Switch) */
+.toggleSwitch {
+    position: relative !important;
+    display: inline-block !important;
+    width: 48px !important;
+    height: 26px !important;
+}
+
+.toggleSwitch input {
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.toggleSwitchSlider {
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 26px !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.toggleSwitchSlider:before {
+    position: absolute !important;
+    content: '' !important;
+    height: 18px !important;
+    width: 18px !important;
+    left: 3px !important;
+    bottom: 3px !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.toggleSwitch input:checked + .toggleSwitchSlider {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-color: rgba(16, 185, 129, 0.7) !important;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.4) !important;
+}
+
+.toggleSwitch input:checked + .toggleSwitchSlider:before {
+    transform: translateX(22px) !important;
+    background: #ffffff !important;
+}
+
+/* 帳號管理按鈕與頭貼 */
+.settingsAddAuthAccount {
+    background: rgba(245, 158, 11, 0.15) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    color: #fbbf24 !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.settingsAddAuthAccount:hover {
+    background: #f59e0b !important;
+    color: #0b0f19 !important;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.5) !important;
+}
+
+/* 檔案選擇器按鈕 */
+.settingsFileSelButton {
+    background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.settingsFileSelButton:hover {
+    filter: brightness(1.15) !important;
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* RAM 滑桿 */
+.settingsMemoryActionContainer {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+
+.settingsMemoryLabel {
+    background: rgba(56, 189, 248, 0.15) !important;
+    color: #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    padding: 4px 12px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    min-width: 45px !important;
+    text-align: center !important;
+}
+
+.rangeSliderTrack {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px !important;
+}
+
+.rangeSliderBar {
+    background: linear-gradient(90deg, #f59e0b, #38bdf8) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.5) !important;
+}
+
+.settingsMemoryStatusContainer {
+    background: rgba(10, 15, 28, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 12px 18px !important;
+    margin-bottom: 8px !important;
+}
+
+.settingsMemoryStatusTitle {
+    color: #94a3b8 !important;
+    font-size: 12px !important;
+}
+
+.settingsMemoryStatusValue {
+    color: #f1f5f9 !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+}
+
+/* ===================================================
+   關於頁面 (About Tab) 頂級精緻化
+   =================================================== */
+
+.rz_about_card {
+    background: linear-gradient(135deg, rgba(20, 28, 48, 0.9), rgba(12, 16, 28, 0.95)) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+    padding: 28px !important;
+}
+
+#settingsAboutCurrentHeadline {
+    display: flex !important;
+    align-items: center !important;
+    gap: 18px !important;
+    margin-bottom: 20px !important;
+}
+
+.rz_about_logo_box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(56, 189, 248, 0.3));
+    border: 2px solid #f59e0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+    flex-shrink: 0;
+}
+
+#settingsAboutLogo {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.rz_about_headline_text {
+    display: flex;
+    flex-direction: column;
+}
+
+#settingsAboutTitle {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.5px !important;
+}
+
+.rz_about_edition {
+    font-size: 12px;
+    color: #38bdf8;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+#settingsAboutCurrentVersion {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: fit-content !important;
+    margin-bottom: 24px !important;
+}
+
+#settingsAboutCurrentVersionCheck {
+    background: #10b981 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 22px !important;
+    height: 22px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5) !important;
+}
+
+#settingsAboutCurrentVersionTitle {
+    color: #10b981 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+#settingsAboutCurrentVersionValue {
+    color: #e2e8f0 !important;
+    font-weight: 700 !important;
+}
+
+/* 關於頁面特色卡片 Grid */
+.rz_about_features_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.rz_about_feat_item {
+    background: rgba(10, 15, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.rz_about_feat_item:hover {
+    background: rgba(15, 22, 38, 0.9);
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+
+.rz_about_feat_icon {
+    font-size: 22px;
+}
+
+.rz_about_feat_info strong {
+    display: block;
+    color: #f1f5f9;
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.rz_about_feat_info p {
+    color: #94a3b8;
+    font-size: 11.5px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 關於按鈕群 */
+#settingsAboutButtons {
+    display: flex !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+}
+
+.settingsAboutButton {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: #e2e8f0 !important;
+    padding: 9px 18px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    cursor: pointer !important;
+}
+
+.settingsAboutButton:hover {
+    background: rgba(255, 255, 255, 0.14) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px) !important;
+}
+
+.settingsAboutButton.rz_btn_glow:hover {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(56, 189, 248, 0.3)) !important;
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.35) !important;
+}
+
+/* ===================================================
+   版本更新頁面 (Update Tab)
+   =================================================== */
+
+#settingsUpdateStatusContainer {
+    background: linear-gradient(135deg, rgba(16, 24, 40, 0.85), rgba(10, 18, 30, 0.95)) !important;
+    border: 1px solid rgba(16, 185, 129, 0.3) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+#settingsUpdateTitle {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 16px !important;
+    display: block !important;
+}
+
+#settingsUpdateVersion {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    border-radius: 12px !important;
+    padding: 12px 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: fit-content !important;
+    margin-bottom: 20px !important;
+}
+
+#settingsUpdateVersionCheck {
+    background: #10b981 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.5) !important;
+}
+
+#settingsUpdateVersionTitle {
+    color: #10b981 !important;
+    font-weight: 700 !important;
+}
+
+#settingsUpdateActionButton {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    padding: 11px 24px !important;
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4) !important;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#settingsUpdateActionButton:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 26px rgba(16, 185, 129, 0.6) !important;
+    filter: brightness(1.1) !important;
+}
+
+/* 更新日誌容器 */
+.settingsChangelogContainer {
+    background: rgba(12, 18, 30, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 22px 26px !important;
+}
+
+.settingsChangelogLabel {
+    font-size: 11.5px !important;
+    color: #f59e0b !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 4px !important;
+}
+
+.settingsChangelogTitle {
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    color: #f1f5f9 !important;
+    margin-bottom: 12px !important;
+}
+
+.settingsChangelogText {
+    color: #cbd5e1 !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+}
+
+/* ===================================================
+   模組清單 (Mods Tab) 現代列表樣式
+   =================================================== */
+
+#settingsReqModsContent,
+#settingsOptModsContent,
+#settingsDropinModsContent {
+    background: rgba(10, 15, 28, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin-top: 10px !important;
+}
+
+.settingsMod,
+.settingsDropinMod {
+    padding: 12px 18px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.settingsMod:last-child,
+.settingsDropinMod:last-child {
+    border-bottom: none !important;
+}
+
+.settingsMod:hover,
+.settingsDropinMod:hover {
+    background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.settingsModStatus {
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background-color: #ef4444 !important;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.6) !important;
+    margin-right: 14px !important;
+}
+
+.settingsBaseMod[enabled] > .settingsModContent > .settingsModMainWrapper > .settingsModStatus {
+    background-color: #10b981 !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7) !important;
+}
+
+.settingsModDetails strong {
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+}
+
+.settingsModVersion {
+    color: #94a3b8 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+#settingsDropinFileSystemButton {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    color: #38bdf8 !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    margin: 8px 0 !important;
+    transition: all 0.2s ease !important;
+}
+
+#settingsDropinFileSystemButton:hover {
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.4) !important;
+}
+
+.settingsSwitchServerButton {
+    background: rgba(245, 158, 11, 0.15) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    color: #fbbf24 !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.settingsSwitchServerButton:hover {
+    background: #f59e0b !important;
+    color: #0b0f19 !important;
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ===================================================
+   極簡精緻滾動條 (Custom Sleek Scrollbars)
+   徹底淘汰醜陋的網頁預設滾輪
+   =================================================== */
+
+.settingsTab::-webkit-scrollbar,
+#settingsNavItemsContainer::-webkit-scrollbar,
+#settingsContainerRight::-webkit-scrollbar,
+#settingsReqModsContent::-webkit-scrollbar,
+#settingsOptModsContent::-webkit-scrollbar,
+#settingsDropinModsContent::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+.settingsTab::-webkit-scrollbar-track,
+#settingsNavItemsContainer::-webkit-scrollbar-track,
+#settingsContainerRight::-webkit-scrollbar-track,
+#settingsReqModsContent::-webkit-scrollbar-track,
+#settingsOptModsContent::-webkit-scrollbar-track,
+#settingsDropinModsContent::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.settingsTab::-webkit-scrollbar-thumb,
+#settingsNavItemsContainer::-webkit-scrollbar-thumb,
+#settingsContainerRight::-webkit-scrollbar-thumb,
+#settingsReqModsContent::-webkit-scrollbar-thumb,
+#settingsOptModsContent::-webkit-scrollbar-thumb,
+#settingsDropinModsContent::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 6px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.settingsTab::-webkit-scrollbar-thumb:hover,
+#settingsNavItemsContainer::-webkit-scrollbar-thumb:hover,
+#settingsContainerRight::-webkit-scrollbar-thumb:hover,
+#settingsReqModsContent::-webkit-scrollbar-thumb:hover,
+#settingsOptModsContent::-webkit-scrollbar-thumb:hover,
+#settingsDropinModsContent::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.6) !important;
+}
+
+/* ===================================================
+   全新現代卡片與快速配置組件 (Modern Settings Components)
+   =================================================== */
+
+.rz_setting_card {
+    background: rgba(16, 22, 38, 0.92) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 22px 26px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.25s ease !important;
+}
+
+.rz_setting_card:hover {
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 雙層側邊欄導航按鈕文字 */
+.rz_nav_text_group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.25;
+    flex: 1;
+}
+
+.rz_nav_desc {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: color 0.2s ease;
+}
+
+.settingsNavItem:hover .rz_nav_desc {
+    color: #94a3b8;
+}
+
+.settingsNavItem[selected] .rz_nav_desc {
+    color: #38bdf8;
+}
+
+/* 卡片頂部標題列與標籤 */
+.rz_card_header_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 12px;
+}
+
+.rz_card_title {
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: 0.2px;
+}
+
+.rz_card_badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* 安全與說明 Notice Banner */
+.rz_card_notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: #bae6fd;
+    line-height: 1.5;
+}
+
+.rz_notice_icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* 區塊副標題 */
+.rz_section_subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* 快速配置按鈕群 (Quick Preset Chips) */
+.rz_quick_presets_row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.rz_chip_btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rz_chip_btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.rz_chip_badge {
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.rz_chip_btn.rz_chip_recommended {
+    border-color: rgba(245, 158, 11, 0.45);
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+}
+
+.rz_chip_btn.rz_chip_recommended .rz_chip_badge {
+    background: #f59e0b;
+    color: #0b0f19;
+}
+
+.rz_chip_btn.rz_chip_highlight {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(56, 189, 248, 0.2));
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f8fafc;
+}
+
+.rz_chip_btn.rz_chip_active {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+}
+
+.rz_chip_btn.rz_chip_active .rz_chip_badge {
+    background: #ffffff;
+    color: #0369a1;
+}
+
+/* 解析度自訂輸入框 */
+.rz_res_input_wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rz_input_box {
+    display: flex;
+    align-items: center;
+    background: rgba(10, 15, 28, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rz_input_box:focus-within {
+    border-color: #38bdf8;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+.rz_input_label {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+}
+
+.rz_input_box input {
+    border: none !important;
+    background: transparent !important;
+    padding: 8px 12px !important;
+    box-shadow: none !important;
+    width: 90px;
+    text-align: center;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* 卡片內行列排版 */
+.rz_setting_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0 !important;
+    margin-bottom: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+.rz_setting_row:last-child {
+    border-bottom: none !important;
+    padding-bottom: 4px !important;
+}
+
+/* RAM 資訊狀態卡片 Grid */
+.rz_ram_status_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.rz_ram_status_card {
+    background: rgba(10, 15, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rz_ram_status_lbl {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.rz_ram_status_val {
+    color: #f1f5f9;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.rz_highlight_card {
+    border-color: rgba(245, 158, 11, 0.35);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.rz_highlight_card .rz_ram_status_lbl {
+    color: #f59e0b;
+}
+
+.rz_highlight_card .rz_ram_status_val {
+    color: #fbbf24;
+}
+
+.rz_sliders_stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.rz_slider_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rz_slider_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rz_val_badge {
+    background: rgba(56, 189, 248, 0.15) !important;
+    color: #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    padding: 3px 12px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+}
+
+/* 檔案選擇器與路徑欄位 */
+.rz_file_actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.rz_file_input {
+    flex: 1;
+}
+
+/* JVM 參數 */
+.rz_jvm_preset_bar {
+    margin-bottom: 12px;
+}
+
+.rz_jvm_input_wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.rz_jvm_input {
+    flex: 1;
+    font-family: 'Consolas', 'Fira Code', monospace;
+    font-size: 12px !important;
+    letter-spacing: 0.2px;
+}
+
+/* 模組狀態 Pill Cards */
+.rz_mod_status_pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.rz_mod_pill {
+    background: rgba(10, 15, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rz_pill_icon {
+    font-size: 20px;
+}
+
+.rz_pill_text strong {
+    display: block;
+    font-size: 12.5px;
+    color: #f1f5f9;
+}
+
+.rz_pill_text small {
+    font-size: 10.5px;
+    color: #94a3b8;
+}
+
+.rz_pill_state {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.rz_state_active {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* 光影包選單 */
+.rz_shader_wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.rz_select_container {
+    flex: 1;
+}
+
+#settingsShaderpackButton {
+    white-space: nowrap;
+    padding: 8px 16px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fbbf24;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#settingsShaderpackButton:hover {
+    background: #f59e0b;
+    color: #0b0f19;
+}
+
+/* ===================================================
+   首頁與設定中心入口按鈕 (Mod Market Entrances)
+   =================================================== */
+
+#modmarketMediaContainer {
+    display: inline-flex;
+    align-items: center;
+}
+
+.rz_market_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(56, 189, 248, 0.15)) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    border-radius: 12px;
+    padding: 8px 16px;
+    color: #f8fafc;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+
+.rz_market_btn:hover {
+    background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+    border-color: #38bdf8 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+}
+
+.rz_market_btn .rz_market_icon {
+    font-size: 16px;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+}
+
+/* 設定頁面內的模組市集 Promo Card */
+.rz_market_promo_card {
+    background: linear-gradient(135deg, rgba(14, 30, 58, 0.95), rgba(8, 18, 36, 0.98)) !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    box-shadow: 0 6px 24px rgba(2, 132, 199, 0.2) !important;
+}
+
+.rz_market_promo_content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.rz_market_promo_icon {
+    font-size: 36px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));
+}
+
+.rz_market_promo_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rz_market_promo_title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.rz_market_promo_desc {
+    font-size: 12.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+.rz_market_promo_btn {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.rz_market_promo_btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(56, 189, 248, 0.5);
+}
+
+/* ===================================================
+   線上模組市集主容器 (Mod Market Container)
+   ================================================== */
+
+#modmarketContainer {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle at 80% 20%, rgba(14, 24, 44, 0.98) 0%, rgba(6, 10, 18, 0.99) 100%) !important;
+    flex-direction: column;
+    z-index: 50 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+#modmarketContainer[style*="display: none"] {
+    display: none !important;
+}
+
+#modmarketContainer:not([style*="display: none"]) {
+    display: flex;
+}
+
+/* 頂部導航列 */
+.rz_market_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 15, 26, 0.95);
+    flex-shrink: 0;
+}
+
+.rz_market_header_left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rz_market_back_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.rz_market_back_btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    transform: translateX(-2px);
+}
+
+.rz_market_title_box {
+    display: flex;
+    flex-direction: column;
+}
+
+.rz_market_main_title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #38bdf8, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rz_market_logo_icon {
+    font-size: 18px;
+    -webkit-text-fill-color: initial;
+}
+
+.rz_market_subtitle {
+    font-size: 10.5px;
+    color: #64748b;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* 搜尋框 */
+.rz_market_header_center {
+    flex: 1;
+    max-width: 460px;
+}
+
+.rz_market_search_wrap {
+    display: flex;
+    align-items: center;
+    background: rgba(18, 25, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0 14px;
+    transition: all 0.25s ease;
+}
+
+.rz_market_search_wrap:focus-within {
+    border-color: #38bdf8;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.35);
+}
+
+.rz_search_icon {
+    font-size: 15px;
+    color: #94a3b8;
+    margin-right: 10px;
+}
+
+#rz_market_search_input {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 10px 0 !important;
+    box-shadow: none !important;
+}
+
+#rz_market_search_input::placeholder {
+    color: #64748b;
+    font-size: 12.5px;
+}
+
+.rz_search_clear {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #94a3b8;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rz_search_clear:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 右側操作 */
+.rz_market_header_right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rz_market_sort_box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rz_sort_label {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.rz_market_select {
+    background: rgba(18, 25, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+}
+
+.rz_market_select:focus {
+    border-color: #38bdf8;
+}
+
+.rz_market_action_btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.rz_market_action_btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+}
+
+/* 分類過濾列 */
+.rz_market_categories_bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: rgba(12, 18, 32, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-x: auto;
+    flex-shrink: 0;
+}
+
+.rz_market_categories_bar::-webkit-scrollbar {
+    height: 4px;
+}
+
+.rz_market_cat_chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.rz_market_cat_chip:hover {
+    color: #f1f5f9;
+    border-color: rgba(56, 189, 248, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.rz_market_cat_chip.rz_cat_active {
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(56, 189, 248, 0.2));
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.rz_market_cat_chip.rz_cat_installed.rz_cat_active {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(5, 150, 105, 0.2));
+    border-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+/* 模組內容展示區 */
+.rz_market_content_body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 28px 40px 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rz_market_content_body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rz_market_content_body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.rz_market_content_body::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.5);
+}
+
+/* 狀態框 (載入、錯誤、空結果) */
+.rz_market_state_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 60px 20px;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rz_market_spinner {
+    width: 38px;
+    height: 38px;
+    border: 3px solid rgba(56, 189, 248, 0.2);
+    border-top-color: #38bdf8;
+    border-radius: 50%;
+    animation: rzSpin 0.8s linear infinite;
+}
+
+@keyframes rzSpin {
+    to { transform: rotate(360deg); }
+}
+
+.rz_state_icon {
+    font-size: 42px;
+}
+
+/* 模組網格卡片 */
+.rz_market_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+}
+
+.rz_mod_card {
+    background: rgba(16, 23, 40, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.rz_mod_card:hover {
+    background: rgba(20, 28, 48, 0.95);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.rz_mod_card.rz_card_installed {
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+.rz_mod_card_top {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.rz_mod_card_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.rz_mod_card_meta {
+    flex: 1;
+    overflow: hidden;
+}
+
+.rz_mod_card_title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.2px;
+}
+
+.rz_mod_card_author {
+    font-size: 11.5px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.rz_mod_card_stats {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.rz_mod_card_desc {
+    font-size: 12.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 38px;
+}
+
+.rz_mod_card_cats {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.rz_card_cat_pill {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+.rz_card_cat_pill.rz_pill_fabric {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.rz_mod_card_bottom {
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rz_card_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.rz_card_install_btn {
+    width: 100%;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 8px 14px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.rz_card_install_btn:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+    transform: translateY(-1px);
+}
+
+.rz_installed_badge {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #10b981;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rz_card_uninstall_btn {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_card_uninstall_btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* 下載中進度條 */
+.rz_install_progress_wrap {
+    width: 100%;
+    height: 32px;
+    background: rgba(10, 15, 28, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rz_install_progress_bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #0284c7, #38bdf8);
+    transition: width 0.2s ease;
+}
+
+.rz_install_progress_text {
+    position: relative;
+    z-index: 2;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* 載入更多按鈕 */
+.rz_market_pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.rz_market_load_more {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    border-radius: 12px;
+    padding: 10px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_market_load_more:hover {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+}
+
+/* 浮動提示 Toast */
+.rz_market_toast {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    background: rgba(16, 24, 40, 0.95);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    z-index: 100;
+    transform: translateY(80px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rz_market_toast.rz_toast_visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.rz_market_toast.rz_toast_error {
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ==================================================
+   XMCL 風格模組版本選擇與詳情彈窗 (Mod Versions Modal)
+   ================================================== */
+
+.rz_modal_overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(3, 7, 18, 0.82) !important;
+    backdrop-filter: blur(14px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500 !important;
+    padding: 24px;
+    box-sizing: border-box;
+    animation: rzFadeIn 0.2s ease;
+}
+
+@keyframes rzFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes rzModalPop {
+    from { transform: scale(0.96) translateY(12px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.rz_modal_dialog {
+    width: 100%;
+    max-width: 960px;
+    height: 90%;
+    max-height: 800px;
+    background: radial-gradient(circle at 85% 15%, rgba(18, 28, 52, 0.98) 0%, rgba(8, 14, 26, 0.99) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(56, 189, 248, 0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: rzModalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 彈窗頂部 Header */
+.rz_modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background: rgba(12, 18, 34, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.rz_modal_mod_info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.rz_modal_icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+}
+
+.rz_modal_title_box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.rz_modal_title_row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rz_modal_title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rz_modal_installed_pill {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid #10b981;
+    color: #34d399;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.rz_modal_author_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.rz_modal_author {
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.rz_modal_sep {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.rz_modal_stats {
+    color: #94a3b8;
+}
+
+.rz_modal_close_btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.rz_modal_close_btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+/* 模組資訊列與外部連結 */
+.rz_modal_meta_bar {
+    padding: 12px 24px;
+    background: rgba(10, 15, 28, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rz_modal_desc {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #cbd5e1;
+    max-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rz_modal_links_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.rz_modal_cats {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.rz_modal_ext_links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rz_modal_link_btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_modal_link_btn:hover {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: #38bdf8;
+    color: #38bdf8;
+}
+
+/* 版本過濾工具列 (XMCL 風格) */
+.rz_modal_filter_toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 24px;
+    background: rgba(14, 20, 36, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.rz_modal_filter_group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rz_modal_filter_label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rz_ver_filter_btn,
+.rz_channel_filter_btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rz_ver_filter_btn:hover,
+.rz_channel_filter_btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+}
+
+.rz_ver_filter_btn.rz_ver_filter_active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.rz_channel_filter_btn.rz_channel_active {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+/* 版本清單列表主體 */
+.rz_modal_versions_body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rz_modal_versions_body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.rz_modal_versions_body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.rz_version_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 單個版本項目卡片 */
+.rz_ver_card {
+    background: rgba(16, 24, 44, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.rz_ver_card:hover {
+    background: rgba(22, 32, 58, 0.85);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.rz_ver_card.rz_ver_card_installed {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(12, 30, 40, 0.8);
+}
+
+.rz_ver_row_main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.rz_ver_meta_left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.rz_ver_title_line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rz_ver_number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: 0.3px;
+}
+
+.rz_channel_badge {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rz_badge_release {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid #10b981;
+    color: #34d399;
+}
+
+.rz_badge_beta {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid #f59e0b;
+    color: #fbbf24;
+}
+
+.rz_badge_alpha {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    color: #f87171;
+}
+
+.rz_ver_details_line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #94a3b8;
+    flex-wrap: wrap;
+}
+
+.rz_mc_ver_tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 6px;
+}
+
+.rz_mc_ver_exact {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+.rz_ver_meta_right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.rz_ver_changelog_btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.rz_ver_changelog_btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.rz_ver_install_btn {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    border: 1px solid #38bdf8;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.rz_ver_install_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+}
+
+.rz_ver_switch_btn {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    border: 1px solid #fbbf24;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 7px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.rz_ver_switch_btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.4);
+}
+
+.rz_ver_installed_tag {
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    white-space: nowrap;
+}
+
+/* 更新日誌展開抽屜 (Changelog Box) */
+.rz_ver_changelog_box {
+    background: rgba(8, 12, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-height: 220px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: Consolas, 'Cascadia Code', monospace;
+}
+
+.rz_ver_changelog_box::-webkit-scrollbar {
+    width: 4px;
+}
+
+.rz_ver_changelog_box::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+}
+
+/* 卡片雙按鈕排版 (⚡ 推薦安裝 + 📋 選擇版本) */
+.rz_card_actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.rz_card_actions .rz_card_install_btn {
+    flex: 1;
+}
+
+.rz_card_versions_btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.rz_card_versions_btn:hover {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+

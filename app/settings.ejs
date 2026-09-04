@@ -1,0 +1,630 @@
+<div id="settingsContainer" style="display: none;">
+    <div id="settingsContainerLeft">
+        <div id="settingsNavContainer">
+            <div id="settingsNavHeader">
+                <div class="rz_settings_nav_logo_wrap">
+                    <img src="./assets/images/SealCircle.png" class="rz_settings_nav_logo" alt="Logo">
+                </div>
+                <div class="rz_settings_nav_titles">
+                    <span id="settingsNavHeaderText"><%- lang('settings.navHeaderText') %></span>
+                    <span class="rz_settings_nav_sub">PREFERENCES & SYSTEM</span>
+                </div>
+            </div>
+            <div id="settingsNavItemsContainer">
+                <div id="settingsNavItemsContent">
+                    <button class="settingsNavItem" rSc="settingsTabAccount" id="settingsNavAccount" selected>
+                        <span class="rz_nav_icon">👤</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navAccount') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navAccountSub') %></span>
+                        </div>
+                    </button>
+                    <button class="settingsNavItem" rSc="settingsTabMinecraft">
+                        <span class="rz_nav_icon">🎮</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navMinecraft') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navMinecraftSub') %></span>
+                        </div>
+                    </button>
+                    <button class="settingsNavItem" rSc="settingsTabJava">
+                        <span class="rz_nav_icon">⚡</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navJava') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navJavaSub') %></span>
+                        </div>
+                    </button>
+                    <button class="settingsNavItem" rSc="settingsTabMods">
+                        <span class="rz_nav_icon">🧩</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navMods') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navModsSub') %></span>
+                        </div>
+                    </button>
+                    <button class="settingsNavItem" rSc="settingsTabLauncher">
+                        <span class="rz_nav_icon">⚙️</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navLauncher') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navLauncherSub') %></span>
+                        </div>
+                    </button>
+                    <div class="settingsNavSpacer"></div>
+                    <button class="settingsNavItem" rSc="settingsTabAbout">
+                        <span class="rz_nav_icon">🏰</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navAbout') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navAboutSub') %></span>
+                        </div>
+                    </button>
+                    <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">
+                        <span class="rz_nav_icon">🚀</span>
+                        <div class="rz_nav_text_group">
+                            <span class="rz_nav_label"><%- lang('settings.navUpdates') %></span>
+                            <span class="rz_nav_desc"><%- lang('settings.navUpdatesSub') %></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="settingsNavContentBottom">
+                <div class="settingsNavDivider"></div>
+                <button id="settingsNavDone"><span class="rz_done_icon">✔</span><span class="rz_done_text"><%- lang('settings.navDone') %></span></button>
+            </div>
+        </div>
+    </div>
+    <div id="settingsContainerRight">
+        
+        <!-- 1. 帳號管理分頁 (Account Tab) -->
+        <div id="settingsTabAccount" class="settingsTab">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.tabAccountHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.tabAccountHeaderDesc') %></span>
+            </div>
+            
+            <div class="settingsAuthAccountTypeContainer rz_setting_card">
+                <div class="settingsAuthAccountTypeHeader">
+                    <div class="settingsAuthAccountTypeHeaderLeft">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 23 23">
+                            <path fill="#f35325" d="M1 1h10v10H1z" />
+                            <path fill="#81bc06" d="M12 1h10v10H12z" />
+                            <path fill="#05a6f0" d="M1 12h10v10H1z" />
+                            <path fill="#ffba08" d="M12 12h10v10H12z" />
+                        </svg>
+                        <span class="rz_card_title"><%- lang('settings.microsoftAccount') %></span>
+                    </div>
+                    <div class="settingsAuthAccountTypeHeaderRight">
+                        <button class="settingsAddAuthAccount" id="settingsAddMicrosoftAccount"><%- lang('settings.addMicrosoftAccount') %></button>
+                    </div>
+                </div>
+                
+                <div class="rz_card_notice">
+                    <span class="rz_notice_icon">🛡️</span>
+                    <span>正版連線保障：採用 Microsoft OAuth 2.0 官方驗證流程，角色皮膚即時預覽，憑證安全加密儲存於本機。</span>
+                </div>
+                
+                <div class="settingsCurrentAccounts" id="settingsCurrentMicrosoftAccounts">
+                    <!-- Microsoft auth accounts populated here -->
+                </div>
+            </div>
+
+            <!-- 舊版 Mojang 帳號隱藏於 DOM 中以相容程式碼，不展示給使用者 -->
+            <div class="settingsAuthAccountTypeContainer" style="display: none !important;">
+                <div class="settingsAuthAccountTypeHeader">
+                    <div class="settingsAuthAccountTypeHeaderLeft">
+                        <span><%- lang('settings.mojangAccount') %></span>
+                    </div>
+                    <div class="settingsAuthAccountTypeHeaderRight">
+                        <button class="settingsAddAuthAccount" id="settingsAddMojangAccount"><%- lang('settings.addMojangAccount') %></button>
+                    </div>
+                </div>
+                <div class="settingsCurrentAccounts" id="settingsCurrentMojangAccounts"></div>
+            </div>
+        </div>
+
+        <!-- 2. 畫面與顯示分頁 (Minecraft Tab) -->
+        <div id="settingsTabMinecraft" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.minecraftTabHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.minecraftTabHeaderDesc') %></span>
+            </div>
+
+            <!-- 卡片 1: 遊戲視窗解析度配置 -->
+            <div id="settingsGameResolutionContainer" class="rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">🖥️ <%- lang('settings.gameResolutionTitle') %></span>
+                    <span class="rz_card_badge">DISPLAY ENGINE</span>
+                </div>
+
+                <div class="rz_section_subtitle"><%- lang('settings.resPresetsTitle') %></div>
+                <div class="rz_quick_presets_row">
+                    <button type="button" class="rz_chip_btn rz_res_chip" onclick="rzSetResolution(1920, 1080, this)">1920×1080 <span class="rz_chip_badge">FHD ★ 推薦</span></button>
+                    <button type="button" class="rz_chip_btn rz_res_chip" onclick="rzSetResolution(2560, 1440, this)">2560×1440 <span class="rz_chip_badge">2K QHD</span></button>
+                    <button type="button" class="rz_chip_btn rz_res_chip" onclick="rzSetResolution(1600, 900, this)">1600×900 <span class="rz_chip_badge">舒適視窗</span></button>
+                    <button type="button" class="rz_chip_btn rz_res_chip" onclick="rzSetResolution(1280, 960, this)">1280×960 <span class="rz_chip_badge">預設 4:3</span></button>
+                    <button type="button" class="rz_chip_btn rz_res_chip" onclick="rzSetResolution(1280, 720, this)">1280×720 <span class="rz_chip_badge">HD 標清</span></button>
+                </div>
+
+                <div class="rz_section_subtitle" style="margin-top: 16px;">自訂長寬規格 (Custom Dimensions)</div>
+                <div id="settingsGameResolutionContent" class="rz_res_input_wrap">
+                    <div class="rz_input_box">
+                        <span class="rz_input_label"><%- lang('settings.widthLabel') %></span>
+                        <input type="number" id="settingsGameWidth" min="0" cValue="GameWidth">
+                    </div>
+                    <div id="settingsGameResolutionCross">&#10006;</div>
+                    <div class="rz_input_box">
+                        <span class="rz_input_label"><%- lang('settings.heightLabel') %></span>
+                        <input type="number" id="settingsGameHeight" min="0" cValue="GameHeight">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片 2: 視窗模式與進程控制 -->
+            <div class="rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">🎬 <%- lang('settings.windowModesTitle') %></span>
+                    <span class="rz_card_badge">WINDOW & PROCESS</span>
+                </div>
+
+                <div class="settingsFieldContainer rz_setting_row">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldTitle">🖥️ <%- lang('settings.launchFullscreenTitle') %></span>
+                        <span class="settingsFieldDesc"><%- lang('settings.launchFullscreenDesc') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="Fullscreen">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settingsFieldContainer rz_setting_row">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldTitle">⚡ <%- lang('settings.autoConnectTitle') %></span>
+                        <span class="settingsFieldDesc"><%- lang('settings.autoConnectDesc') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="AutoConnect">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settingsFieldContainer rz_setting_row">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldTitle">🚀 <%- lang('settings.launchDetachedTitle') %></span>
+                        <span class="settingsFieldDesc"><%- lang('settings.launchDetachedDesc') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="LaunchDetached">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. 效能與記憶體分頁 (Java Tab) -->
+        <div id="settingsTabJava" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.tabJavaHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.tabJavaHeaderDesc') %></span>
+            </div>
+
+            <div class="settingsSelServContainer" style="display: none;">
+                <div class="settingsSelServContent"></div>
+                <div class="settingsSwitchServerContainer">
+                    <div class="settingsSwitchServerContent">
+                        <button class="settingsSwitchServerButton"><%- lang('settings.switchServerButton') %></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片 1: 記憶體配置 (RAM) -->
+            <div id="settingsMemoryContainer" class="rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">⚡ <%- lang('settings.memoryTitle') %></span>
+                    <span class="rz_card_badge">ALLOCATION</span>
+                </div>
+
+                <div class="rz_ram_status_grid">
+                    <div class="rz_ram_status_card">
+                        <span class="rz_ram_status_lbl"><%- lang('settings.memoryTotalTitle') %></span>
+                        <span id="settingsMemoryTotal" class="rz_ram_status_val">--</span>
+                    </div>
+                    <div class="rz_ram_status_card">
+                        <span class="rz_ram_status_lbl"><%- lang('settings.memoryAvailableTitle') %></span>
+                        <span id="settingsMemoryAvail" class="rz_ram_status_val">--</span>
+                    </div>
+                    <div class="rz_ram_status_card rz_highlight_card">
+                        <span class="rz_ram_status_lbl">悠然官方推薦配置</span>
+                        <span class="rz_ram_status_val">6.0G ~ 8.0G</span>
+                    </div>
+                </div>
+
+                <div class="rz_section_subtitle"><%- lang('settings.ramPresetsTitle') %></div>
+                <div class="rz_quick_presets_row">
+                    <button type="button" class="rz_chip_btn rz_ram_chip" onclick="rzSetRAM(4, this)">4 GB <span class="rz_chip_badge">基礎輕量</span></button>
+                    <button type="button" class="rz_chip_btn rz_ram_chip rz_chip_recommended" onclick="rzSetRAM(6, this)">6 GB <span class="rz_chip_badge">★ 官方推薦</span></button>
+                    <button type="button" class="rz_chip_btn rz_ram_chip" onclick="rzSetRAM(8, this)">8 GB <span class="rz_chip_badge">高畫質光影</span></button>
+                    <button type="button" class="rz_chip_btn rz_ram_chip" onclick="rzSetRAM(12, this)">12 GB <span class="rz_chip_badge">頂級渲染</span></button>
+                </div>
+
+                <div id="settingsMemoryContent" class="rz_sliders_stack">
+                    <div class="settingsMemoryContentItem rz_slider_item">
+                        <div class="rz_slider_header">
+                            <span class="settingsMemoryHeader"><%- lang('settings.maxRAM') %></span>
+                            <span id="settingsMaxRAMLabel" class="settingsMemoryLabel rz_val_badge">6.0G</span>
+                        </div>
+                        <div class="settingsMemoryActionContainer">
+                            <div id="settingsMaxRAMRange" class="rangeSlider" cValue="MaxRAM" serverDependent min="3" max="16" value="6" step="0.5">
+                                <div class="rangeSliderBar"></div>
+                                <div class="rangeSliderTrack"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settingsMemoryContentItem rz_slider_item">
+                        <div class="rz_slider_header">
+                            <span class="settingsMemoryHeader"><%- lang('settings.minRAM') %></span>
+                            <span id="settingsMinRAMLabel" class="settingsMemoryLabel rz_val_badge">3.0G</span>
+                        </div>
+                        <div class="settingsMemoryActionContainer">
+                            <div id="settingsMinRAMRange" class="rangeSlider" cValue="MinRAM" serverDependent min="3" max="16" value="3" step="0.5">
+                                <div class="rangeSliderBar"></div>
+                                <div class="rangeSliderTrack"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="settingsMemoryDesc"><%- lang('settings.memoryDesc') %></div>
+            </div>
+
+            <!-- 卡片 2: Java 21 執行核心 -->
+            <div class="settingsFileSelContainer rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">☕ <%- lang('settings.javaExecutableTitle') %></span>
+                    <span class="rz_card_badge">RUNTIME</span>
+                </div>
+                <div class="settingsFileSelContent">
+                    <div id="settingsJavaExecDetails"><!-- Loaded via script --></div>
+                    <div class="settingsFileSelActions rz_file_actions">
+                        <div class="settingsFileSelIcon">
+                            <span style="font-size: 18px;">☕</span>
+                        </div>
+                        <input class="settingsFileSelVal rz_file_input" id="settingsJavaExecVal" type="text" value="null" cValue="JavaExecutable" serverDependent disabled>
+                        <button class="settingsFileSelButton rz_btn_glow" id="settingsJavaExecSel" dialogTitle="<%- lang('settings.javaExecSelDialogTitle') %>" dialogDirectory="false"><%- lang('settings.javaExecSelButtonText') %></button>
+                    </div>
+                </div>
+                <div class="settingsFileSelDesc"><%- lang('settings.javaExecDesc') %> <strong id="settingsJavaReqDesc"></strong><br><%- lang('settings.javaPathDesc', {'pathSuffix': `bin${process.platform === 'win32' ? '\\javaw.exe' : '/java'}`}) %></div>
+            </div>
+
+            <!-- 卡片 3: JVM 效能最佳化參數 -->
+            <div id="settingsJVMOptsContainer" class="rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">🛠️ <%- lang('settings.jvmOptsTitle') %></span>
+                    <span class="rz_card_badge">TUNING FLAGS</span>
+                </div>
+                <div class="rz_jvm_preset_bar">
+                    <button type="button" class="rz_chip_btn rz_chip_highlight" onclick="rzApplyAikarFlags()"><%- lang('settings.jvmPresetAikar') %></button>
+                </div>
+                <div id="settingsJVMOptsContent" class="rz_jvm_input_wrap">
+                    <div class="settingsFileSelIcon">
+                        <span style="font-size: 18px;">⚙️</span>
+                    </div>
+                    <input id="settingsJVMOptsVal" class="rz_jvm_input" cValue="JVMOptions" serverDependent type="text" placeholder="-XX:+UseG1GC -XX:+ParallelRefProcEnabled ...">
+                </div>
+                <div id="settingsJVMOptsDesc"><%- lang('settings.jvmOptsDesc') %><br><a href="#" id="settingsJvmOptsLink" style="display: none;"><!-- Available Options --></a></div>
+            </div>
+        </div>
+
+        <!-- 4. 模組與光影分頁 (Mods Tab) -->
+        <div id="settingsTabMods" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.tabModsHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.tabModsHeaderDesc') %></span>
+            </div>
+            
+            <div class="settingsSelServContainer" style="display: none;">
+                <div class="settingsSelServContent"></div>
+                <div class="settingsSwitchServerContainer">
+                    <div class="settingsSwitchServerContent">
+                        <button class="settingsSwitchServerButton"><%- lang('settings.switchServerButton') %></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settingsModsContainer">
+                <!-- 模組市集快速入口橫幅 -->
+                <div class="rz_setting_card rz_market_promo_card">
+                    <div class="rz_market_promo_content">
+                        <div class="rz_market_promo_icon">🧩</div>
+                        <div class="rz_market_promo_info">
+                            <span class="rz_market_promo_title">Modrinth 線上模組探索市集</span>
+                            <span class="rz_market_promo_desc">直接在啟動器內搜尋、瀏覽與一鍵安裝上萬款 Fabric 1.21.11 效能優化、小地圖與 HUD 模組。</span>
+                        </div>
+                        <button type="button" class="rz_market_promo_btn rz_btn_glow" onclick="if(window.rzRefreshMarketOnOpen)window.rzRefreshMarketOnOpen(); switchView(getCurrentView(), VIEWS.modmarket)">
+                            <span>進入市集 ➔</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 卡片 1: 伺服器核心模組套件 -->
+                <div id="settingsReqModsContainer" class="rz_setting_card">
+                    <div class="rz_card_header_bar">
+                        <span class="rz_card_title">🛡️ <%- lang('settings.requiredMods') %></span>
+                        <span class="rz_card_badge">CORE BUNDLE</span>
+                    </div>
+                    
+                    <div class="rz_mod_status_pills">
+                        <div class="rz_mod_pill">
+                            <span class="rz_pill_icon">📦</span>
+                            <div class="rz_pill_text">
+                                <strong>PackForge 2.0</strong>
+                                <small>材質快取與模型載入加速</small>
+                            </div>
+                            <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
+                        </div>
+                        <div class="rz_mod_pill">
+                            <span class="rz_pill_icon">🌿</span>
+                            <div class="rz_pill_text">
+                                <strong>Iris + Sodium 1.21.11</strong>
+                                <small>超效光影與多線程渲染核心</small>
+                            </div>
+                            <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
+                        </div>
+                        <div class="rz_mod_pill">
+                            <span class="rz_pill_icon">🎙️</span>
+                            <div class="rz_pill_text">
+                                <strong>Simple Voice Chat</strong>
+                                <small>3D 空間距離即時語音連線</small>
+                            </div>
+                            <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
+                        </div>
+                    </div>
+
+                    <div id="settingsReqModsContent">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- 卡片 2: 光影包管理器 -->
+                <div id="settingsShadersContainer" class="rz_setting_card">
+                    <div class="rz_card_header_bar">
+                        <span class="rz_card_title">✨ <%- lang('settings.shaderpacks') %></span>
+                        <span class="rz_card_badge">IRIS SHADERS</span>
+                    </div>
+                    <div id="settingsShaderpackDesc"><%- lang('settings.shaderpackDesc') %></div>
+                    <div id="settingsShaderpackWrapper" class="rz_shader_wrap">
+                        <button id="settingsShaderpackButton" class="rz_btn_glow" title="開啟光影包目錄"> ＋ 開啟光影資料夾 </button>
+                        <div class="settingsSelectContainer rz_select_container">
+                            <div class="settingsSelectSelected" id="settingsShadersSelected"><%- lang('settings.selectShaderpack') %></div>
+                            <div class="settingsSelectOptions" id="settingsShadersOptions" hidden></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 卡片 3: 玩家自訂模組 -->
+                <div id="settingsDropinModsContainer" class="rz_setting_card">
+                    <div class="rz_card_header_bar">
+                        <span class="rz_card_title">📂 <%- lang('settings.dropinMods') %></span>
+                        <span class="rz_card_badge">DROP-IN MODS</span>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <button id="settingsDropinFileSystemButton" class="rz_btn_glow"><%- lang('settings.addMods') %> <span id="settingsDropinRefreshNote"><%- lang('settings.dropinRefreshNote') %></span></button>
+                    </div>
+                    <div id="settingsDropinModsContent"></div>
+                </div>
+
+                <!-- 可選模組 (如有伺服器配置) -->
+                <div id="settingsOptModsContainer" class="rz_setting_card" style="display: none;">
+                    <div class="settingsModsHeader"><%- lang('settings.optionalMods') %></div>
+                    <div id="settingsOptModsContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 啟動器系統分頁 (Launcher Tab) -->
+        <div id="settingsTabLauncher" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.launcherTabHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.launcherTabHeaderDesc') %></span>
+            </div>
+
+            <!-- 卡片 1: 本機資料儲存庫 -->
+            <div class="settingsFileSelContainer rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">📁 <%- lang('settings.dataDirectoryTitle') %></span>
+                    <span class="rz_card_badge">LOCAL STORAGE</span>
+                </div>
+                <div class="settingsFileSelContent">
+                    <div class="settingsFieldTitle" id="settingsDataDirTitle" style="display: none;"><%- lang('settings.dataDirectoryTitle') %></div>
+                    <div class="settingsFileSelActions rz_file_actions">
+                        <div class="settingsFileSelIcon">
+                            <span style="font-size: 18px;">📁</span>
+                        </div>
+                        <input class="settingsFileSelVal rz_file_input" type="text" value="null" cValue="DataDirectory" disabled>
+                        <button class="settingsFileSelButton rz_btn_glow" dialogTitle="<%- lang('settings.selectDataDirectory') %>" dialogDirectory="true"><%- lang('settings.chooseFolder') %></button>
+                    </div>
+                </div>
+                <div class="settingsFileSelDesc"><%- lang('settings.dataDirectoryDesc') %></div>
+            </div>
+
+            <!-- 卡片 2: 搶先體驗更新頻道 -->
+            <div class="settingsFieldContainer rz_setting_card">
+                <div class="rz_card_header_bar">
+                    <span class="rz_card_title">🚀 <%- lang('settings.allowPrereleaseTitle') %></span>
+                    <span class="rz_card_badge">UPDATE CHANNEL</span>
+                </div>
+                <div class="rz_setting_row" style="margin-top: 10px;">
+                    <div class="settingsFieldLeft">
+                        <span class="settingsFieldDesc"><%- lang('settings.allowPrereleaseDesc') %></span>
+                    </div>
+                    <div class="settingsFieldRight">
+                        <label class="toggleSwitch">
+                            <input type="checkbox" cValue="AllowPrerelease">
+                            <span class="toggleSwitchSlider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. 關於 Relax Zone 分頁 (About Tab) -->
+        <div id="settingsTabAbout" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.aboutTabHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.aboutTabHeaderDesc') %></span>
+            </div>
+
+            <div id="settingsAboutCurrentContainer" class="rz_about_card">
+                <div id="settingsAboutCurrentContent">
+                    <div id="settingsAboutCurrentHeadline">
+                        <div class="rz_about_logo_box">
+                            <img id="settingsAboutLogo" src="./assets/images/SealCircle.png">
+                        </div>
+                        <div class="rz_about_headline_text">
+                            <span id="settingsAboutTitle">Relax Zone 悠然之境 官方啟動器</span>
+                            <span class="rz_about_edition">MMORPG Adventure Edition</span>
+                        </div>
+                    </div>
+                    <div id="settingsAboutCurrentVersion">
+                        <div id="settingsAboutCurrentVersionCheck">&#10003;</div>
+                        <div id="settingsAboutCurrentVersionDetails">
+                            <span id="settingsAboutCurrentVersionTitle"><%- lang('settings.stableRelease') %></span>
+                            <div id="settingsAboutCurrentVersionLine">
+                                <span id="settingsAboutCurrentVersionText"><%- lang('settings.versionText') %></span>
+                                <span id="settingsAboutCurrentVersionValue">1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rz_about_features_grid">
+                    <div class="rz_about_feat_item">
+                        <span class="rz_about_feat_icon">🚀</span>
+                        <div class="rz_about_feat_info">
+                            <strong>極速啟動引擎</strong>
+                            <p>整合 Java 21 與專屬記憶體分配最佳化</p>
+                        </div>
+                    </div>
+                    <div class="rz_about_feat_item">
+                        <span class="rz_about_feat_icon">✨</span>
+                        <div class="rz_about_feat_info">
+                            <strong>PackForge + 光影</strong>
+                            <p>內建材質載入加速與高畫質 Iris/Sodium 光影</p>
+                        </div>
+                    </div>
+                    <div class="rz_about_feat_item">
+                        <span class="rz_about_feat_icon">🎙️</span>
+                        <div class="rz_about_feat_info">
+                            <strong>3D 空間語音整合</strong>
+                            <p>Simple Voice Chat 遊戲內距離語音連線</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="settingsAboutButtons">
+                    <a href="<%- lang('settings.sourceGithubLink') %>" id="settingsAboutSourceButton" class="settingsAboutButton rz_btn_glow">🌐 <%- lang('settings.sourceGithub') %></a>
+                    <a href="<%- lang('settings.supportLink') %>" id="settingsAboutSupportButton" class="settingsAboutButton rz_btn_glow">💬 <%- lang('settings.support') %></a>
+                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">🛠️ <%- lang('settings.devToolsConsole') %></a>
+                </div>
+            </div>
+
+            <div class="settingsChangelogContainer rz_changelog_card">
+                <div class="settingsChangelogContent">
+                    <div class="settingsChangelogHeadline">
+                        <div class="settingsChangelogLabel"><%- lang('settings.releaseNotes') %></div>
+                        <div class="settingsChangelogTitle"><%- lang('settings.changelog') %></div>
+                    </div>
+                    <div class="settingsChangelogText">
+                        <%- lang('settings.noReleaseNotes') %>
+                    </div>
+                </div>
+                <div class="settingsChangelogActions">
+                    <a class="settingsChangelogButton settingsAboutButton" href="https://discord.gg/relaxzone"><%- lang('settings.viewReleaseNotes') %></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 版本更新檢查分頁 (Update Tab) -->
+        <div id="settingsTabUpdate" class="settingsTab" style="display: none;">
+            <div class="settingsTabHeader">
+                <span class="settingsTabHeaderText"><%- lang('settings.launcherUpdatesHeaderText') %></span>
+                <span class="settingsTabHeaderDesc"><%- lang('settings.launcherUpdatesHeaderDesc') %></span>
+            </div>
+            <div id="settingsUpdateStatusContainer" class="rz_setting_card">
+                <div id="settingsUpdateStatusContent">
+                    <div id="settingsUpdateStatusHeadline">
+                        <span id="settingsUpdateTitle"><!-- Dynamically updated --></span>
+                    </div>
+                    <div id="settingsUpdateVersion">
+                        <div id="settingsUpdateVersionCheck">&#10003;</div>
+                        <div id="settingsUpdateVersionDetails">
+                            <span id="settingsUpdateVersionTitle"><%- lang('settings.stableRelease') %></span>
+                            <div id="settingsUpdateVersionLine">
+                                <span id="settingsUpdateVersionText"><%- lang('settings.versionText') %> </span>
+                                <span id="settingsUpdateVersionValue">1.0.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settingsUpdateActionContainer">
+                        <button id="settingsUpdateActionButton" class="rz_btn_glow"><%- lang('settings.checkForUpdates') %></button>
+                    </div>
+                </div>
+            </div>
+            <div class="settingsChangelogContainer rz_changelog_card">
+                <div class="settingsChangelogContent">
+                    <div class="settingsChangelogHeadline">
+                        <div class="settingsChangelogLabel"><%- lang('settings.whatsNew') %></div>
+                        <div class="settingsChangelogTitle"><%- lang('settings.updateReleaseNotes') %></div>
+                    </div>
+                    <div class="settingsChangelogText">
+                        <%- lang('settings.noReleaseNotes') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 悠然設定輔助 Script -->
+    <script>
+        function rzSetResolution(w, h, btn) {
+            const wEl = document.getElementById('settingsGameWidth');
+            const hEl = document.getElementById('settingsGameHeight');
+            if (wEl && hEl) {
+                wEl.value = w;
+                hEl.value = h;
+                wEl.dispatchEvent(new Event('input', { bubbles: true }));
+                hEl.dispatchEvent(new Event('input', { bubbles: true }));
+                wEl.dispatchEvent(new Event('keyup', { bubbles: true }));
+                hEl.dispatchEvent(new Event('keyup', { bubbles: true }));
+            }
+            document.querySelectorAll('.rz_res_chip').forEach(c => c.classList.remove('rz_chip_active'));
+            if (btn) btn.classList.add('rz_chip_active');
+        }
+
+        function rzSetRAM(gb, btn) {
+            const slider = document.getElementById('settingsMaxRAMRange');
+            if (slider && typeof updateRangedSlider === 'function' && typeof calculateRangeSliderMeta === 'function') {
+                const meta = calculateRangeSliderMeta(slider);
+                const val = Math.min(Math.max(gb, meta.min), meta.max);
+                updateRangedSlider(slider, val, ((val - meta.min) / meta.step) * meta.inc);
+                if (typeof slider.onchange === 'function') {
+                    slider.onchange({ target: slider });
+                }
+            }
+            document.querySelectorAll('.rz_ram_chip').forEach(c => c.classList.remove('rz_chip_active'));
+            if (btn) btn.classList.add('rz_chip_active');
+        }
+
+        function rzApplyAikarFlags() {
+            const jvmInput = document.getElementById('settingsJVMOptsVal');
+            if (jvmInput) {
+                jvmInput.value = '-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1';
+                jvmInput.dispatchEvent(new Event('input', { bubbles: true }));
+                jvmInput.dispatchEvent(new Event('keyup', { bubbles: true }));
+            }
+        }
+    </script>
+    <script src="./assets/js/scripts/settings.js"></script>
+</div>

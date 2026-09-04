@@ -1,0 +1,201 @@
+<div id="modmarketContainer" style="display: none;">
+    <!-- 頂部導航與搜尋控制列 -->
+    <div class="rz_market_header">
+        <div class="rz_market_header_left">
+            <button id="rz_market_back_btn" class="rz_market_back_btn" title="<%- lang('modmarket.backButton') %>">
+                <span class="rz_back_arrow">←</span>
+                <span><%- lang('modmarket.backButton') %></span>
+            </button>
+            <div class="rz_market_title_box">
+                <div class="rz_market_main_title">
+                    <span class="rz_market_logo_icon">🧩</span>
+                    <span><%- lang('modmarket.title') %></span>
+                </div>
+                <span class="rz_market_subtitle"><%- lang('modmarket.subtitle') %></span>
+            </div>
+        </div>
+
+        <div class="rz_market_header_center">
+            <div class="rz_market_search_wrap">
+                <span class="rz_search_icon">🔍</span>
+                <input type="text" id="rz_market_search_input" placeholder="<%- lang('modmarket.searchPlaceholder') %>" autocomplete="off">
+                <button type="button" id="rz_market_search_clear" class="rz_search_clear" style="display: none;">✕</button>
+            </div>
+        </div>
+
+        <div class="rz_market_header_right">
+            <div class="rz_market_sort_box">
+                <span class="rz_sort_label">排序:</span>
+                <select id="rz_market_sort_select" class="rz_market_select">
+                    <option value="downloads" selected><%- lang('modmarket.sortPopular') %></option>
+                    <option value="relevance"><%- lang('modmarket.sortRelevance') %></option>
+                    <option value="updated"><%- lang('modmarket.sortUpdated') %></option>
+                    <option value="newest"><%- lang('modmarket.sortNewest') %></option>
+                </select>
+            </div>
+
+            <button type="button" id="rz_market_refresh_btn" class="rz_market_action_btn" title="<%- lang('modmarket.refreshButton') %>">
+                <span><%- lang('modmarket.refreshButton') %></span>
+            </button>
+
+            <button type="button" id="rz_market_open_folder_btn" class="rz_market_action_btn rz_btn_glow" title="<%- lang('modmarket.openFolderButton') %>">
+                <span><%- lang('modmarket.openFolderButton') %></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 分類過濾晶片列 -->
+    <div class="rz_market_categories_bar">
+        <button type="button" class="rz_market_cat_chip rz_cat_active" data-cat="all">
+            <span><%- lang('modmarket.allMods') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="optimization">
+            <span><%- lang('modmarket.optimization') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="utility">
+            <span><%- lang('modmarket.utility') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="decoration">
+            <span><%- lang('modmarket.decoration') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="adventure">
+            <span><%- lang('modmarket.adventure') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="magic">
+            <span><%- lang('modmarket.magic') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip" data-cat="storage">
+            <span><%- lang('modmarket.storage') %></span>
+        </button>
+        <button type="button" class="rz_market_cat_chip rz_cat_installed" data-cat="installed">
+            <span><%- lang('modmarket.installed') %> (<span id="rz_market_installed_count">0</span>)</span>
+        </button>
+    </div>
+
+    <!-- 模組列表主要內容區 -->
+    <div class="rz_market_content_body">
+        <!-- 載入中狀態 -->
+        <div id="rz_market_loading" class="rz_market_state_box" style="display: none;">
+            <div class="rz_market_spinner"></div>
+            <span><%- lang('modmarket.loadingText') %></span>
+        </div>
+
+        <!-- 錯誤狀態 -->
+        <div id="rz_market_error" class="rz_market_state_box" style="display: none;">
+            <span class="rz_state_icon">⚠️</span>
+            <span id="rz_market_error_msg"><%- lang('modmarket.errorText') %></span>
+            <button type="button" id="rz_market_retry_btn" class="rz_market_action_btn"><%- lang('modmarket.retryButton') %></button>
+        </div>
+
+        <!-- 空結果狀態 -->
+        <div id="rz_market_empty" class="rz_market_state_box" style="display: none;">
+            <span class="rz_state_icon">🔍</span>
+            <span><%- lang('modmarket.emptyText') %></span>
+        </div>
+
+        <!-- 模組卡片網格 -->
+        <div id="rz_market_grid" class="rz_market_grid">
+            <!-- 由 JavaScript 動態生成模組卡片 -->
+        </div>
+
+        <!-- 分頁/載入更多按鈕 -->
+        <div class="rz_market_pagination">
+            <button type="button" id="rz_market_load_more_btn" class="rz_market_load_more" style="display: none;">
+                載入更多模組...
+            </button>
+        </div>
+    </div>
+
+    <!-- XMCL 風格模組版本選擇與詳情彈窗 (Version Selection Modal) -->
+    <div id="rz_mod_details_modal" class="rz_modal_overlay" style="display: none;">
+        <div class="rz_modal_dialog">
+            <!-- 彈窗頂部 -->
+            <div class="rz_modal_header">
+                <div class="rz_modal_mod_info">
+                    <img id="rz_modal_icon" class="rz_modal_icon" src="./assets/images/SealCircle.png" alt="Mod Icon">
+                    <div class="rz_modal_title_box">
+                        <div class="rz_modal_title_row">
+                            <h2 id="rz_modal_title" class="rz_modal_title">模組名稱</h2>
+                            <span id="rz_modal_installed_badge" class="rz_modal_installed_pill" style="display: none;">✓ 已安裝</span>
+                        </div>
+                        <div class="rz_modal_author_row">
+                            <span id="rz_modal_author" class="rz_modal_author">by 作者名稱</span>
+                            <span class="rz_modal_sep">‧</span>
+                            <span id="rz_modal_stats" class="rz_modal_stats">📥 0 下載 ‧ ❤️ 0 關注</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rz_modal_header_actions">
+                    <button type="button" id="rz_modal_close_btn" class="rz_modal_close_btn" title="關閉 (ESC)">✕</button>
+                </div>
+            </div>
+
+            <!-- 模組簡介與外部連結列 -->
+            <div class="rz_modal_meta_bar">
+                <p id="rz_modal_desc" class="rz_modal_desc">模組簡介說明...</p>
+                <div class="rz_modal_links_row">
+                    <div id="rz_modal_categories" class="rz_modal_cats">
+                        <!-- 分類標籤動態注入 -->
+                    </div>
+                    <div class="rz_modal_ext_links">
+                        <button type="button" id="rz_modal_link_modrinth" class="rz_modal_link_btn" style="display: none;"><%- lang('modmarket.openModrinthPage') %></button>
+                        <button type="button" id="rz_modal_link_source" class="rz_modal_link_btn" style="display: none;"><%- lang('modmarket.openSourcePage') %></button>
+                        <button type="button" id="rz_modal_link_issues" class="rz_modal_link_btn" style="display: none;"><%- lang('modmarket.openIssuesPage') %></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 版本篩選工具列 (XMCL 風格) -->
+            <div class="rz_modal_filter_toolbar">
+                <div class="rz_modal_filter_group">
+                    <span class="rz_modal_filter_label">相容核心:</span>
+                    <button type="button" class="rz_ver_filter_btn rz_ver_filter_active" data-ver-filter="12111"><%- lang('modmarket.versionFilter12111') %></button>
+                    <button type="button" class="rz_ver_filter_btn" data-ver-filter="121x"><%- lang('modmarket.versionFilter121x') %></button>
+                    <button type="button" class="rz_ver_filter_btn" data-ver-filter="all"><%- lang('modmarket.versionFilterAll') %></button>
+                </div>
+
+                <div class="rz_modal_filter_group">
+                    <span class="rz_modal_filter_label">發布頻道:</span>
+                    <button type="button" class="rz_channel_filter_btn rz_channel_active" data-channel="all"><%- lang('modmarket.channelAll') %></button>
+                    <button type="button" class="rz_channel_filter_btn" data-channel="release"><%- lang('modmarket.channelRelease') %></button>
+                    <button type="button" class="rz_channel_filter_btn" data-channel="beta"><%- lang('modmarket.channelBeta') %></button>
+                </div>
+            </div>
+
+            <!-- 版本清單主內容區 -->
+            <div class="rz_modal_versions_body">
+                <!-- 載入中狀態 -->
+                <div id="rz_version_loading" class="rz_market_state_box" style="display: none;">
+                    <div class="rz_market_spinner"></div>
+                    <span><%- lang('modmarket.loadingVersions') %></span>
+                </div>
+
+                <!-- 錯誤狀態 -->
+                <div id="rz_version_error" class="rz_market_state_box" style="display: none;">
+                    <span class="rz_state_icon">⚠️</span>
+                    <span id="rz_version_error_msg">讀取版本失敗</span>
+                </div>
+
+                <!-- 空結果狀態 -->
+                <div id="rz_version_empty" class="rz_market_state_box" style="display: none;">
+                    <span class="rz_state_icon">🔍</span>
+                    <span><%- lang('modmarket.noVersionsFound') %></span>
+                </div>
+
+                <!-- 版本列表容器 -->
+                <div id="rz_version_list" class="rz_version_list">
+                    <!-- 由 JavaScript 動態注入版本項目 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 即時提示 Toast -->
+    <div id="rz_market_toast" class="rz_market_toast">
+        <span class="rz_toast_icon">🎉</span>
+        <span id="rz_market_toast_text">模組安裝成功！</span>
+    </div>
+
+    <script src="./assets/js/scripts/modmarket_ui.js"></script>
+</div>

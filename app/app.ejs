@@ -1,0 +1,50 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: file: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' data: blob: https:; connect-src 'self' https:;"/>
+    <title><%= lang('app.title') %></title>
+    <script src="./assets/js/scripts/uicore.js"></script>
+    <script src="./assets/js/scripts/uibinder.js"></script>
+    <link type="text/css" rel="stylesheet" href="./assets/css/launcher.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/relaxzone.css">
+    <style>
+        body {
+            transition: background-image 1s ease;
+            background: url('assets/images/relaxzone_banner.jpg') no-repeat center center fixed;
+            background-size: cover;
+            -webkit-user-select: none;
+        }
+        #main {
+            display: none;
+            height: calc(100% - 22px);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+        #main[overlay] {
+            filter: blur(3px) contrast(0.9) brightness(1.0);
+        }
+    </style>
+</head>
+<body bkid="<%=bkid%>">
+    <%- include('frame') %>
+    <div id="main">
+        <%- include('welcome') %>
+        <%- include('login') %>
+        <%- include('waiting') %>
+        <%- include('loginOptions') %>
+        <%- include('settings') %>
+        <%- include('landing') %>
+        <%- include('modmarket') %>
+    </div>
+    <%- include('overlay') %>
+    <div id="loadingContainer">
+        <div id="loadingContent">
+            <div id="loadSpinnerContainer">
+                <img id="loadCenterImage" src="assets/images/relaxzone_logo.png">
+                <img id="loadSpinnerImage" class="rotating" src="assets/images/RelaxZoneLoadingRing.svg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

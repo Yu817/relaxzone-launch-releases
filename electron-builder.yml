@@ -1,0 +1,55 @@
+appId: 'org.relaxzone.launcher'
+productName: 'Relax Zone Launcher'
+artifactName: 'RelaxZone-Launcher-Setup-${version}.${ext}'
+
+copyright: 'Copyright © 2026 Relax Zone Team'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,dev-app-update.yml,.nvmrc,eslint.config.mjs}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: 'RelaxZone-Launcher-Setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage'
+  maintainer: 'Relax Zone Team'
+  vendor: 'Relax Zone Team'
+  synopsis: 'Relax Zone Minecraft Launcher'
+  description: 'Official Relax Zone launcher for installing, updating, and launching the Minecraft client.'
+  category: 'Game'
+
+# Update metadata and artifacts are served from the Relax Zone website.
+publish:
+  provider: 'generic'
+  url: 'https://relaxzone.org/downloads/'
+
+directories:
+  buildResources: 'build'
+  output: 'dist'

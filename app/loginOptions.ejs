@@ -1,0 +1,49 @@
+<div id="loginOptionsContainer" style="display: none;">
+    <div id="loginOptionsContent">
+        <div class="loginOptionsMainContent rz_login_card">
+            <!-- 伺服器品牌標誌與標題 -->
+            <div class="rz_login_header">
+                <div class="rz_login_badge">✦ RELAX ZONE ✦</div>
+                <h1 class="rz_login_brand_title">Relax Zone 悠然之境</h1>
+                <p class="rz_login_brand_subtitle">請使用微軟帳號登入以進入伺服器冒險</p>
+            </div>
+
+            <!-- 單一固定微軟登入按鈕 -->
+            <div class="loginOptionActions rz_login_actions">
+                <div class="loginOptionButtonContainer" style="width: 100%;">
+                    <button id="loginOptionMicrosoft" class="loginOptionButton rz_login_btn rz_btn_msft rz_btn_msft_primary">
+                        <div class="rz_btn_icon_box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 23 23">
+                                <path fill="#f35325" d="M1 1h10v10H1z" />
+                                <path fill="#81bc06" d="M12 1h10v10H12z" />
+                                <path fill="#05a6f0" d="M1 12h10v10H1z" />
+                                <path fill="#ffba08" d="M12 12h10v10H12z" />
+                            </svg>
+                        </div>
+                        <div class="rz_btn_text_group">
+                            <span class="rz_btn_main_text" style="font-size: 16px; letter-spacing: 0.5px;">使用微軟帳號登入</span>
+                            <span class="rz_btn_sub_text">正版 Minecraft ‧ Xbox 官方安全授權</span>
+                        </div>
+                        <div class="rz_btn_arrow" style="font-size: 18px;">➔</div>
+                    </button>
+                </div>
+
+                <!-- 隱藏已廢棄之 Mojang 按鈕，避免任何誤導並保持腳本相容 -->
+                <div class="loginOptionButtonContainer" style="display: none;">
+                    <button id="loginOptionMojang" style="display: none;"></button>
+                </div>
+            </div>
+
+            <!-- 安全保證說明 -->
+            <div class="rz_login_footer">
+                <span class="rz_security_icon">🛡️</span>
+                <span>官方直連認證：由微軟安全授權，啟動器絕不儲存密碼</span>
+            </div>
+
+            <div id="loginOptionCancelContainer" style="display: none; margin-top: 14px;">
+                <button id="loginOptionCancelButton" class="rz_login_cancel_btn">← <%- lang('loginOptions.cancelButton') %></button>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/scripts/loginOptions.js"></script>
+</div>

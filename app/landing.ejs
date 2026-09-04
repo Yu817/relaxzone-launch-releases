@@ -1,0 +1,246 @@
+<div id="landingContainer" style="display: none;">
+    <!-- 頂部沉浸式毛玻璃功能列 -->
+    <div class="rz_top_bar">
+        <div class="rz_brand_chip">
+            <img class="rz_brand_icon" src="assets/images/SealCircle.png" alt="Relax Zone"/>
+            <div class="rz_brand_meta">
+                <span class="rz_brand_title">Relax Zone 悠然之境</span>
+                <span class="rz_brand_tag">✦ MMORPG 1.21.11 Fabric</span>
+            </div>
+        </div>
+
+        <div class="rz_user_panel">
+            <div class="rz_user_capsule" id="user_content">
+                <div class="rz_avatar_frame" id="avatarContainer">
+                    <img id="rz_avatar_head" src="https://mc-heads.net/avatar/steve/28" alt="Skin"/>
+                </div>
+                <div class="rz_user_info">
+                    <span class="rz_user_name" id="user_text"><%- lang('landing.usernamePlaceholder') %></span>
+                    <span class="rz_user_status"><span class="rz_status_dot_online"></span>正版已登入</span>
+                </div>
+                <button class="rz_account_switch_btn" id="avatarOverlay" title="<%- lang('landing.usernameEditButton') %>">
+                    ⇄ <%- lang('landing.usernameEditButton') %>
+                </button>
+            </div>
+
+            <div id="image_seal_container" style="display: none;">
+                <img id="image_seal" src="assets/images/SealCircle.png"/>
+                <div id="updateAvailableTooltip"><%- lang('landing.updateAvailableTooltip') %></div>
+            </div>
+
+            <div id="modmarketMediaContainer">
+                <button class="rz_market_btn rz_btn_glow" id="modmarketMediaButton" title="線上模組探索市集 (Modrinth)">
+                    <span class="rz_market_icon">🧩</span>
+                    <span>模組市集</span>
+                </button>
+            </div>
+
+            <div id="settingsMediaContainer">
+                <button class="rz_settings_btn" id="settingsMediaButton" title="<%- lang('landing.settingsTooltip') %>">
+                    <span class="rz_gear_icon">⚙</span>
+                    <span><%- lang('landing.settingsTooltip') %></span>
+                    <div id="settingsTooltip" style="display: none;"><%- lang('landing.settingsTooltip') %></div>
+                </button>
+            </div>
+
+            <!-- 保留舊有社群容器但隱藏以保持相容性 -->
+            <div id="mediaContent" style="display: none;">
+                <div id="externalMedia">
+                    <a href="<%- lang('landing.mediaGitHubURL') %>" class="mediaURL" id="linkURL"></a>
+                    <a href="<%- lang('landing.mediaXURL') %>" class="mediaURL" id="xURL"></a>
+                    <a href="<%- lang('landing.mediaInstagramURL') %>" class="mediaURL" id="instagramURL"></a>
+                    <a href="<%- lang('landing.mediaYouTubeURL') %>" class="mediaURL" id="youtubeURL"></a>
+                    <a href="<%- lang('landing.mediaDiscordURL') %>" class="mediaURL" id="discordURL"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中央宏偉世界主視覺區 (史詩標題、副標、模組標籤) -->
+    <div class="rz_hero_center">
+        <div class="rz_hero_badge">
+            <span class="rz_sparkle">✦</span>
+            <span>史詩奇幻冒險 ‧ 全新 MMORPG 賽季</span>
+            <span class="rz_sparkle">✦</span>
+        </div>
+        <h1 class="rz_hero_main_title">
+            Relax Zone <span class="rz_title_glow">悠然之境</span>
+        </h1>
+        <p class="rz_hero_tagline">
+            ⚔️ 自訂職業技能 ‧ 🏰 史詩神話副本 ‧ 🎣 神秘海域寶藏 ‧ 🎙️ 3D 空間語音
+        </p>
+        <div class="rz_mod_pills">
+            <div class="rz_mod_pill"><span class="rz_pill_icon">⚡</span> PackForge 材質載入最佳化</div>
+            <div class="rz_mod_pill"><span class="rz_pill_icon">✨</span> Iris + Sodium 光影預裝</div>
+            <div class="rz_mod_pill"><span class="rz_pill_icon">🎙️</span> Simple Voice Chat 遊戲內麥</div>
+        </div>
+    </div>
+
+    <!-- 底部一體化操作控制台 (左側：狀態與公告；右側：大型傳奇開始遊戲按鈕) -->
+    <div class="rz_bottom_deck">
+        <!-- 左側：伺服器狀態與最新公告卡片 -->
+        <div class="rz_deck_left">
+            <div class="rz_status_bar">
+                <!-- 伺服器選擇 / 分流切換按鈕 -->
+                <button id="server_selection_button" class="rz_server_select_btn" type="button" title="點擊切換伺服器與分流">
+                    <span class="rz_server_btn_icon">🏰</span>
+                    <span class="rz_server_btn_name"><%- lang('landing.launchButtonPlaceholder') %></span>
+                    <span class="rz_server_btn_arrow">
+                        <svg viewBox="0 0 10 6" width="10" height="6">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- 伺服器即時連線狀態卡片 -->
+                <div id="server_status_wrapper" class="rz_server_status_card" title="即時伺服器連線狀態 (點擊可手動刷新)">
+                    <span class="rz_status_dot_indicator online" id="server_status_dot"></span>
+                    <span id="landingPlayerLabel" class="rz_status_text_label"><%- lang('landing.serverStatus') %></span>
+                    <span class="rz_status_sep">|</span>
+                    <span id="player_count" class="rz_status_text_val"><%- lang('landing.serverStatusPlaceholder') %></span>
+                </div>
+            </div>
+
+            <!-- 精緻毛玻璃動態公告列 -->
+            <div class="rz_news_strip">
+                <div class="rz_news_strip_header">
+                    <div class="rz_news_strip_title">
+                        <span class="rz_news_icon">📢</span>
+                        <span>最新公告</span>
+                    </div>
+                    <button id="newsButton" class="rz_news_more_btn">
+                        <span id="newsButtonText"><%- lang('landing.newsButton') %></span>
+                        <span class="rz_arrow_more">➔</span>
+                        <div id="newsButtonAlert" style="display: none;"></div>
+                        <svg id="newsButtonSVG" style="display: none;" viewBox="0 0 24.87 13.97">
+                            <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="rz_news_items">
+                    <div class="rz_news_item" onclick="document.getElementById('newsButton').click();">
+                        <span class="rz_news_tag tag_dungeon">全新副本</span>
+                        <span class="rz_news_text">深淵神殿冒險正式開放，全新神話裝備與首領挑戰等您征服！</span>
+                        <span class="rz_news_date">09/04</span>
+                    </div>
+                    <div class="rz_news_item" onclick="document.getElementById('newsButton').click();">
+                        <span class="rz_news_tag tag_event">玩法更新</span>
+                        <span class="rz_news_text">全新海域釣魚系統與神秘寶藏上線，享受悠然釣魚樂趣。</span>
+                        <span class="rz_news_date">09/02</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右側：開始遊戲核心行動區 -->
+        <div class="rz_deck_right">
+            <div class="rz_launch_wrapper">
+                <div id="launch_content">
+                    <button id="launch_button" class="rz_epic_play_btn">
+                        <div class="rz_btn_shimmer"></div>
+                        <div class="rz_btn_inner">
+                            <div class="rz_play_icon_box">
+                                <span class="rz_play_arrow">▶</span>
+                            </div>
+                            <div class="rz_btn_labels">
+                                <span class="rz_label_primary"><%- lang('landing.launchButton') %></span>
+                                <span class="rz_label_secondary">RELAX ZONE MMORPG</span>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- 啟動進度卡片 (開始下載與驗證時由 JS 切換展開) -->
+                <div id="launch_details" class="rz_progress_deck" style="display: none;">
+                    <div class="rz_progress_top">
+                        <span id="launch_details_text" class="rz_prog_label"><%- lang('landing.launchDetails') %></span>
+                        <span id="launch_progress_label" class="rz_prog_val">0%</span>
+                    </div>
+                    <div class="rz_prog_track">
+                        <progress id="launch_progress" class="rz_epic_progress" value="0" max="100"></progress>
+                    </div>
+                    <div id="launch_details_left" style="display: none;"></div>
+                    <div id="launch_details_right" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 兼容隱藏容器 (Mojang Status) -->
+    <div id="mojangStatusWrapper" style="display: none;">
+        <span class="bot_label"><%- lang('landing.mojangStatus') %></span>
+        <span id="mojang_status_icon">&#8226;</span>
+        <div id="mojangStatusTooltip">
+            <div id="mojangStatusTooltipTitle"><%- lang('landing.mojangStatusTooltipTitle') %></div>
+            <div id="mojangStatusEssentialContainer"></div>
+            <div id="mojangStatusNEContainer">
+                <div class="mojangStatusNEBar"></div>
+                <div id="mojangStatusNETitle"><%- lang('landing.mojangStatusNETitle') %></div>
+                <div class="mojangStatusNEBar"></div>
+            </div>
+            <div id="mojangStatusNonEssentialContainer"></div>
+        </div>
+    </div>
+
+    <!-- 新聞彈出視窗容器 (保留原生新聞輪播功能) -->
+    <div id="newsContainer" style="display: none;">
+        <div id="newsContent" article="-1" style="display: none;">
+            <div id="newsStatusContainer">
+                <div id="newsStatusContent">
+                    <div id="newsTitleContainer">
+                        <a id="newsArticleTitle" href="#">Lorem Ipsum</a>
+                    </div>
+                    <div id="newsMetaContainer">
+                        <div id="newsArticleDateWrapper">
+                            <span id="newsArticleDate">Mar 15, 44 BC, 9:14 AM</span>
+                        </div>
+                        <div id="newsArticleAuthorWrapper">
+                            <span id="newsArticleAuthor">by Cicero</span>
+                        </div>
+                        <a href="#" id="newsArticleComments">0 Comments</a>
+                    </div>
+                </div>
+                <div id="newsNavigationContainer">
+                    <button id="newsNavigateLeft">
+                        <svg id="newsNavigationLeftSVG" viewBox="0 0 24.87 13.97">
+                            <defs>
+                                <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
+                            </defs>
+                            <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                        </svg>
+                    </button>
+                    <span id="newsNavigationStatus"><%- lang('landing.newsNavigationStatus', { currentPage: 1, totalPages: 1 }) %></span>
+                    <button id="newsNavigateRight">
+                        <svg id="newsNavigationRightSVG" viewBox="0 0 24.87 13.97">
+                            <defs>
+                                <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
+                            </defs>
+                            <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="newsArticleContainer">
+                <div id="newsArticleContent">
+                    <div id="newsArticleContentScrollable">
+                        <!-- Article Content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="newsErrorContainer">
+            <div id="newsErrorLoading">
+                <span id="nELoadSpan" class="newsErrorContent"><%- lang('landing.newsErrorLoadSpan') %></span>
+            </div>
+            <div id="newsErrorFailed" style="display: none;">
+                <span id="nEFailedSpan" class="newsErrorContent"><%- lang('landing.newsErrorFailedSpan') %></span>
+                <button id="newsErrorRetry"><%- lang('landing.newsErrorRetryButton') %></button>
+            </div>
+            <div id="newsErrorNone" style="display: none;">
+                <span id="nENoneSpan" class="newsErrorContent"><%- lang('landing.newsErrorNoneSpan') %></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/scripts/landing.js"></script>
+</div>

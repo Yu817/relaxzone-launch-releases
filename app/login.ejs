@@ -1,0 +1,81 @@
+<div id="loginContainer" style="display: none;">
+    <div id="loginContent">
+        <form id="loginForm" class="rz_login_card">
+            <!-- 返回選擇按鈕 -->
+            <div id="loginCancelContainer" style="width: 100%; margin-bottom: 16px;">
+                <button type="button" id="loginCancelButton" class="rz_login_cancel_btn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span id="loginCancelIcon">←</span>
+                    <span id="loginCancelText">返回選擇【微軟帳號登入】</span>
+                </button>
+            </div>
+
+            <div class="rz_login_header">
+                <div class="rz_login_badge">✦ 舊版驗證 ✦</div>
+                <h1 class="rz_login_brand_title" style="font-size: 20px;">Mojang 帳號登入</h1>
+                <p class="rz_login_brand_subtitle" id="loginSubheader"><%- lang('login.loginSubheader') %></p>
+                <img id="loginImageSeal" style="display: none;" src="assets/images/SealCircle.png"/>
+            </div>
+
+            <!-- 重要安全提醒 -->
+            <div class="rz_login_warning_box">
+                <strong>⚠️ 重要提示：</strong><br>
+                若您使用的是<strong>微軟帳號（現行 Minecraft 帳號）</strong>，請點擊上方按鈕返回，並選擇<strong>【使用微軟帳號登入】</strong>！<br>
+                <span style="color: #94a3b8; font-size: 11px;">Mojang 舊版認證伺服器已於 2023 年停止支援，輸入微軟帳密將會顯示連線失敗。</span>
+            </div>
+
+            <!-- 使用者名稱或信箱 -->
+            <div class="loginFieldContainer">
+                <span class="rz_input_icon">👤</span>
+                <input id="loginUsername" class="loginField" type="text" placeholder="<%- lang('login.loginEmailPlaceholder') %>"/>
+                <svg id="profileSVG" style="display: none;" class="loginSVG" viewBox="40 37 65.36 61.43"></svg>
+                <span class="loginErrorSpan" id="loginEmailError"><%- lang('login.loginEmailError') %></span>
+            </div>
+
+            <!-- 密碼 -->
+            <div class="loginFieldContainer">
+                <span class="rz_input_icon">🔒</span>
+                <input id="loginPassword" class="loginField" type="password" placeholder="<%- lang('login.loginPasswordPlaceholder') %>"/>
+                <svg id="lockSVG" style="display: none;" class="loginSVG" viewBox="40 32 60.36 70.43"></svg>
+                <span class="loginErrorSpan" id="loginPasswordError"><%- lang('login.loginPasswordError') %></span>
+            </div>
+
+            <!-- 記住我與忘記密碼 -->
+            <div id="loginOptions" class="rz_login_sub_options">
+                <label id="checkmarkContainer" class="rz_checkbox_label">
+                    <input id="loginRememberOption" type="checkbox" checked>
+                    <span class="loginCheckmark" style="display: none;"></span>
+                    <span id="loginRememberText" class="loginSpanDim"><%- lang('login.loginRememberMeText') %></span>
+                </label>
+                <span class="loginSpanDim">
+                    <a href="<%- lang('login.loginForgotPasswordLink') %>" class="rz_forgot_link"><%- lang('login.loginForgotPasswordText') %></a>
+                </span>
+            </div>
+
+            <!-- 登入確認按鈕 -->
+            <button id="loginButton" class="rz_submit_btn" disabled>
+                <div id="loginButtonContent" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span style="letter-spacing: 2px;"><%- lang('login.loginButtonText') %></span>
+                    <svg id="loginSVG" style="width: 14px; height: 14px;" viewBox="0 0 24.87 13.97">
+                        <defs>
+                            <style>.arrowLine{fill:none;stroke:#FFF;stroke-width:2px;transition: 0.25s ease;}</style>
+                        </defs>
+                        <polyline class="arrowLine" points="0.71 13.26 12.56 1.41 24.16 13.02"/>
+                    </svg>
+                    <div class="circle-loader" style="display: none;">
+                        <div class="checkmark draw"></div>
+                    </div>
+                </div>
+            </button>
+
+            <!-- 隱私與安全說明 -->
+            <div id="loginDisclaimer" class="rz_login_disclaimer">
+                <span class="loginSpanDim" id="loginRegisterSpan">
+                    <a href="<%- lang('login.loginNeedAccountLink') %>" class="rz_register_link"><%- lang('login.loginNeedAccountText') %></a>
+                </span>
+                <p class="loginDisclaimerText"><%- lang('login.loginPasswordDisclaimer1') %></p>
+                <p class="loginDisclaimerText"><%- lang('login.loginPasswordDisclaimer2', { appName: lang('app.title') }) %></p>
+            </div>
+        </form>
+    </div>
+    <script src="./assets/js/scripts/login.js"></script>
+</div>

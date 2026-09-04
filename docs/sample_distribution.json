@@ -1,0 +1,48 @@
+{
+    "version": "1.0.0",
+    "discord": {
+        "clientId": "12334567890123456789",
+        "smallImageText": "Relax Zone 悠然之境",
+        "smallImageKey": "seal-circle"
+    },
+    "rss": "https://relaxzone.org/rss.xml",
+    "servers": [
+        {
+            "id": "RelaxZone-Fabric-1.21.11",
+            "name": "Relax Zone 悠然之境",
+            "description": "Relax Zone Minecraft 生存冒險伺服器。",
+            "icon": "assets/images/SealCircle.png",
+            "version": "1.0.0",
+            "address": "mc.relaxzone.org",
+            "minecraftVersion": "1.21.11",
+            "discord": {
+                "shortId": "悠然之境",
+                "largeImageText": "Relax Zone 悠然之境",
+                "largeImageKey": "server-relaxzone"
+            },
+            "mainServer": true,
+            "autoconnect": true,
+            "javaOptions": {
+                "suggestedMajor": 21,
+                "supported": "21.x",
+                "ram": {
+                    "minimum": 3072,
+                    "recommended": 4096
+                }
+            },
+            "modules": [
+                {
+                    "id": "net.fabricmc:fabric-loader:0.19.5",
+                    "name": "Fabric Loader",
+                    "type": "Fabric",
+                    "artifact": {
+                        "size": 1984980,
+                        "MD5": "23bf6a8c5ba938db7d13959a2630357f",
+                        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/0.19.5/fabric-loader-0.19.5.jar"
+                    },
+                    "subModules": []
+                }
+            ]
+        }
+    ]
+}
