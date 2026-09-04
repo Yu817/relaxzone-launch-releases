@@ -374,7 +374,7 @@ class ProcessBuilder {
         // Java Arguments
         if(process.platform === 'darwin'){
             args.push('-Xdock:name=RelaxZoneLauncher')
-            args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
+            args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'SealCircle.png'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
         args.push('-Xms' + ConfigManager.getMinRAM(this.server.rawServer.id))
@@ -423,7 +423,7 @@ class ProcessBuilder {
         // Java Arguments
         if(process.platform === 'darwin'){
             args.push('-Xdock:name=RelaxZoneLauncher')
-            args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
+            args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'SealCircle.png'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
         args.push('-Xms' + ConfigManager.getMinRAM(this.server.rawServer.id))
