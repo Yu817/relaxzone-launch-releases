@@ -86,7 +86,6 @@ const DEFAULT_CONFIG = {
             launchDetached: true
         },
         launcher: {
-            allowPrerelease: false,
             dataDirectory: dataPath
         }
     },
@@ -175,6 +174,10 @@ exports.load = function(){
         }
         if(doValidate){
             config = validateKeySet(DEFAULT_CONFIG, config)
+            // Remove the retired pre-release channel setting from older configs.
+            if(config.settings?.launcher && Object.prototype.hasOwnProperty.call(config.settings.launcher, 'allowPrerelease')){
+                delete config.settings.launcher.allowPrerelease
+            }
             migrateLegacyDataDirectory()
             exports.save()
         }
@@ -797,25 +800,4 @@ exports.getLaunchDetached = function(def = false){
  */
 exports.setLaunchDetached = function(launchDetached){
     config.settings.game.launchDetached = launchDetached
-}
-
-// Launcher Settings
-
-/**
- * Check if the launcher should download prerelease versions.
- * 
- * @param {boolean} def Optional. If true, the default value will be returned.
- * @returns {boolean} Whether or not the launcher should download prerelease versions.
- */
-exports.getAllowPrerelease = function(def = false){
-    return !def ? config.settings.launcher.allowPrerelease : DEFAULT_CONFIG.settings.launcher.allowPrerelease
-}
-
-/**
- * Change the status of Whether or not the launcher should download prerelease versions.
- * 
- * @param {boolean} launchDetached Whether or not the launcher should download prerelease versions.
- */
-exports.setAllowPrerelease = function(allowPrerelease){
-    config.settings.launcher.allowPrerelease = allowPrerelease
 }

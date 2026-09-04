@@ -62,7 +62,7 @@ async function showMainUI(data){
 
     if(!isDev){
         loggerAutoUpdater.info('Initializing..')
-        ipcRenderer.send('autoUpdateAction', 'initAutoUpdater', ConfigManager.getAllowPrerelease())
+        ipcRenderer.send('autoUpdateAction', 'initAutoUpdater')
     }
 
     try {

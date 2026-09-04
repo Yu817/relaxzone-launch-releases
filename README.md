@@ -11,6 +11,7 @@
 - Microsoft 帳號登入與多帳號切換。
 - 自動檢查並下載相容的 Java 環境。
 - 自動下載、校驗與更新 Minecraft、Fabric 及伺服器模組。
+- 預設整合小地圖、背包整理、材質載入、光影與 3D 空間語音模組。
 - 內建伺服器公告、服務狀態與 Discord Rich Presence。
 - 提供模組探索市集與遊戲設定管理。
 - 支援啟動器自動更新。
@@ -72,7 +73,7 @@ npm run lint
 
 ## 支援
 
-遇到登入、下載或啟動問題，請前往 [Relax Zone Discord](https://discord.gg/m2Ern4DKCZ)，並附上啟動器控制台紀錄與錯誤發生步驟。
+遇到登入、下載或啟動問題，請前往 [Relax Zone Discord](https://discord.gg/m2Ern4DKCZ)，並附上錯誤訊息、截圖與錯誤發生步驟。
 
 ## 相關文件
 

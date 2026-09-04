@@ -7,7 +7,6 @@ const autoUpdater                       = require('electron-updater').autoUpdate
 const ejse                              = require('ejs-electron')
 const isDev                             = require('./app/assets/js/isdev')
 const path                              = require('path')
-const semver                            = require('semver')
 const { pathToFileURL }                 = require('url')
 const { MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
 const LangLoader                        = require('./app/assets/js/langloader')
@@ -26,7 +25,7 @@ function sendAutoUpdateNotification(arg, info) {
     }
 }
 
-function initAutoUpdater(event, data) {
+function initAutoUpdater(event) {
 
     autoUpdaterEventSender = event.sender
     if(autoUpdaterInitialized){
@@ -34,12 +33,8 @@ function initAutoUpdater(event, data) {
     }
     autoUpdaterInitialized = true
 
-    if(data){
-        autoUpdater.allowPrerelease = true
-    } else {
-        // Defaults to true if application version contains prerelease components (e.g. 0.12.1-alpha.1)
-        // autoUpdater.allowPrerelease = true
-    }
+    // Only stable launcher releases are distributed to players.
+    autoUpdater.allowPrerelease = false
     
     if(isDev){
         autoUpdater.autoDownload = false
@@ -85,11 +80,11 @@ function initAutoUpdater(event, data) {
 }
 
 // Open channel to listen for update actions.
-ipcMain.on('autoUpdateAction', (event, arg, data) => {
+ipcMain.on('autoUpdateAction', (event, arg, _data) => {
     switch(arg){
         case 'initAutoUpdater':
             console.log('Initializing auto updater.')
-            initAutoUpdater(event, data)
+            initAutoUpdater(event)
             event.sender.send('autoUpdateNotification', 'ready')
             break
         case 'checkForUpdate':
@@ -97,18 +92,6 @@ ipcMain.on('autoUpdateAction', (event, arg, data) => {
                 .catch(err => {
                     sendAutoUpdateNotification('realerror', err)
                 })
-            break
-        case 'allowPrereleaseChange':
-            if(!data){
-                const preRelComp = semver.prerelease(app.getVersion())
-                if(preRelComp != null && preRelComp.length > 0){
-                    autoUpdater.allowPrerelease = true
-                } else {
-                    autoUpdater.allowPrerelease = data
-                }
-            } else {
-                autoUpdater.allowPrerelease = data
-            }
             break
         case 'installUpdateNow':
             autoUpdater.quitAndInstall()
@@ -313,7 +296,8 @@ function createWindow() {
         webPreferences: {
             preload: path.join(__dirname, 'app', 'assets', 'js', 'preloader.js'),
             nodeIntegration: true,
-            contextIsolation: false
+            contextIsolation: false,
+            devTools: isDev
         },
         backgroundColor: '#171614'
     })
@@ -337,10 +321,6 @@ function createWindow() {
     })
 
     win.webContents.on('before-input-event', (event, input) => {
-        if (input.key === 'F12' && input.type === 'keyDown') {
-            win.webContents.toggleDevTools()
-            event.preventDefault()
-        }
         if ((input.control || input.meta) && input.key.toLowerCase() === 'r' && input.type === 'keyDown') {
             win.reload()
             event.preventDefault()

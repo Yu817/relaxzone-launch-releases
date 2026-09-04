@@ -204,10 +204,6 @@ function saveSettingsValues(){
                 } else if(v.type === 'checkbox'){
                     sFnOpts.push(v.checked)
                     sFn.apply(null, sFnOpts)
-                    // Special Conditions
-                    if(cVal === 'AllowPrerelease'){
-                        changeAllowPrerelease(v.checked)
-                    }
                 }
             } else if(v.tagName === 'DIV'){
                 if(v.classList.contains('rangeSlider')){
@@ -1420,12 +1416,6 @@ const settingsAboutChangelogTitle  = settingsTabAbout.getElementsByClassName('se
 const settingsAboutChangelogText   = settingsTabAbout.getElementsByClassName('settingsChangelogText')[0]
 const settingsAboutChangelogButton = settingsTabAbout.getElementsByClassName('settingsChangelogButton')[0]
 
-// Bind the devtools toggle button.
-document.getElementById('settingsAboutDevToolsButton').onclick = (e) => {
-    let window = remote.getCurrentWindow()
-    window.toggleDevTools()
-}
-
 /**
  * Return whether or not the provided version is a prerelease.
  * 
@@ -1477,10 +1467,11 @@ function populateAboutVersionInformation(){
  * of the current version. This value is displayed on the UI.
  */
 function populateReleaseNotes(){
-    settingsAboutChangelogTitle.innerHTML = 'Relax Zone v1.0.0 正式上線'
+    settingsAboutChangelogTitle.innerHTML = 'Relax Zone Launcher v1.0.7 更新'
     settingsAboutChangelogText.innerHTML = `
         <div style="line-height: 1.8; color: #cbd5e1; font-size: 13px;">
             ✦ <b>核心版本</b>：完美支援 Minecraft 1.21.11 Fabric 核心<br>
+            ✦ <b>預設模組</b>：新增 Xaero's Minimap 小地圖與 Inventory Sorting 背包整理<br>
             ✦ <b>渲染引擎</b>：內建 PackForge 材質載入優化、Iris + Sodium 光影支援<br>
             ✦ <b>空間語音</b>：整合 Simple Voice Chat 遊戲內 3D 距離語音模組<br>
             ✦ <b>伺服器直連</b>：mc.relaxzone.org 專屬直連與多人伺服器列表自動預載<br>

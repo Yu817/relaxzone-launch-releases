@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "discord": {
         "clientId": "12334567890123456789",
         "smallImageText": "Relax Zone 悠然之境",
@@ -10,9 +10,9 @@
         {
             "id": "RelaxZone-Fabric-1.21.11",
             "name": "Relax Zone 悠然之境",
-            "description": "全新 MMORPG 生存冒險伺服器。內建 PackForge 材質載入最佳化、Iris+Sodium 光影與 Simple Voice Chat 遊戲內語音模組。",
+            "description": "全新 MMORPG 生存冒險伺服器。內建 PackForge 材質載入最佳化、Iris+Sodium 光影、小地圖、背包整理與 Simple Voice Chat 遊戲內語音模組。",
             "icon": "assets/images/SealCircle.png",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "address": "mc.relaxzone.org",
             "minecraftVersion": "1.21.11",
             "discord": {
@@ -192,6 +192,50 @@
                         "MD5": "bd7ec1ab499c1f5b64011cfbae0a9c1d",
                         "url": "https://cdn.modrinth.com/data/9eGKb6K1/versions/CN53keBo/voicechat-fabric-1.21.11-2.6.22.jar"
                     }
+                },
+                {
+                    "id": "com.relaxzone.mods:xaeros-minimap:26.4.2+mc1.21.11",
+                    "name": "Xaero's Minimap 小地圖",
+                    "type": "FabricMod",
+                    "required": {
+                        "value": true,
+                        "def": true
+                    },
+                    "artifact": {
+                        "size": 2203673,
+                        "MD5": "6f74f5e6f5b9be366b44b17cb79c22cb",
+                        "url": "https://cdn.modrinth.com/data/1bokaNcj/versions/8MdqDp18/xaerominimap-fabric-1.21.11-26.4.2.jar"
+                    }
+                },
+                {
+                    "id": "com.relaxzone.mods:inventorysorter:2.1.4+mc1.21.11",
+                    "name": "Inventory Sorting 背包整理",
+                    "type": "FabricMod",
+                    "required": {
+                        "value": true,
+                        "def": true
+                    },
+                    "artifact": {
+                        "size": 3654635,
+                        "MD5": "98baaa803f501f3dd6558d4a3c3d5785",
+                        "url": "https://cdn.modrinth.com/data/5ibSyLAz/versions/Dq4h9aTH/inventorysorter-fabric-2.1.4%2Bmc1.21.11.jar"
+                    },
+                    "subModules": [
+                        {
+                            "id": "me.shedaniel.cloth:cloth-config:21.11.153-fabric",
+                            "name": "Cloth Config API",
+                            "type": "FabricMod",
+                            "required": {
+                                "value": true,
+                                "def": true
+                            },
+                            "artifact": {
+                                "size": 1148427,
+                                "MD5": "9de770889c2b19445f57f881e4f7d6f8",
+                                "url": "https://cdn.modrinth.com/data/9s6osm5g/versions/xuX40TN5/cloth-config-21.11.153-fabric.jar"
+                            }
+                        }
+                    ]
                 }
             ]
         }

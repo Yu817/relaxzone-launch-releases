@@ -11,10 +11,9 @@ mediaYouTubeURL = "#"
 mediaDiscordURL = "https://discord.gg/m2Ern4DKCZ"
 
 [ejs.settings]
-sourceGithubLink = "https://relaxzone.org"
 supportLink = "https://discord.gg/m2Ern4DKCZ"
 
 [ejs.welcome]
 welcomeHeader = "歡迎來到 Relax Zone 悠然之境"
-welcomeDescription = "踏入這片奇幻的 MMORPG 生存冒險世界，在這裡探索未知的地下城、掌握強大職業技能、與好友在海域垂釣並組隊挑戰史詩世界 BOSS。啟動器已為您預載 PackForge 材質載入優化、超效光影支援與 3D 空間語音模組，一切準備就緒。"
+welcomeDescription = "踏入這片奇幻的 MMORPG 生存冒險世界，在這裡探索未知的地下城、掌握強大職業技能、與好友在海域垂釣並組隊挑戰史詩世界 BOSS。啟動器已為您預載 PackForge 材質載入優化、超效光影、小地圖、背包整理與 3D 空間語音模組，一切準備就緒。"
 welcomeDescCTA = "點擊下方按鈕，即刻啟程冒險！"

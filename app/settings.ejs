@@ -340,7 +340,7 @@
                         <div class="rz_market_promo_icon">🧩</div>
                         <div class="rz_market_promo_info">
                             <span class="rz_market_promo_title">Modrinth 線上模組探索市集</span>
-                            <span class="rz_market_promo_desc">直接在啟動器內搜尋、瀏覽與一鍵安裝上萬款 Fabric 1.21.11 效能優化、小地圖與 HUD 模組。</span>
+                            <span class="rz_market_promo_desc">直接在啟動器內搜尋、瀏覽與一鍵安裝上萬款 Fabric 1.21.11 效能優化、小地圖、背包整理與 HUD 模組。</span>
                         </div>
                         <button type="button" class="rz_market_promo_btn rz_btn_glow" onclick="if(window.rzRefreshMarketOnOpen)window.rzRefreshMarketOnOpen(); switchView(getCurrentView(), VIEWS.modmarket)">
                             <span>進入市集 ➔</span>
@@ -377,6 +377,22 @@
                             <div class="rz_pill_text">
                                 <strong>Simple Voice Chat</strong>
                                 <small>3D 空間距離即時語音連線</small>
+                            </div>
+                            <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
+                        </div>
+                        <div class="rz_mod_pill">
+                            <span class="rz_pill_icon">🗺️</span>
+                            <div class="rz_pill_text">
+                                <strong>Xaero's Minimap</strong>
+                                <small>探索地形、座標與路標</small>
+                            </div>
+                            <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
+                        </div>
+                        <div class="rz_mod_pill">
+                            <span class="rz_pill_icon">🎒</span>
+                            <div class="rz_pill_text">
+                                <strong>Inventory Sorting</strong>
+                                <small>一鍵整理背包與箱子物品</small>
                             </div>
                             <span class="rz_pill_state rz_state_active">✓ 啟用中</span>
                         </div>
@@ -449,24 +465,6 @@
                 <div class="settingsFileSelDesc"><%- lang('settings.dataDirectoryDesc') %></div>
             </div>
 
-            <!-- 卡片 2: 搶先體驗更新頻道 -->
-            <div class="settingsFieldContainer rz_setting_card">
-                <div class="rz_card_header_bar">
-                    <span class="rz_card_title">🚀 <%- lang('settings.allowPrereleaseTitle') %></span>
-                    <span class="rz_card_badge">UPDATE CHANNEL</span>
-                </div>
-                <div class="rz_setting_row" style="margin-top: 10px;">
-                    <div class="settingsFieldLeft">
-                        <span class="settingsFieldDesc"><%- lang('settings.allowPrereleaseDesc') %></span>
-                    </div>
-                    <div class="settingsFieldRight">
-                        <label class="toggleSwitch">
-                            <input type="checkbox" cValue="AllowPrerelease">
-                            <span class="toggleSwitchSlider"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- 6. 關於 Relax Zone 分頁 (About Tab) -->
@@ -524,9 +522,7 @@
                 </div>
 
                 <div id="settingsAboutButtons">
-                    <a href="<%- lang('settings.sourceGithubLink') %>" id="settingsAboutSourceButton" class="settingsAboutButton rz_btn_glow">🌐 <%- lang('settings.sourceGithub') %></a>
                     <a href="<%- lang('settings.supportLink') %>" id="settingsAboutSupportButton" class="settingsAboutButton rz_btn_glow">💬 <%- lang('settings.support') %></a>
-                    <a href="#" id="settingsAboutDevToolsButton" class="settingsAboutButton">🛠️ <%- lang('settings.devToolsConsole') %></a>
                 </div>
             </div>
 

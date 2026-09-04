@@ -2,7 +2,7 @@ const { DistributionAPI } = require('helios-core/common')
 
 const ConfigManager = require('./configmanager')
 
-// Relax Zone 專屬遠端分發伺服器網址（日後若上傳至官網或 GitHub Raw，可填在此處）
+// Relax Zone 專屬遠端分發伺服器網址（日後若上傳至公開檔案主機，可填在此處）
 // 當此處為空字串時，啟動器會固定鎖定讀取專案內的 Relax Zone Fabric 1.21.1 本機設定
 exports.REMOTE_DISTRO_URL = ''
 
