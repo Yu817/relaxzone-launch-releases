@@ -68,7 +68,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.info('No new update found.')
-                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.checkForUpdatesButton'))
+                populateSettingsUpdateInformation(null)
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -87,6 +87,7 @@ if(!isDev){
                         loggerAutoUpdater.debug('Error Code:', info.code)
                     }
                 }
+                showSettingsUpdateCheckError()
                 break
             default:
                 loggerAutoUpdater.info('Unknown argument', arg)

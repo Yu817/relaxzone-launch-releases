@@ -276,6 +276,7 @@ newPreReleaseTitle = "New Pre-release Available"
 downloadingButton = "Downloading.."
 downloadButton = 'Download update<span style="font-size: 10px;color: gray;text-shadow: none !important;">Close the launcher and run the installer to update.</span>'
 latestVersionTitle = "You Are Running the Latest Version"
+checkForUpdatesFailed = "Unable to Check for Updates"
 checkForUpdatesButton = "Check for Updates"
 checkingForUpdatesButton = "Checking for Updates.."
 

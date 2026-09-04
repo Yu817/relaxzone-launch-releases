@@ -1522,6 +1522,33 @@ function settingsUpdateButtonStatus(text, disabled = false, handler = null){
 }
 
 /**
+ * Request a launcher update check from the main process.
+ */
+function requestLauncherUpdateCheck(){
+    if(!isDev){
+        ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
+        settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkingForUpdatesButton'), true)
+    }
+}
+
+/**
+ * Restore the update button after a check completes or fails.
+ */
+function resetSettingsUpdateCheckButton(){
+    settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkForUpdatesButton'), false, requestLauncherUpdateCheck)
+}
+
+/**
+ * Show a recoverable update-check error instead of leaving the button disabled.
+ */
+function showSettingsUpdateCheckError(){
+    settingsUpdateTitle.innerHTML = Lang.queryJS('settings.updates.checkForUpdatesFailed')
+    settingsUpdateChangelogCont.style.display = 'none'
+    populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
+    resetSettingsUpdateCheckButton()
+}
+
+/**
  * Populate the update tab with relevant information.
  * 
  * @param {Object} data The update data.
@@ -1545,12 +1572,7 @@ function populateSettingsUpdateInformation(data){
         settingsUpdateTitle.innerHTML = Lang.queryJS('settings.updates.latestVersionTitle')
         settingsUpdateChangelogCont.style.display = 'none'
         populateVersionInformation(remote.app.getVersion(), settingsUpdateVersionValue, settingsUpdateVersionTitle, settingsUpdateVersionCheck)
-        settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkForUpdatesButton'), false, () => {
-            if(!isDev){
-                ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus(Lang.queryJS('settings.updates.checkingForUpdatesButton'), true)
-            }
-        })
+        resetSettingsUpdateCheckButton()
     }
 }
 

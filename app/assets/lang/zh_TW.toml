@@ -298,6 +298,7 @@ newPreReleaseTitle = "發現新測試版本！"
 downloadingButton = "正在下載更新.."
 downloadButton = "立即前往下載"
 latestVersionTitle = "您目前使用的是最新版本"
+checkForUpdatesFailed = "暫時無法完成版本檢查"
 checkForUpdatesButton = "檢查更新"
 checkingForUpdatesButton = "正在檢查更新.."
 
