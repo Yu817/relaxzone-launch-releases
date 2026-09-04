@@ -59,11 +59,7 @@ if(!isDev){
                 break
             case 'update-downloaded':
                 loggerAutoUpdater.info('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.installNowButton'), false, () => {
-                    if(!isDev){
-                        ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
-                    }
-                })
+                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.installingButton'), true)
                 showUpdateUI(info)
                 break
             case 'update-not-available':
@@ -71,9 +67,11 @@ if(!isDev){
                 populateSettingsUpdateInformation(null)
                 break
             case 'ready':
-                updateCheckListener = setInterval(() => {
-                    ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                }, 1800000)
+                if(!updateCheckListener){
+                    updateCheckListener = setInterval(() => {
+                        ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
+                    }, 1800000)
+                }
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
                 break
             case 'realerror':

@@ -72,7 +72,7 @@ npm run lint
 
 ## 支援
 
-遇到登入、下載或啟動問題，請前往 [Relax Zone Discord](https://discord.gg/relaxzone)，並附上啟動器控制台紀錄與錯誤發生步驟。
+遇到登入、下載或啟動問題，請前往 [Relax Zone Discord](https://discord.gg/m2Ern4DKCZ)，並附上啟動器控制台紀錄與錯誤發生步驟。
 
 ## 相關文件
 

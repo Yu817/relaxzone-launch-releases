@@ -1,13 +1,13 @@
 {
   "name": "relaxzone-launcher",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "productName": "Relax Zone 悠然之境",
   "description": "Relax Zone 悠然之境 MMORPG 專屬 Minecraft 啟動器",
   "author": "Relax Zone Team",
   "license": "UNLICENSED",
   "homepage": "https://relaxzone.org",
   "bugs": {
-    "url": "https://discord.gg/relaxzone"
+    "url": "https://discord.gg/m2Ern4DKCZ"
   },
   "private": true,
   "main": "index.js",

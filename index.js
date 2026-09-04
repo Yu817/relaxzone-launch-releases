@@ -16,7 +16,23 @@ const LangLoader                        = require('./app/assets/js/langloader')
 LangLoader.setupLanguage()
 
 // Setup auto updater.
+let autoUpdaterInitialized = false
+let autoUpdaterInstallStarted = false
+let autoUpdaterEventSender = null
+
+function sendAutoUpdateNotification(arg, info) {
+    if(autoUpdaterEventSender && !autoUpdaterEventSender.isDestroyed()){
+        autoUpdaterEventSender.send('autoUpdateNotification', arg, info)
+    }
+}
+
 function initAutoUpdater(event, data) {
+
+    autoUpdaterEventSender = event.sender
+    if(autoUpdaterInitialized){
+        return
+    }
+    autoUpdaterInitialized = true
 
     if(data){
         autoUpdater.allowPrerelease = true
@@ -26,26 +42,42 @@ function initAutoUpdater(event, data) {
     }
     
     if(isDev){
+        autoUpdater.autoDownload = false
         autoUpdater.autoInstallOnAppQuit = false
         autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml')
+    } else {
+        // Windows/Linux updates are downloaded and installed automatically.
+        // macOS keeps the existing manual DMG flow because the app is not
+        // distributed through a signed auto-update channel.
+        autoUpdater.autoDownload = process.platform !== 'darwin'
+        autoUpdater.autoInstallOnAppQuit = process.platform !== 'darwin'
     }
     if(process.platform === 'darwin'){
         autoUpdater.autoDownload = false
     }
     autoUpdater.on('update-available', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-available', info)
+        sendAutoUpdateNotification('update-available', info)
     })
     autoUpdater.on('update-downloaded', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-downloaded', info)
+        sendAutoUpdateNotification('update-downloaded', info)
+
+        // Do not ask the player whether to update. Once the installer has
+        // finished downloading, silently install it and relaunch the launcher.
+        if(!isDev && process.platform !== 'darwin' && !autoUpdaterInstallStarted){
+            autoUpdaterInstallStarted = true
+            setTimeout(() => {
+                autoUpdater.quitAndInstall(true, true)
+            }, 500)
+        }
     })
     autoUpdater.on('update-not-available', (info) => {
-        event.sender.send('autoUpdateNotification', 'update-not-available', info)
+        sendAutoUpdateNotification('update-not-available', info)
     })
     autoUpdater.on('checking-for-update', () => {
-        event.sender.send('autoUpdateNotification', 'checking-for-update')
+        sendAutoUpdateNotification('checking-for-update')
     })
     autoUpdater.on('error', (err) => {
-        event.sender.send('autoUpdateNotification', 'realerror', err)
+        sendAutoUpdateNotification('realerror', err)
     }) 
 }
 
@@ -60,7 +92,7 @@ ipcMain.on('autoUpdateAction', (event, arg, data) => {
         case 'checkForUpdate':
             autoUpdater.checkForUpdates()
                 .catch(err => {
-                    event.sender.send('autoUpdateNotification', 'realerror', err)
+                    sendAutoUpdateNotification('realerror', err)
                 })
             break
         case 'allowPrereleaseChange':

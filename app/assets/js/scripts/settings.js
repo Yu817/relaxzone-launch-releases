@@ -1487,7 +1487,7 @@ function populateReleaseNotes(){
             ✦ <b>極致效能</b>：整合 Java 21 與專屬記憶體分配最佳化
         </div>
     `
-    settingsAboutChangelogButton.href = 'https://discord.gg/relaxzone'
+    settingsAboutChangelogButton.href = Lang.queryEJS('settings.supportLink')
 }
 
 /**
@@ -1522,9 +1522,7 @@ const settingsUpdateActionButton   = document.getElementById('settingsUpdateActi
 function settingsUpdateButtonStatus(text, disabled = false, handler = null){
     settingsUpdateActionButton.innerHTML = text
     settingsUpdateActionButton.disabled = disabled
-    if(handler != null){
-        settingsUpdateActionButton.onclick = handler
-    }
+    settingsUpdateActionButton.onclick = handler
 }
 
 /**

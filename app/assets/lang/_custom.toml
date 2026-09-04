@@ -8,11 +8,11 @@ mediaGitHubURL = "#"
 mediaXURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
-mediaDiscordURL = "https://discord.gg/relaxzone"
+mediaDiscordURL = "https://discord.gg/m2Ern4DKCZ"
 
 [ejs.settings]
 sourceGithubLink = "https://relaxzone.org"
-supportLink = "https://discord.gg/relaxzone"
+supportLink = "https://discord.gg/m2Ern4DKCZ"
 
 [ejs.welcome]
 welcomeHeader = "歡迎來到 Relax Zone 悠然之境"
