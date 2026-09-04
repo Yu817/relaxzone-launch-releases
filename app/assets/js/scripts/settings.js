@@ -1463,7 +1463,13 @@ function populateVersionInformation(version, valueElement, titleElement, checkEl
  * Retrieve the version information and display it on the UI.
  */
 function populateAboutVersionInformation(){
-    populateVersionInformation(remote.app.getVersion(), document.getElementById('settingsAboutCurrentVersionValue'), document.getElementById('settingsAboutCurrentVersionTitle'), document.getElementById('settingsAboutCurrentVersionCheck'))
+    const launcherVersion = remote.app.getVersion()
+    populateVersionInformation(launcherVersion, document.getElementById('settingsAboutCurrentVersionValue'), document.getElementById('settingsAboutCurrentVersionTitle'), document.getElementById('settingsAboutCurrentVersionCheck'))
+
+    const settingsNavAboutSub = document.getElementById('settingsNavAboutSub')
+    if(settingsNavAboutSub){
+        settingsNavAboutSub.innerText = `Relax Zone v${launcherVersion}`
+    }
 }
 
 /**

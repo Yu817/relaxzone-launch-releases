@@ -52,7 +52,7 @@
                         <span class="rz_nav_icon">🏰</span>
                         <div class="rz_nav_text_group">
                             <span class="rz_nav_label"><%- lang('settings.navAbout') %></span>
-                            <span class="rz_nav_desc"><%- lang('settings.navAboutSub') %></span>
+                            <span class="rz_nav_desc" id="settingsNavAboutSub"><%- lang('settings.navAboutSub') %></span>
                         </div>
                     </button>
                     <button class="settingsNavItem" rSc="settingsTabUpdate" id="settingsNavUpdate">
@@ -493,7 +493,7 @@
                             <span id="settingsAboutCurrentVersionTitle"><%- lang('settings.stableRelease') %></span>
                             <div id="settingsAboutCurrentVersionLine">
                                 <span id="settingsAboutCurrentVersionText"><%- lang('settings.versionText') %></span>
-                                <span id="settingsAboutCurrentVersionValue">1.0.0</span>
+                                <span id="settingsAboutCurrentVersionValue">--</span>
                             </div>
                         </div>
                     </div>
@@ -563,7 +563,7 @@
                             <span id="settingsUpdateVersionTitle"><%- lang('settings.stableRelease') %></span>
                             <div id="settingsUpdateVersionLine">
                                 <span id="settingsUpdateVersionText"><%- lang('settings.versionText') %> </span>
-                                <span id="settingsUpdateVersionValue">1.0.0</span>
+                                <span id="settingsUpdateVersionValue">--</span>
                             </div>
                         </div>
                     </div>

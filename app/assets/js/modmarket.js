@@ -3,10 +3,11 @@ const path = require('path')
 const https = require('https')
 const http = require('http')
 const { URL } = require('url')
+const remote = require('@electron/remote')
 const ConfigManager = require('./configmanager')
 
 const MODRINTH_API = 'https://api.modrinth.com/v2'
-const USER_AGENT = 'RelaxZoneLauncher/1.0.0 (https://relaxzone.org; contact@relaxzone.org)'
+const USER_AGENT = `RelaxZoneLauncher/${remote.app.getVersion()} (https://relaxzone.org; contact@relaxzone.org)`
 
 /**
  * Helper to get the active mods directory for the current selected server
