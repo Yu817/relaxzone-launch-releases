@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T12:35:23.429Z",
+  "updatedAt": "2026-09-06T12:36:36.448Z",
   "announcements": [
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -13,7 +13,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:35:23.316Z"
+      "updatedAt": "2026-09-06T12:36:36.345Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -27,7 +27,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:35:23.316Z"
+      "updatedAt": "2026-09-06T12:36:36.345Z"
     }
   ],
   "ticker": {
