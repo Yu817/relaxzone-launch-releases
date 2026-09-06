@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T12:36:36.448Z",
+  "updatedAt": "2026-09-06T12:37:01.847Z",
   "announcements": [
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -13,7 +13,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:36:36.345Z"
+      "updatedAt": "2026-09-06T12:37:01.730Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -27,12 +27,12 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:36:36.345Z"
+      "updatedAt": "2026-09-06T12:37:01.730Z"
     }
   ],
   "ticker": {
-    "enabled": false,
-    "text": "",
+    "enabled": true,
+    "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！                      🎰 悠然樂透正式推出｜每週一 04:00 開賣｜週日 20:30 全服開獎｜下一個幸運兒會是你嗎？🍀        🚀 Relax Zone 專屬啟動器｜伺服器公告・模組整合・資源包加速・遊戲內語音，一次搞定！",
     "textColor": "#f5dca7",
     "backgroundColor": "#20352a",
     "speed": 32
