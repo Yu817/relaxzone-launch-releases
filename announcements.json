@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-09-06T12:38:01.599Z",
+  "updatedAt": "2026-09-06T15:41:30.977Z",
   "announcements": [
+    {
+      "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
+      "status": "published",
+      "tag": "更新",
+      "tagTextColor": "#fbff00",
+      "tagBackgroundColor": "#304833",
+      "title": "📦 全新玩法・天降空投正式登場",
+      "summary": "神秘空投降臨生存世界！追蹤座標、挑戰守衛，與其他玩家爭奪補給與特殊資源。",
+      "contentHtml": "<div># ✦ 全新隨機事件｜天降空投正式登場！</div><div><br></div><div>神秘補給訊號出現在生存世界上空！&nbsp;&nbsp;</div><div>伺服器現已加入全新隨機事件「天降空投」，準備迎接守衛、混戰與資源爭奪！</div><div><br></div><div>## ⏰ 活動時間</div><div><br></div><div>空投將於台北時間每 3 小時出現一輪：</div><div><br></div><div>`00:00・03:00・06:00・09:00・12:00・15:00・18:00・21:00`</div><div><br></div><div>每輪內容：</div><div><br></div><div>- 黃金空投 ×1</div><div>- 白銀空投 ×1</div><div>- 兩處空投至少相距 1,200 格</div><div>- 生存一、二分流輪流舉辦</div><div>- 空投落地後存在 30 分鐘，逾時自動撤離</div><div><br></div><div>活動開始時，生存分流會收到空投類型、所在分流及座標公告。&nbsp;&nbsp;</div><div>如果空投位於另一個分流，可以直接點擊公告中的按鈕前往！</div><div><br></div><div>## ⚔️ 空投爭奪規則</div><div><br></div><div>空投附近駐守著能夠無視防禦造成傷害的特殊守衛，請不要掉以輕心！</div><div><br></div><div>- 黃金空投：4 隻守衛，解鎖時間 10 秒</div><div>- 白銀空投：2 隻守衛，解鎖時間 6 秒</div><div>- 解鎖期間移動超過 2 格會中止</div><div>- 遭到攻擊會損失 40% 解鎖進度</div><div>- 空投周圍 20 格為爭奪區，玩家傷害降低 70%</div><div>- 可選擇先清除守衛，或趁混戰冒險解鎖</div><div><br></div><div>箱子獎勵只會發給成功完成解鎖的玩家，不另外發放參與獎。</div><div><br></div><div>## 👑 黃金空投獎勵</div><div><br></div><div>- 遊戲幣 `$3,500～5,000`</div><div>- 進階補給箱鑰匙 ×1</div><div>- 普通金蘋果 ×2</div><div>- 20% 機率獲得防爆符 ×1</div><div><br></div><div>## 📦 白銀空投獎勵</div><div><br></div><div>- 遊戲幣 `$2,000～3,500`</div><div>- 日常補給箱鑰匙 ×2</div><div>- 小型生命藥水 ×2</div><div>- 普通金蘋果 ×8</div><div><br></div><div>每位玩家每天最多可獲得 3 個正式空投箱獎勵。</div><div><br></div><div>## ⛏️ 空投殘骸</div><div><br></div><div>箱子成功解鎖後，附近會散落 3～5 處空投殘骸：</div><div><br></div><div>- 一般殘骸可能取得鐵錠、金錠或經驗瓶</div><div>- 每處有 20% 機率生成特殊礦脈原礦</div><div>- 七種礦脈礦物都有機會出現</div><div>- 稀有礦物將維持較低的出現機率</div><div>- 每位玩家每輪最多採集 2 處</div><div>- 殘骸會在 120 秒後消失</div><div><br></div><div>準備好武器、藥水與隊友。&nbsp;&nbsp;</div><div>看到空投公告與直衝天際的光柱，就立刻出發吧！</div><div><br></div><div>究竟是正面擊敗守衛，還是趁著混戰奪走補給——就看各位冒險者的本事了！</div>",
+      "date": "2026-09-06",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-09-06T15:41:30.855Z"
+    },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
       "status": "published",
@@ -13,7 +27,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:38:01.491Z"
+      "updatedAt": "2026-09-06T15:41:30.856Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -27,14 +41,24 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T12:38:01.491Z"
+      "updatedAt": "2026-09-06T15:41:30.856Z"
     }
   ],
   "ticker": {
     "enabled": true,
+    "speed": 32,
+    "items": [
+      {
+        "id": "d331d396-bdd6-4425-91b5-bd884274fdf7",
+        "enabled": true,
+        "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！                      🎰 悠然樂透正式推出｜每週一 04:00 開賣｜週日 20:30 全服開獎｜下一個幸運兒會是你嗎？",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 1
+      }
+    ],
     "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！                      🎰 悠然樂透正式推出｜每週一 04:00 開賣｜週日 20:30 全服開獎｜下一個幸運兒會是你嗎？",
     "textColor": "#f5dca7",
-    "backgroundColor": "#20352a",
-    "speed": 32
+    "backgroundColor": "#20352a"
   }
 }
