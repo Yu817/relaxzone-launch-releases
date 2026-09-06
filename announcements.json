@@ -1,0 +1,11 @@
+{
+  "updatedAt": "2026-09-06T12:06:21.910Z",
+  "announcements": [],
+  "ticker": {
+    "enabled": false,
+    "text": "",
+    "textColor": "#f5dca7",
+    "backgroundColor": "#20352a",
+    "speed": 32
+  }
+}
