@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T15:44:45.028Z",
+  "updatedAt": "2026-09-06T16:19:33.329Z",
   "announcements": [
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -13,7 +13,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:44:44.917Z"
+      "updatedAt": "2026-09-06T16:19:33.220Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -27,13 +27,13 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:44:44.917Z"
+      "updatedAt": "2026-09-06T16:19:33.220Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
       "status": "published",
       "tag": "更新",
-      "tagTextColor": "#fb00ff",
+      "tagTextColor": "#fbff00",
       "tagBackgroundColor": "#304833",
       "title": "🎰 全新玩法・悠然樂透正式推出",
       "summary": "選一組幸運號碼，等待每週全服開獎！獎池持續累積，也許下一個幸運兒就是你。",
@@ -41,7 +41,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:44:44.917Z"
+      "updatedAt": "2026-09-06T16:19:33.220Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -55,7 +55,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:44:44.917Z"
+      "updatedAt": "2026-09-06T16:19:33.220Z"
     }
   ],
   "ticker": {
