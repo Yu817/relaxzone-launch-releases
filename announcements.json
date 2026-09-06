@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T15:42:01.810Z",
+  "updatedAt": "2026-09-06T15:42:16.971Z",
   "announcements": [
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -13,7 +13,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:42:01.653Z"
+      "updatedAt": "2026-09-06T15:42:16.837Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -27,11 +27,11 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:42:01.653Z"
+      "updatedAt": "2026-09-06T15:42:16.837Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
-      "status": "published",
+      "status": "draft",
       "tag": "公告",
       "tagTextColor": "#b9d4ae",
       "tagBackgroundColor": "#304833",
@@ -41,7 +41,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-06T15:42:01.653Z"
+      "updatedAt": "2026-09-06T15:42:16.837Z"
     }
   ],
   "ticker": {
@@ -49,7 +49,7 @@
     "speed": 32,
     "items": [
       {
-        "id": "16706855-407c-40fb-a919-c21a44f4a11d",
+        "id": "1ccfae2b-9827-4a70-b2f4-5869ee0dab8f",
         "enabled": true,
         "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！                      🎰 悠然樂透正式推出｜每週一 04:00 開賣｜週日 20:30 全服開獎｜下一個幸運兒會是你嗎？",
         "textColor": "#f5dca7",
