@@ -1,6 +1,21 @@
 {
-  "updatedAt": "2026-09-06T12:06:21.910Z",
-  "announcements": [],
+  "updatedAt": "2026-09-06T12:06:33.807Z",
+  "announcements": [
+    {
+      "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
+      "status": "published",
+      "tag": "公告",
+      "tagTextColor": "#b9d4ae",
+      "tagBackgroundColor": "#304833",
+      "title": "測試",
+      "summary": "123",
+      "contentHtml": "123312132112323",
+      "date": "2026-09-06",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-09-06T12:06:33.680Z"
+    }
+  ],
   "ticker": {
     "enabled": false,
     "text": "",
