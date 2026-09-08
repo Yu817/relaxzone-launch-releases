@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-07T17:17:56.582Z",
+  "updatedAt": "2026-09-08T08:05:40.714Z",
   "announcements": [
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
-      "status": "published",
+      "status": "draft",
       "tag": "公告",
       "tagTextColor": "#b9d4ae",
       "tagBackgroundColor": "#304833",
@@ -13,7 +13,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-07T17:17:56.468Z"
+      "updatedAt": "2026-09-08T08:05:40.577Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -27,7 +27,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-07T17:17:56.468Z"
+      "updatedAt": "2026-09-08T08:05:40.577Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -41,7 +41,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-07T17:17:56.468Z"
+      "updatedAt": "2026-09-08T08:05:40.577Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -55,7 +55,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-07T17:17:56.469Z"
+      "updatedAt": "2026-09-08T08:05:40.577Z"
     }
   ],
   "ticker": {
