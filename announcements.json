@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T08:07:11.793Z",
+  "updatedAt": "2026-09-08T08:11:04.702Z",
   "announcements": [
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -13,7 +13,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-08T08:07:11.651Z"
+      "updatedAt": "2026-09-08T08:11:04.581Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -27,7 +27,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-08T08:07:11.651Z"
+      "updatedAt": "2026-09-08T08:11:04.582Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -41,7 +41,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-08T08:07:11.651Z"
+      "updatedAt": "2026-09-08T08:11:04.582Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -55,7 +55,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-08T08:07:11.651Z"
+      "updatedAt": "2026-09-08T08:11:04.582Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -69,7 +69,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-08T08:07:11.651Z"
+      "updatedAt": "2026-09-08T08:11:04.582Z"
     }
   ],
   "ticker": {
@@ -99,6 +99,22 @@
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 3
+      },
+      {
+        "id": "item-1788855033716-7sjd",
+        "enabled": true,
+        "text": "👗 全新專屬時裝系統｜自由混搭・套裝穿搭・試衣間・武器幻化｜打造屬於自己的角色造型！",
+        "textColor": "#ff00dd",
+        "backgroundColor": "#20352a",
+        "sortOrder": 4
+      },
+      {
+        "id": "item-1788855056653-zqb8",
+        "enabled": true,
+        "text": "🎫 高級通行證獎勵升級｜整體獎勵內容全面調整｜點券・補給箱・限定獎勵・強化資源更加豐富！",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 5
       }
     ],
     "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！",
