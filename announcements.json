@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T13:24:55.441Z",
+  "updatedAt": "2026-09-09T13:25:08.935Z",
   "announcements": [
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -13,7 +13,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.279Z"
+      "updatedAt": "2026-09-09T13:25:08.797Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -27,7 +27,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.280Z"
+      "updatedAt": "2026-09-09T13:25:08.797Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -41,7 +41,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.280Z"
+      "updatedAt": "2026-09-09T13:25:08.798Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -55,7 +55,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.280Z"
+      "updatedAt": "2026-09-09T13:25:08.798Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -69,7 +69,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.280Z"
+      "updatedAt": "2026-09-09T13:25:08.798Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -83,7 +83,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-09T13:24:55.280Z"
+      "updatedAt": "2026-09-09T13:25:08.798Z"
     }
   ],
   "ticker": {
@@ -129,6 +129,14 @@
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 5
+      },
+      {
+        "id": "item-1788960305449-zwf1",
+        "enabled": true,
+        "text": "🤝 全新玩家交易系統｜SHIFT + 右鍵發起交易｜物品・遊戲幣・經驗值皆可交換！",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 6
       }
     ],
     "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！",
