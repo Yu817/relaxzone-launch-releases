@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-09-17T10:38:42.346Z",
+  "updatedAt": "2026-09-18T15:27:38.292Z",
   "announcements": [
+    {
+      "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
+      "status": "published",
+      "tag": "更新",
+      "tagTextColor": "#fbff00",
+      "tagBackgroundColor": "#304833",
+      "title": "🔥 全新副本｜第四副本「熔獄堡壘」正式開放",
+      "summary": "全新第四副本「熔獄堡壘」正式開放！同步完成副本難度與血量調整、移除組隊加成倍率，並新增副本素材生命藥水兌換。",
+      "contentHtml": "<h3 data-section-id=\"uholdn\" dir=\"auto\" data-start=\"63\" data-end=\"84\" class=\"PDq2pG_selectionAnchorContainer\">🔥 第四副本「熔獄堡壘」正式開放<span aria-hidden=\"true\" class=\"PDq2pG_selectionAnchor\"></span></h3>\n<p dir=\"auto\" data-start=\"86\" data-end=\"107\">悠然之境第四副本「熔獄堡壘」現已正式推出。</p>\n<p dir=\"auto\" data-start=\"109\" data-end=\"186\">這次將帶來全新的副本區域、怪物與 BOSS，整體挑戰難度也將比先前的副本更高。隨著冒險逐漸深入，也更加考驗玩家目前的裝備養成、戰鬥操作以及隊伍之間的配合。</p>\n<p dir=\"auto\" data-start=\"188\" data-end=\"272\">第四副本推出後，我們陸續收到不少玩家回報的異常與 BUG，目前相關問題皆已完成修復。同時也根據實際遊玩情況，針對副本難度與怪物血量進行微調，希望讓整體挑戰體驗更加合理。</p>\n<p dir=\"auto\" data-start=\"274\" data-end=\"350\">本次也同步移除原有的「組隊加成倍率」機制。現在多人組隊進入副本時，怪物不會再因隊伍人數增加而額外提升血量與傷害，大家可以更自由地與其他玩家一起挑戰副本。</p>\n<p dir=\"auto\" data-start=\"352\" data-end=\"373\">除此之外，副本素材兌換也加入新的補給選擇。</p>\n<p dir=\"auto\" data-start=\"375\" data-end=\"469\">第三副本素材現在可以兌換「小型生命藥水」，第四副本素材則可以兌換「生命藥水」。希望讓大家累積的副本素材除了原有用途之外，也能轉換成實際的戰鬥補給，準備好藥水後，再繼續向更高難度的副本挑戰。</p>\n<p dir=\"auto\" data-start=\"471\" data-end=\"525\">熔獄堡壘目前已正式開放，如果挑戰過程中還有遇到任何異常或 BUG，也歡迎再向七星反映，我們會持續確認與調整。</p>\n<p dir=\"auto\" data-start=\"527\" data-end=\"571\" data-is-last-node=\"\" data-is-only-node=\"\"><strong data-start=\"527\" data-end=\"546\">Relax Zone｜悠然之境</strong><br data-start=\"546\" data-end=\"549\">\n<strong data-start=\"549\" data-end=\"571\" data-is-last-node=\"\">Minecraft 生存 × RPG</strong></p>",
+      "date": "2026-09-18",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-09-18T15:27:38.138Z"
+    },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
       "status": "published",
@@ -13,7 +27,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.128Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -27,7 +41,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.128Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -41,7 +55,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.128Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -55,7 +69,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.129Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -69,7 +83,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.129Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -83,7 +97,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.129Z"
+      "updatedAt": "2026-09-18T15:27:38.138Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -97,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-17T10:38:42.129Z"
+      "updatedAt": "2026-09-18T15:27:38.139Z"
     }
   ],
   "ticker": {
