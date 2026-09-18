@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T15:27:38.292Z",
+  "updatedAt": "2026-09-18T15:27:46.506Z",
   "announcements": [
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -13,7 +13,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -27,7 +27,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -41,7 +41,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -55,7 +55,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -69,7 +69,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -83,7 +83,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -97,7 +97,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.138Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -111,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-18T15:27:38.139Z"
+      "updatedAt": "2026-09-18T15:27:46.316Z"
     }
   ],
   "ticker": {
@@ -173,6 +173,14 @@
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 7
+      },
+      {
+        "id": "item-1789745263827-qa47",
+        "enabled": true,
+        "text": "🔥 第四副本「熔獄堡壘」正式開放｜全新副本、怪物與 BOSS 等待各位冒險者前往挑戰！",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 8
       }
     ],
     "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！",
