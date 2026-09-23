@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T12:38:09.658Z",
+  "updatedAt": "2026-09-23T12:39:18.024Z",
   "announcements": [
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -13,7 +13,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -27,7 +27,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -41,7 +41,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -55,7 +55,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -69,7 +69,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -83,7 +83,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -97,7 +97,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -111,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.447Z"
+      "updatedAt": "2026-09-23T12:39:17.861Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -125,7 +125,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:38:09.448Z"
+      "updatedAt": "2026-09-23T12:39:17.862Z"
     }
   ],
   "ticker": {
@@ -142,19 +142,11 @@
       },
       {
         "id": "item-1788711952441-ncwr",
-        "enabled": true,
+        "enabled": false,
         "text": "🎰 悠然樂透正式推出｜每週一 04:00 開賣｜週日 20:30 全服開獎｜下一個幸運兒會是你嗎？",
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 2
-      },
-      {
-        "id": "item-1788801469977-22ta",
-        "enabled": true,
-        "text": "✨ 魔力系統全面提升｜魔力上限 20 ➜ 40｜每秒回魔 0.1 ➜ 0.5｜戰鬥續航更加順暢！",
-        "textColor": "#f5dca7",
-        "backgroundColor": "#20352a",
-        "sortOrder": 3
       },
       {
         "id": "item-1788855033716-7sjd",
@@ -163,14 +155,6 @@
         "textColor": "#ff00dd",
         "backgroundColor": "#20352a",
         "sortOrder": 4
-      },
-      {
-        "id": "item-1788855056653-zqb8",
-        "enabled": true,
-        "text": "🎫 高級通行證獎勵升級｜整體獎勵內容全面調整｜點券・補給箱・限定獎勵・強化資源更加豐富！",
-        "textColor": "#f5dca7",
-        "backgroundColor": "#20352a",
-        "sortOrder": 5
       },
       {
         "id": "item-1788960305449-zwf1",
@@ -182,7 +166,7 @@
       },
       {
         "id": "item-1789641509350-ckgn",
-        "enabled": true,
+        "enabled": false,
         "text": "🛡️ 裝備外觀顯示功能上線｜VIP（含）以上會員可自由切換各部位裝備顯示！",
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
@@ -195,6 +179,14 @@
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 8
+      },
+      {
+        "id": "item-1790167153899-mg1s",
+        "enabled": true,
+        "text": "✨ 全新飾品系統登場！💍 蒐集各式飾品、自由搭配，進一步提升你的角色能力！",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 7
       }
     ],
     "text": "⚔️ 世界 BOSS 正式開放｜二・四・六・日 20:30｜六・日 00:00 加開｜全服集結討伐！",
