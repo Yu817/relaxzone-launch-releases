@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T17:15:35.582Z",
+  "updatedAt": "2026-09-24T17:15:46.234Z",
   "announcements": [
     {
       "id": "e559b67d-27d6-4b0c-88e0-afe121a14db9",
@@ -13,7 +13,7 @@
       "date": "2026-09-24",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.377Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -27,7 +27,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -41,7 +41,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -55,7 +55,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -69,7 +69,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -83,7 +83,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.055Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -97,7 +97,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.056Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -111,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.056Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -125,7 +125,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.378Z"
+      "updatedAt": "2026-09-24T17:15:46.056Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -139,7 +139,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-24T17:15:35.379Z"
+      "updatedAt": "2026-09-24T17:15:46.056Z"
     }
   ],
   "ticker": {
@@ -198,6 +198,14 @@
         "id": "item-1789745263827-qa47",
         "enabled": true,
         "text": "🔥 第四副本「熔獄堡壘」正式開放｜全新副本、怪物與 BOSS 等待各位冒險者前往挑戰！",
+        "textColor": "#f5dca7",
+        "backgroundColor": "#20352a",
+        "sortOrder": 8
+      },
+      {
+        "id": "item-1790270143512-su36",
+        "enabled": true,
+        "text": "⚔️ 全新「裝備評分系統」上線！查看裝備與整體配裝評分，更直觀掌握自己的裝備成長！",
         "textColor": "#f5dca7",
         "backgroundColor": "#20352a",
         "sortOrder": 8
