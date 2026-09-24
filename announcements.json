@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T12:39:30.183Z",
+  "updatedAt": "2026-09-24T16:45:19.741Z",
   "announcements": [
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -13,7 +13,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -27,7 +27,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -41,11 +41,11 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
-      "status": "published",
+      "status": "draft",
       "tag": "更新",
       "tagTextColor": "#fbff00",
       "tagBackgroundColor": "#304833",
@@ -55,7 +55,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -69,7 +69,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -83,7 +83,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -97,7 +97,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -111,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -125,7 +125,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-23T12:39:30.009Z"
+      "updatedAt": "2026-09-24T16:45:19.457Z"
     }
   ],
   "ticker": {
