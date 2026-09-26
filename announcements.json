@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-09-26T13:52:06.870Z",
+  "updatedAt": "2026-09-26T13:52:32.736Z",
   "announcements": [
+    {
+      "id": "42495840-162f-4aef-85e5-1069aa529924",
+      "status": "published",
+      "tag": "更新",
+      "tagTextColor": "#fbff00",
+      "tagBackgroundColor": "#304833",
+      "title": "🛠️生存便利性更新上線",
+      "summary": "特殊工具、電梯系統、隔空開啟界伏盒與頭顱兌換券正式上線，讓日常生存更加便利！",
+      "contentHtml": "<div>🛠️ 全新「生存便利性更新」正式上線！</div><div><br></div><div>本次新增多項生存與日常便利功能：</div><div><br></div><div>🔧 特殊工具系統</div><div>收集原版生存素材，兌換各種特殊用途工具，讓採集、農耕與建築更加便利。</div><div><br></div><div>🛗 電梯系統</div><div>使用「電梯核心」即可建立多樓層電梯，快速往返建築中的不同樓層。</div><div>電梯核心可自行合成，也可於刷新商店取得。</div><div><br></div><div>📦 隔空開啟界伏盒</div><div>VIP+（含）以上會員新增便利功能，無需放置界伏盒，即可直接隔空開啟使用。</div><div><br></div><div>🎫 頭顱兌換券</div><div>刷新商店新增「頭顱兌換券」，提供更多收藏與兌換選擇。</div><div><br></div><div>更多系統內容與使用方式，可至 Discord 教學頻道查看！</div>",
+      "date": "2026-09-26",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-09-26T13:52:32.569Z"
+    },
     {
       "id": "e559b67d-27d6-4b0c-88e0-afe121a14db9",
       "status": "published",
@@ -13,7 +27,7 @@
       "date": "2026-09-24",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.657Z"
+      "updatedAt": "2026-09-26T13:52:32.569Z"
     },
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -27,7 +41,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.657Z"
+      "updatedAt": "2026-09-26T13:52:32.569Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -41,7 +55,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.657Z"
+      "updatedAt": "2026-09-26T13:52:32.569Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -55,7 +69,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.657Z"
+      "updatedAt": "2026-09-26T13:52:32.569Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -69,7 +83,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.657Z"
+      "updatedAt": "2026-09-26T13:52:32.569Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -83,7 +97,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.658Z"
+      "updatedAt": "2026-09-26T13:52:32.570Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -97,7 +111,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.658Z"
+      "updatedAt": "2026-09-26T13:52:32.570Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -111,7 +125,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.658Z"
+      "updatedAt": "2026-09-26T13:52:32.570Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -125,7 +139,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.658Z"
+      "updatedAt": "2026-09-26T13:52:32.570Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -139,7 +153,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-26T13:52:06.658Z"
+      "updatedAt": "2026-09-26T13:52:32.570Z"
     }
   ],
   "ticker": {
