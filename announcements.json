@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-09-27T14:52:06.033Z",
+  "updatedAt": "2026-09-27T14:52:54.493Z",
   "announcements": [
+    {
+      "id": "06fe9f27-980f-4a2f-88c0-c4da72c3e02e",
+      "status": "published",
+      "tag": "公告",
+      "tagTextColor": "#b9d4ae",
+      "tagBackgroundColor": "#304833",
+      "title": "⚔️討伐系統正式上線",
+      "summary": "集結隊伍、挑戰強敵！全新大型 PVE「討伐系統」正式開放！",
+      "contentHtml": "<div>⚔️ 討伐系統正式上線！</div><div><br></div><div>全新大型 PVE 挑戰「討伐系統」正式開放。</div><div><br></div><div>玩家可以集結隊伍，挑戰更高難度的討伐內容。</div><div>隨著挑戰逐步深入，敵人強度與戰鬥機制也會持續提升，更加考驗隊伍之間的分工、配合與整體戰力。</div><div><br></div><div>討伐系統將作為悠然之境長期發展的大型 PVE 內容，未來也會持續加入更高階的挑戰與全新內容。</div><div><br></div><div>準備好你的裝備，找好隊友，一起迎接新的挑戰吧！</div>",
+      "date": "2026-09-27",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-09-27T14:52:54.359Z"
+    },
     {
       "id": "42495840-162f-4aef-85e5-1069aa529924",
       "status": "published",
@@ -13,7 +27,7 @@
       "date": "2026-09-26",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.844Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "e559b67d-27d6-4b0c-88e0-afe121a14db9",
@@ -27,7 +41,7 @@
       "date": "2026-09-24",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -41,7 +55,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -55,7 +69,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -69,7 +83,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -83,7 +97,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -97,7 +111,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -111,7 +125,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -125,7 +139,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.845Z"
+      "updatedAt": "2026-09-27T14:52:54.359Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -139,7 +153,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.846Z"
+      "updatedAt": "2026-09-27T14:52:54.360Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -153,7 +167,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-09-27T14:52:05.846Z"
+      "updatedAt": "2026-09-27T14:52:54.360Z"
     }
   ],
   "ticker": {
