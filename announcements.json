@@ -1,6 +1,20 @@
 {
-  "updatedAt": "2026-10-05T14:52:27.106Z",
+  "updatedAt": "2026-10-05T14:52:43.821Z",
   "announcements": [
+    {
+      "id": "f1d1ec42-c46c-4bad-a086-c28acf3a35d6",
+      "status": "draft",
+      "tag": "公告",
+      "tagTextColor": "#b9d4ae",
+      "tagBackgroundColor": "#304833",
+      "title": "結婚・羈絆系統｜正式上線",
+      "summary": "全新結婚・羈絆系統正式開放！與另一半共同累積羈絆，從相識、求婚到正式結婚，留下屬於兩人的冒險紀錄。",
+      "contentHtml": "",
+      "date": "2026-10-05",
+      "link": "",
+      "sortOrder": 1,
+      "updatedAt": "2026-10-05T14:52:43.564Z"
+    },
     {
       "id": "81beb1e1-5f8b-4816-bbff-5c69af6c8545",
       "status": "draft",
@@ -13,7 +27,7 @@
       "date": "2026-10-05",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "06fe9f27-980f-4a2f-88c0-c4da72c3e02e",
@@ -27,7 +41,7 @@
       "date": "2026-09-27",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "42495840-162f-4aef-85e5-1069aa529924",
@@ -41,7 +55,7 @@
       "date": "2026-09-26",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "e559b67d-27d6-4b0c-88e0-afe121a14db9",
@@ -55,7 +69,7 @@
       "date": "2026-09-24",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -69,7 +83,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -83,7 +97,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -97,7 +111,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.924Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -111,7 +125,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -125,7 +139,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.564Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -139,7 +153,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.565Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -153,7 +167,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.565Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -167,7 +181,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.565Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -181,7 +195,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-05T14:52:26.925Z"
+      "updatedAt": "2026-10-05T14:52:43.565Z"
     }
   ],
   "ticker": {
