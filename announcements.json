@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T07:26:58.386Z",
+  "updatedAt": "2026-10-29T07:27:05.161Z",
   "announcements": [
     {
       "id": "7ce2eb2a-d51f-4d53-909f-dd1fff4d8287",
@@ -13,11 +13,11 @@
       "date": "2026-10-28",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.120Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "eada0347-f5a5-4a9f-a12a-eae816e96dd8",
-      "status": "published",
+      "status": "draft",
       "tag": "更新",
       "tagTextColor": "#fbffae",
       "tagBackgroundColor": "#304833",
@@ -27,7 +27,7 @@
       "date": "2026-10-22",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.120Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "c4b26011-10f1-4376-889e-a525df3eadce",
@@ -41,7 +41,7 @@
       "date": "2026-10-21",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.120Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "7faaab84-ea46-4301-a973-84e3f2c5d348",
@@ -55,7 +55,7 @@
       "date": "2026-10-14",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.120Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "a8f9b8cc-b38a-41f0-a5d5-795659053d30",
@@ -69,7 +69,7 @@
       "date": "2026-10-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "6b08c415-feed-43be-8751-b2e8380c8fe7",
@@ -83,7 +83,7 @@
       "date": "2026-10-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "f1d1ec42-c46c-4bad-a086-c28acf3a35d6",
@@ -97,7 +97,7 @@
       "date": "2026-10-05",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.886Z"
     },
     {
       "id": "81beb1e1-5f8b-4816-bbff-5c69af6c8545",
@@ -111,7 +111,7 @@
       "date": "2026-10-05",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "06fe9f27-980f-4a2f-88c0-c4da72c3e02e",
@@ -125,7 +125,7 @@
       "date": "2026-09-27",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "42495840-162f-4aef-85e5-1069aa529924",
@@ -139,7 +139,7 @@
       "date": "2026-09-26",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "e559b67d-27d6-4b0c-88e0-afe121a14db9",
@@ -153,7 +153,7 @@
       "date": "2026-09-24",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "8cb381a9-af81-48d9-bbf3-e7a741396700",
@@ -167,7 +167,7 @@
       "date": "2026-09-23",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "a4aaf0f5-bf76-45ac-a072-fcf79f916ffb",
@@ -181,7 +181,7 @@
       "date": "2026-09-18",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "f25692aa-7ccf-4dad-bdf8-101f30477c07",
@@ -195,7 +195,7 @@
       "date": "2026-09-17",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "e053d7f2-026c-488c-a800-3509f387f245",
@@ -209,7 +209,7 @@
       "date": "2026-09-09",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.121Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "fa73fc78-bda9-4c4e-a2d3-57f1f246504c",
@@ -223,7 +223,7 @@
       "date": "2026-09-08",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.122Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "85508da5-6963-4725-8f62-0650dabcbe24",
@@ -237,7 +237,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.122Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "2f27d87f-1d2e-45dc-8bb2-38201eaa99da",
@@ -251,7 +251,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.122Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "c5b51d1a-6306-43ee-b4e9-1a08ee3d18c9",
@@ -265,7 +265,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.122Z"
+      "updatedAt": "2026-10-29T07:27:04.887Z"
     },
     {
       "id": "69a92a5e-b1c8-468e-978d-52bd023cb9ae",
@@ -279,7 +279,7 @@
       "date": "2026-09-06",
       "link": "",
       "sortOrder": 1,
-      "updatedAt": "2026-10-29T07:26:58.122Z"
+      "updatedAt": "2026-10-29T07:27:04.888Z"
     }
   ],
   "ticker": {
